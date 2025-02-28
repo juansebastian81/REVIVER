@@ -1,0 +1,31 @@
+header {
+    background-color: #f8f9fa;
+}
+
+nav {
+    display: flex;
+    justify-content: Center;
+    align-items: center;
+    background-color: #545c65;
+}
+
+nav a {
+    text-decoration: none;
+    color: #eceaea;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        padding: 10px 0;
+    }
+}
