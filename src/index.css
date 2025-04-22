@@ -1,0 +1,53 @@
+index.css
+
+:root {
+    --color-primary: #B7D3E3;
+    --color-secondary: #A4C8E1;
+    --color-tertiary: #8FB8D8;
+    --color-quaternary:#6FA3D8;
+    --color-quinary:#4A8BBE;
+    --color-neutral: whitesmoke;
+    --color-textual:black;
+    --color-normal:#333;
+
+  }
+  
+  html,
+  body,
+  #root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    user-select: none;
+    overflow-x: hidden;
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-textual);
+  }
+  
+  span,
+  p {
+    color: var(--color-textual);
+  }
+  
+  a,
+  li {
+    color: var(--color-neutral);
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  li {
+    list-style-type: none;
+  }
