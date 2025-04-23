@@ -43,7 +43,7 @@ export default function GLBViewer({
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: 'url("../../public/backgroundHome.jpeg")',
+          backgroundImage: 'url("/backgroundHome.jpeg")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

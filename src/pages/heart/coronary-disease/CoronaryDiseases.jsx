@@ -1,14 +1,17 @@
 import "./CoronaryDiseases.css";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import Heart from "./models-3d/HeartCoronary";
+import GLBViewer from "../../../components/GLBViewer";
+import React from "react";
 
 const CoronaryDiseases = () => {
   return (
-    <Canvas>
-      <OrbitControls />
-      <Heart scale={25} />
-    </Canvas>
+    <div style={{ height: "100vh", width: "100vw" }}>
+      <p>Enfermedad coronaria</p>
+
+      <GLBViewer
+        modelUrl="/models-3d/coronary-disease/RealHeartCoronary1.glb"
+        fov={5}
+      />
+    </div>
   );
 };
 
