@@ -11,7 +11,7 @@ const HeartFailure = () => {
         como se que cada modelo es distinto lo deje dinamico */}
 
       <GLBViewer
-        modelUrl="../../../../public/models-3d/heart-failure/Confusion.glb"
+        modelUrl="/models-3d/heart-failure/Confusion.glb"
         cameraPosition={[0, 1.5, 4]}
         fov={20}
       />
