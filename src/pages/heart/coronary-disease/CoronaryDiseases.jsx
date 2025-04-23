@@ -5,9 +5,10 @@ import Heart from "./models-3d/HeartCoronary";
 
 const CoronaryDiseases = () => {
   return (
-    <>
-      <Canvas></Canvas>
-    </>
+    <Canvas>
+      <OrbitControls />
+      <Heart scale={25} />
+    </Canvas>
   );
 };
 
