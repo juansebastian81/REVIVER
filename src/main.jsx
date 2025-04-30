@@ -18,16 +18,13 @@ createRoot(document.getElementById("root")).render(
         <Route index path="/" element={<Home />} />
         <Route path="/landing" element={<Landing />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="heart" element={<Heart />}>
-          <Route path="arrhythmia" element={<Arrhythmia />} />
-          <Route path="heart-failure" element={<HeartFailure />} />
-          <Route path="coronary-disease" element={<CoronaryDiseases />} />
-          <Route
-            path="congenital-heart-disease"
-            element={<CongenitalHeartDisease />}
-            
-          />
-        </Route>
+        <Route path="/heart/arrhythmia" element={<Arrhythmia />} />
+        <Route path="/heart/heart-failure" element={<HeartFailure />} />
+        <Route path="/heart/coronary-disease" element={<CoronaryDiseases />} />
+        <Route
+            path="/heart/congenital-heart-disease"
+            element={<CongenitalHeartDisease />} />
+        <Route path="heart" element={<Heart />}/>
       </Routes>
     </Layout>
   </BrowserRouter>
