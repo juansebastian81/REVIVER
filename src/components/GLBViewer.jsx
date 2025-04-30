@@ -1,7 +1,9 @@
+import "./GLBViewer.css";
 import { useRef, Suspense, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF, Environment, Html } from "@react-three/drei";
 import { AnimationMixer } from "three";
+import Title from "../pages/texts/Title";
 
 function AnimatedModel({ url }) {
   const group = useRef();
@@ -32,9 +34,13 @@ function AnimatedModel({ url }) {
 }
 
 export default function GLBViewer({
+  // Modificar dentro de sus documentos,
+  // variable por defecto, evitar [0, 0, 0]
+  // asi evita cargar la camara dentro de los modelos
   modelUrl,
-  cameraPosition = [0, 1.5, 4],
-  fov = 20,
+  cameraPosition = [0, 0, 1.5], //Variable por defecto.
+  fov = 20, //Variable por defecto.
+  heartTitle = "Aqui tu titulo", //Variable por defecto.
 }) {
   return (
     <div style={{ height: "100vh", width: "100vw", position: "relative" }}>
@@ -43,7 +49,7 @@ export default function GLBViewer({
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: 'url("/backgroundHome.jpeg")',
+          backgroundImage: 'url("/background/backgroundHome.jpeg")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -56,9 +62,10 @@ export default function GLBViewer({
       <div style={{ position: "absolute", inset: 0, zIndex: 1 }}>
         <Canvas
           shadows
-          camera={{ cameraPosition, fov }} //el fov es el zoom XD
+          camera={{ position: cameraPosition, fov }} //el fov es el zoom XD
           style={{ background: "transparent" }}
         >
+          <Title title={heartTitle} />
           <ambientLight intensity={0.4} />
           <directionalLight
             castShadow
@@ -68,7 +75,7 @@ export default function GLBViewer({
             shadow-mapSize-height={2048}
             shadow-radius={0}
           />
-          <Suspense fallback={<Html center>Loading...</Html>}>
+          <Suspense fallback={<Html center>Cargando...</Html>}>
             <AnimatedModel url={modelUrl} />
             <Environment preset="sunset" />
           </Suspense>
