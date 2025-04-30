@@ -1,7 +1,9 @@
+import "./GLBViewer.css";
 import { useRef, Suspense, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF, Environment, Html } from "@react-three/drei";
 import { AnimationMixer } from "three";
+import Title from "../pages/texts/Title";
 
 function AnimatedModel({ url }) {
   const group = useRef();
@@ -32,9 +34,18 @@ function AnimatedModel({ url }) {
 }
 
 export default function GLBViewer({
+  //
+  // Modificar los parametros dentro de sus documentos,
+  //
+  // Se inicializan variables para evitar errores
+  //
   modelUrl,
-  cameraPosition = [0, 1.5, 4],
+  cameraPosition = [0, 0, 1.5],
   fov = 20,
+  titleHeart = "Tu titulo",
+  titlePosition = [0, 0.5, -1],
+  titleColor = "black",
+  titleSize = "0.2",
 }) {
   return (
     <div style={{ height: "100vh", width: "100vw", position: "relative" }}>
@@ -43,7 +54,7 @@ export default function GLBViewer({
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: 'url("/backgroundHome.jpeg")',
+          backgroundImage: 'url("/background/backgroundHome.jpeg")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -56,9 +67,16 @@ export default function GLBViewer({
       <div style={{ position: "absolute", inset: 0, zIndex: 1 }}>
         <Canvas
           shadows
-          camera={{ cameraPosition, fov }} //el fov es el zoom XD
+          camera={{ position: cameraPosition, fov }} //el fov es el zoom XD
           style={{ background: "transparent" }}
         >
+          <Title
+            title={titleHeart}
+            position={titlePosition}
+            color={titleColor}
+            fontSize={titleSize}
+          />
+
           <ambientLight intensity={0.4} />
           <directionalLight
             castShadow
@@ -68,7 +86,7 @@ export default function GLBViewer({
             shadow-mapSize-height={2048}
             shadow-radius={0}
           />
-          <Suspense fallback={<Html center>Loading...</Html>}>
+          <Suspense fallback={<Html center>Cargando...</Html>}>
             <AnimatedModel url={modelUrl} />
             <Environment preset="sunset" />
           </Suspense>
