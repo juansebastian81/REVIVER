@@ -1,7 +1,5 @@
 import React from "react";
 import GLBViewer from "../../../components/GLBViewer";
-import React from "react";
-import GLBViewer from "../../../components/GLBViewer";
 import "./Arrhythmia.css";
 
 const Arrhythmia = () => {
