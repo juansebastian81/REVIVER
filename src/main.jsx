@@ -9,12 +9,14 @@ import HeartFailure from "./pages/heart/heart-failure/HeartFailure";
 import CoronaryDiseases from "./pages/heart/coronary-disease/CoronaryDiseases";
 import CongenitalHeartDisease from "./pages/heart/congenital-heart-disease/CongenitalHeartDisease";
 import Layout from "./pages/layout/Layout";
+import Landing from "./pages/landing/Landing";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <Layout>
       <Routes>
         <Route index path="/" element={<Home />} />
+        <Route path="/landing" element={<Landing />} />
         <Route path="*" element={<NotFound />} />
         <Route path="heart" element={<Heart />}>
           <Route path="arrhythmia" element={<Arrhythmia />} />
