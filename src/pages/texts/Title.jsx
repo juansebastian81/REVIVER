@@ -1,14 +1,21 @@
 import "./Title.css";
 import { Html, Text } from "@react-three/drei";
 
-const Title = ({ title }) => {
+const Title = ({ title, position, color, fontSize }) => {
   return (
+    //
+    //Text por temas de personalizacion no tiene por defecto:
+    // -color
+    // -posicion
+    // -tamño
+    // {title} es el mensaje.
+    //
     <Text
-      position={[0, 0.4, -1]}
-      color={"black"}
+      position={position}
+      color={color}
+      fontSize={fontSize}
       anchorX={"center"}
       anchorY={"middle"}
-      fontSize="0.2"
       font="/fonts/perfectPenmanship.ttf"
     >
       {title}

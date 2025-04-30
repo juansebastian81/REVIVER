@@ -34,13 +34,18 @@ function AnimatedModel({ url }) {
 }
 
 export default function GLBViewer({
-  // Modificar dentro de sus documentos,
-  // variable por defecto, evitar [0, 0, 0]
-  // asi evita cargar la camara dentro de los modelos
+  //
+  // Modificar los parametros dentro de sus documentos,
+  //
+  // Se inicializan variables para evitar errores
+  //
   modelUrl,
-  cameraPosition = [0, 0, 1.5], //Variable por defecto.
-  fov = 20, //Variable por defecto.
-  heartTitle = "Aqui tu titulo", //Variable por defecto.
+  cameraPosition = [0, 0, 1.5],
+  fov = 20,
+  titleHeart = "Tu titulo",
+  titlePosition = [0, 0.5, -1],
+  titleColor = "black",
+  titleSize = "0.2",
 }) {
   return (
     <div style={{ height: "100vh", width: "100vw", position: "relative" }}>
@@ -65,7 +70,13 @@ export default function GLBViewer({
           camera={{ position: cameraPosition, fov }} //el fov es el zoom XD
           style={{ background: "transparent" }}
         >
-          <Title title={heartTitle} />
+          <Title
+            title={titleHeart}
+            position={titlePosition}
+            color={titleColor}
+            fontSize={titleSize}
+          />
+
           <ambientLight intensity={0.4} />
           <directionalLight
             castShadow

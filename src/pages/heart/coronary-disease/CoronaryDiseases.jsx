@@ -8,8 +8,11 @@ const CoronaryDiseases = () => {
       <GLBViewer
         modelUrl="/models-3d/coronary-disease/RealHeartCoronary1.glb"
         cameraPosition={[0, 0.5, 5]}
-        fov={15}
-        heartTitle="Enfermedad Coronaria"
+        fov={9}
+        titleHeart="Enfermedad Coronaria"
+        titlePosition={[0, 0.3, -0.1]}
+        titleColor="black"
+        titleSize=".1"
       />
     </div>
   );
