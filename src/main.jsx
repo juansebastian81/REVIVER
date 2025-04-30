@@ -25,6 +25,7 @@ createRoot(document.getElementById("root")).render(
           <Route
             path="congenital-heart-disease"
             element={<CongenitalHeartDisease />}
+            
           />
         </Route>
       </Routes>
