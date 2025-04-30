@@ -13,7 +13,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/backgroundHome.jpeg");
+  background-image: url("/background/backgroundHome.jpeg");
   background-size: cover;
   background-position: center;
   filter: blur(8px);
