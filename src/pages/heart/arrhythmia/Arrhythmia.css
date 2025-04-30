@@ -1,0 +1,15 @@
+.container-modelo {
+}
+
+.container-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+.container-info p {
+    padding: 10px 20px;
+}
