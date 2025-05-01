@@ -4,19 +4,18 @@ import { useNavigate } from "react-router";
 const Home = () => {
   const navigate = useNavigate();
   return (
-    <div class="home-page">
-      <div class="home-page-content">
-        <h1>Bienvenido a Corazones</h1>
+    <div className="home-page">
+      <div className="home-page-content">
+        <h1>Bienvenido a Reviver</h1>
         <div>
           <h2>
-            We are a platform dedicated to exploring heart disease models.
+          Somos una plataforma dedicada a explorar modelos 3D de enfermedades cardíacas.
           </h2>
           <p>
-            Test your knowledge with our interactive quiz and learn more about
-            heart health.
+          Pon a prueba tus conocimientos con nuestro cuestionario interactivo y aprende más sobre la salud del corazón.
           </p>
         </div>
-        <button onClick={() => navigate("/models")}>Go to Models</button>
+        <button onClick={() => navigate("/models")}>Ir a modelos</button>
       </div>
     </div>
   );
