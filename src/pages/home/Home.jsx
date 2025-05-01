@@ -1,20 +1,23 @@
 import "./Home.css";
 import { useNavigate } from "react-router";
-import { useCallback } from "react";
 
 const Home = () => {
   const navigate = useNavigate();
-
-  const handleClick = useCallback(()=>{
-    navigate("/heart", {
-      state: { userData: {displayName: "Back por JSOM"} },
-    })
-  }, [navigate]);
-
   return (
-    <div>
-      <h1>Inicio</h1>
-      <button onClick={handleClick}>Ver mas enfermedades</button>
+    <div class="home-page">
+      <div class="home-page-content">
+        <h1>Bienvenido a Corazones</h1>
+        <div>
+          <h2>
+            We are a platform dedicated to exploring heart disease models.
+          </h2>
+          <p>
+            Test your knowledge with our interactive quiz and learn more about
+            heart health.
+          </p>
+        </div>
+        <button onClick={() => navigate("/models")}>Go to Models</button>
+      </div>
     </div>
   );
 };
