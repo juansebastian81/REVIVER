@@ -1,8 +1,26 @@
-import React from "react";
 import GLBViewer from "../../../components/GLBViewer";
 import "./Arrhythmia.css";
+import React, { useEffect } from "react";
 
 const Arrhythmia = () => {
+
+    useEffect(() => {
+      // Prevenir el zoom en la página (fuera del canvas) solo cuando no se presiona Ctrl
+      const preventZoom = (e) => {
+        if (e.ctrlKey) {
+          e.preventDefault(); // Previene el zoom de la página
+        }
+      };
+  
+     
+      window.addEventListener("wheel", preventZoom, { passive: false });
+  
+  
+      return () => {
+        window.removeEventListener("wheel", preventZoom);
+      };
+    }, []);
+
   return (
     <>
       <div class="container-modelo">
