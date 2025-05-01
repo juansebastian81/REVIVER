@@ -1,6 +1,6 @@
 import "./GLBViewer.css";
 import { useRef, Suspense, useEffect } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, useGLTF, Environment, Html } from "@react-three/drei";
 import { AnimationMixer } from "three";
 import Title from "../pages/texts/Title";
@@ -34,20 +34,35 @@ function AnimatedModel({ url }) {
 }
 
 export default function GLBViewer({
-  //
-  // Modificar los parametros dentro de sus documentos,
-  //
-  // Se inicializan variables para evitar errores
-  //
   modelUrl,
   cameraPosition = [0, 0, 1.5],
   fov = 20,
-  titleHeart = "Tu titulo",
+  titleHeart = "Tu título",
   titlePosition = [0, 0.5, -1],
   titleColor = "black",
   titleSize = "0.2",
   shadowPosition = [0, -0.5, 0],
 }) {
+  const controlsRef = useRef();
+
+  useEffect(() => {
+    // Bloquea scroll del body
+    document.body.style.overflow = "hidden";
+
+    const handleWheel = (event) => {
+      if (controlsRef.current) {
+        controlsRef.current.enableZoom = event.ctrlKey;
+      }
+    };
+
+    window.addEventListener("wheel", handleWheel, { passive: false });
+
+    return () => {
+      document.body.style.overflow = "auto";
+      window.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
+
   return (
     <div style={{ height: "100vh", width: "100vw", position: "relative" }}>
       {/* Fondo desenfocado */}
@@ -64,20 +79,13 @@ export default function GLBViewer({
         }}
       />
 
-      {/* Canvas 3D encima del fondo */}
+      {/* Canvas 3D */}
       <div style={{ position: "absolute", inset: 0, zIndex: 1 }}>
         <Canvas
           shadows
-          camera={{ position: cameraPosition, fov }} //el fov es el zoom XD
+          camera={{ position: cameraPosition, fov }}
           style={{ background: "transparent" }}
         >
-          <Title
-            title={titleHeart}
-            position={titlePosition}
-            color={titleColor}
-            fontSize={titleSize}
-          />
-
           <ambientLight intensity={0.4} />
           <directionalLight
             castShadow
@@ -85,13 +93,22 @@ export default function GLBViewer({
             intensity={1.2}
             shadow-mapSize-width={2048}
             shadow-mapSize-height={2048}
-            shadow-radius={0}
           />
+
           <Suspense fallback={<Html center>Cargando...</Html>}>
+            <Title
+              title={titleHeart}
+              position={titlePosition}
+              color={titleColor}
+              fontSize={titleSize}
+            />
             <AnimatedModel url={modelUrl} />
             <Environment preset="sunset" />
           </Suspense>
-          <OrbitControls />
+
+          {/* OrbitControls con zoom controlado */}
+          <OrbitControls ref={controlsRef} enableZoom={false} />
+
           <mesh
             receiveShadow
             rotation={[-Math.PI / 2, 0, 0]}
