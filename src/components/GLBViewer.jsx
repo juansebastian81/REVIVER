@@ -46,6 +46,7 @@ export default function GLBViewer({
   titlePosition = [0, 0.5, -1],
   titleColor = "black",
   titleSize = "0.2",
+  shadowPosition = [0, -0.5, 0],
 }) {
   return (
     <div style={{ height: "100vh", width: "100vw", position: "relative" }}>
@@ -94,7 +95,7 @@ export default function GLBViewer({
           <mesh
             receiveShadow
             rotation={[-Math.PI / 2, 0, 0]}
-            position={[0, -0.5, 0]}
+            position={shadowPosition}
           >
             <planeGeometry args={[20, 20]} />
             <shadowMaterial opacity={0.3} />

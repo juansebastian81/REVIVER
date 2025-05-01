@@ -8,18 +8,21 @@ const CoronaryDiseases = () => {
       <div style={{ height: "100vh", width: "100vw" }}>
         <GLBViewer
           modelUrl="/models-3d/coronary-disease/RealHeartCoronary1.glb"
-          cameraPosition={[0, 0.5, 5]}
-          fov={9}
+          cameraPosition={[0, 0, 5]}
+          fov={6}
           titleHeart="Enfermedad Coronaria"
-          titlePosition={[0, 0.3, -0.1]}
+          titlePosition={[0, 0.2, -0.1]}
           titleColor="black"
-          titleSize=".1"
+          titleSize=".05"
+          shadowPosition={[0, -0.1, 0]}
         />
       </div>
       <div className="container">
         <h1>Enfermedad Coronaria del Corazón</h1>
 
-        <h2>¿Qué es?</h2>
+        <h2>
+          <strong>¿Qué es?</strong>
+        </h2>
         <p>
           La enfermedad coronaria (también llamada enfermedad arterial
           coronaria) es una afección en la que las arterias coronarias, que
@@ -28,7 +31,9 @@ const CoronaryDiseases = () => {
           colesterol y otras sustancias). Este proceso se llama aterosclerosis.
         </p>
 
-        <h2>¿Cuáles son sus causas?</h2>
+        <h2>
+          <strong>¿Cuáles son sus causas?</strong>
+        </h2>
         <ul>
           <li>Colesterol alto</li>
           <li>Presión arterial alta (hipertensión)</li>
@@ -39,7 +44,9 @@ const CoronaryDiseases = () => {
           <li>Antecedentes familiares</li>
         </ul>
 
-        <h2>¿Cómo afecta al cuerpo humano?</h2>
+        <h2>
+          <strong>¿Cómo afecta al cuerpo humano?</strong>
+        </h2>
         <p>
           Cuando las arterias coronarias se estrechan o bloquean, el corazón no
           recibe suficiente oxígeno, lo que puede causar dolor en el pecho

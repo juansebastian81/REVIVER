@@ -1,5 +1,5 @@
 import "./Title.css";
-import { Html, Text } from "@react-three/drei";
+import { Text } from "@react-three/drei";
 
 const Title = ({ title, position, color, fontSize }) => {
   return (
