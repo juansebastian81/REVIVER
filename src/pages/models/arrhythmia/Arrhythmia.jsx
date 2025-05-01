@@ -18,11 +18,9 @@ const Arrhythmia = () => {
         />
       </div>
       <div className="container">
-        <h1>Arritmia Cardíaca</h1>
-
-        <h2>
+        <h1>
           <strong>¿Qué es?</strong>
-        </h2>
+        </h1>
         <p>
           Las arritmias se producen cuando los impulsos eléctricos que controlan
           el ritmo del corazón no funcionan correctamente. Esto puede hacer que
@@ -31,9 +29,9 @@ const Arrhythmia = () => {
           mortales, dependiendo de su tipo y gravedad.
         </p>
 
-        <h2>
+        <h1>
           <strong>¿Cuáles son sus causas?</strong>
-        </h2>
+        </h1>
         <ul>
           <li>Enfermedades Cardíacas</li>
           <li>Desequilibrios electrolíticos</li>
@@ -45,9 +43,9 @@ const Arrhythmia = () => {
           <li>Falta de sueño</li>
         </ul>
 
-        <h2>
+        <h1>
           <strong>¿Cómo afecta al cuerpo humano?</strong>
-        </h2>
+        </h1>
         <p>
           Las arritmias cardíacas pueden tener efectos que van desde ser
           completamente inofensivos hasta representar un riesgo grave para la
