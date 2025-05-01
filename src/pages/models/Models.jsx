@@ -31,7 +31,9 @@ const Models = () => {
             />
             <div className="card-body">
               <h5 className="card-title">Arritmia</h5>
-              <p className="card-text">Alteraciones del ritmo cardíaco.</p>
+              <p className="card-text text-center">
+                Alteraciones del ritmo cardíaco.
+              </p>
             </div>
           </div>
 
@@ -48,7 +50,7 @@ const Models = () => {
             />
             <div className="card-body">
               <h5 className="card-title">Insuficiencia Cardíaca</h5>
-              <p className="card-text">
+              <p className="card-text text-center">
                 El corazón no bombea sangre adecuadamente.
               </p>
             </div>
@@ -67,7 +69,7 @@ const Models = () => {
             />
             <div className="card-body">
               <h5 className="card-title">Enfermedad Coronaria</h5>
-              <p className="card-text">
+              <p className="card-text text-center">
                 Obstrucción en las arterias del corazón.
               </p>
             </div>
@@ -86,7 +88,7 @@ const Models = () => {
             />
             <div className="card-body">
               <h5 className="card-title">Cardiopatía Congénita</h5>
-              <p className="card-text">
+              <p className="card-text text-center">
                 Defectos del corazón presentes al nacer.
               </p>
             </div>

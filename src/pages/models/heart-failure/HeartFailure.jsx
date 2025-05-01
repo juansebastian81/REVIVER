@@ -32,7 +32,9 @@ const HeartFailure = () => {
       <div className="container">
         <h1>Insuficiencia Cardíaca</h1>
 
-        <h2>¿Qué es?</h2>
+        <h2>
+          <strong>¿Qué es?</strong>
+        </h2>
         <p>
           La insuficiencia cardíaca es una afección crónica en la que el corazón
           no puede bombear sangre de manera eficiente para satisfacer las
@@ -41,7 +43,9 @@ const HeartFailure = () => {
           manera progresiva con el tiempo.
         </p>
 
-        <h2>¿Cuáles son sus causas?</h2>
+        <h2>
+          <strong>¿Cuáles son sus causas?</strong>
+        </h2>
         <ul>
           <li>Enfermedad arterial coronaria</li>
           <li>Presión arterial alta (hipertensión)</li>
@@ -53,7 +57,9 @@ const HeartFailure = () => {
           <li>Consumo excesivo de alcohol o drogas</li>
         </ul>
 
-        <h2>¿Cómo afecta al cuerpo humano?</h2>
+        <h2>
+          <strong>¿Cómo afecta al cuerpo humano?</strong>
+        </h2>
         <p>
           La insuficiencia cardíaca provoca que el cuerpo no reciba suficiente
           oxígeno y nutrientes, lo que puede causar fatiga extrema, dificultad
