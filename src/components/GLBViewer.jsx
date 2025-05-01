@@ -1,6 +1,6 @@
 import "./GLBViewer.css";
-import { useRef, Suspense, useEffect } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { useRef, Suspense, useEffect, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF, Environment, Html } from "@react-three/drei";
 import { AnimationMixer } from "three";
 import Title from "../pages/texts/Title";
@@ -44,14 +44,17 @@ export default function GLBViewer({
   shadowPosition = [0, -0.5, 0],
 }) {
   const controlsRef = useRef();
+  const [showTooltip, setShowTooltip] = useState(true);
 
   useEffect(() => {
-    // Bloquea scroll del body
     document.body.style.overflow = "hidden";
 
     const handleWheel = (event) => {
       if (controlsRef.current) {
         controlsRef.current.enableZoom = event.ctrlKey;
+      }
+      if (event.ctrlKey && showTooltip) {
+        setShowTooltip(false); // Oculta el mensaje después del primer zoom con Ctrl
       }
     };
 
@@ -61,7 +64,7 @@ export default function GLBViewer({
       document.body.style.overflow = "auto";
       window.removeEventListener("wheel", handleWheel);
     };
-  }, []);
+  }, [showTooltip]);
 
   return (
     <div style={{ height: "100vh", width: "100vw", position: "relative" }}>
@@ -106,7 +109,6 @@ export default function GLBViewer({
             <Environment preset="sunset" />
           </Suspense>
 
-          {/* OrbitControls con zoom controlado */}
           <OrbitControls ref={controlsRef} enableZoom={false} />
 
           <mesh
@@ -119,6 +121,25 @@ export default function GLBViewer({
           </mesh>
         </Canvas>
       </div>
+
+      {/* 💬 Tooltip en la parte superior derecha */}
+      {showTooltip && (
+        <div
+          style={{
+            position: "absolute",
+            top: "220px", // Mueve el mensaje a la parte superior
+            right: "30px", // Alineado a la derecha
+            backgroundColor: "rgba(0,0,0,0.7)",
+            color: "white",
+            padding: "8px 12px",
+            borderRadius: "8px",
+            fontSize: "14px",
+            zIndex: 2,
+          }}
+        >
+          💡 Presiona <strong>Ctrl</strong> + <strong>Scroll</strong> para hacer zoom
+        </div>
+      )}
     </div>
   );
 }
