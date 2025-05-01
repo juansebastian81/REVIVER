@@ -21,7 +21,7 @@ const Home = () => {
   
           {/* Card 1 */}
           <div className="card m-3" style={{ width: "18rem", cursor: "pointer" }} onClick={() => goTo("/heart/arrhythmia")}>
-            <img src="./public/insuficienciaCard.jpeg" className="card-img-top" alt="Arritmia" />
+            <img src="./public/arritmiaCard.jpg" className="card-img-top" alt="Arritmia" />
             <div className="card-body">
               <h5 className="card-title">Arritmia</h5>
               <p className="card-text">Alteraciones del ritmo cardíaco.</p>
@@ -39,7 +39,7 @@ const Home = () => {
   
           {/* Card 3 */}
           <div className="card m-3" style={{ width: "18rem", cursor: "pointer" }} onClick={() => goTo("/heart/coronary-disease")}>
-            <img src="./public/insuficienciaCard.jpeg" className="card-img-top" alt="Enfermedad Coronaria" />
+            <img src="./public/enfermedadCoronariaCard.jpg" className="card-img-top" alt="Enfermedad Coronaria" />
             <div className="card-body">
               <h5 className="card-title">Enfermedad Coronaria</h5>
               <p className="card-text">Obstrucción en las arterias del corazón.</p>
@@ -48,7 +48,7 @@ const Home = () => {
   
           {/* Card 4 */}
           <div className="card m-3" style={{ width: "18rem", cursor: "pointer" }} onClick={() => goTo("/heart/congenital-heart-disease")}>
-            <img src="./public/insuficienciaCard.jpeg" className="card-img-top" alt="Cardiopatía Congénita" />
+            <img src="./public/cardioCongenitaCard.jpg" className="card-img-top" alt="Cardiopatía Congénita" />
             <div className="card-body">
               <h5 className="card-title">Cardiopatía Congénita</h5>
               <p className="card-text">Defectos del corazón presentes al nacer.</p>
