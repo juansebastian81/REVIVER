@@ -15,16 +15,15 @@ const CongenitalHeartDisease = () => {
           cameraPosition={[0, 0, 5]}
           fov={20}
           titleHeart="Cardiopatia congenita"
-          titlePosition={[0, 0.6, -0.5]}
+          titlePosition={[0, 0.7, -0.5]}
           titleColor="black"
           titleSize=".2"
         />
       </div>
       <div className="container">
-        <h1>Cardiopatia congenita</h1>
-        <h2>
+        <h1>
           <strong>¿Que es?</strong>
-        </h2>
+        </h1>
         <p>
           Una cardiopatía congénita es una alteración en la estructura del
           corazón que se presenta desde el nacimiento.Surge debido a un
@@ -34,9 +33,9 @@ const CongenitalHeartDisease = () => {
           mientras que otras son más complejas y requieren intervenciones
           quirúrgicas desde los primeros días de vida.
         </p>
-        <h2>
+        <h1>
           <strong>¿Cuales son sus causas?</strong>
-        </h2>
+        </h1>
         <p>
           Las cardiopatías congénitas son alteraciones del corazón que están
           presentes desde el nacimiento y, por lo general, tienen un origen
@@ -77,9 +76,9 @@ const CongenitalHeartDisease = () => {
           corazón durante su formación en el embarazo.
         </p>
 
-        <h2>
+        <h1>
           <strong>Tratamiento</strong>
-        </h2>
+        </h1>
         <p>
           El tratamiento de las cardiopatías congénitas depende del tipo y la
           gravedad del defecto cardíaco. En algunos casos leves, puede que no se

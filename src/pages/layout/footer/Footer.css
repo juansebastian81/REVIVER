@@ -13,7 +13,7 @@ footer {
   margin-top: auto;
 }
 
-.footer p {
+footer p {
   margin: 10px;
   color: var(--color-neutral);
 }
