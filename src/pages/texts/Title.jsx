@@ -16,7 +16,7 @@ const Title = ({ title, position, color, fontSize }) => {
       fontSize={fontSize}
       anchorX={"center"}
       anchorY={"middle"}
-      font="/fonts/perfectPenmanship.ttf"
+      font="/fonts/perfectPenmanship.woff"
     >
       {title}
     </Text>
