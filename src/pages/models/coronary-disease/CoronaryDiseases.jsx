@@ -1,8 +1,27 @@
 import "./CoronaryDiseases.css";
 import GLBViewer from "../../../components/GLBViewer";
-import React from "react";
+import React, { useEffect } from "react";
 
 const CoronaryDiseases = () => {
+
+    useEffect(() => {
+      // Prevenir el zoom en la página (fuera del canvas) solo cuando no se presiona Ctrl
+      const preventZoom = (e) => {
+        if (e.ctrlKey) {
+          e.preventDefault(); // Previene el zoom de la página
+        }
+      };
+  
+     
+      window.addEventListener("wheel", preventZoom, { passive: false });
+  
+  
+      return () => {
+        window.removeEventListener("wheel", preventZoom);
+      };
+    }, []);
+
+  
   return (
     <>
       <div style={{ height: "100vh", width: "100vw" }}>
