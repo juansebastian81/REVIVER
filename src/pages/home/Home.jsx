@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div class="home-page">
       <div class="home-page-content">
-        <h1>WELCOME TO LANDING PAGE</h1>
+        <h1>Bienvenido a Corazones</h1>
         <div>
           <h2>
             We are a platform dedicated to exploring heart disease models.
