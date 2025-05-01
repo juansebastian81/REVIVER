@@ -43,7 +43,7 @@ span,
 ul,
 p {
   color: var(--color-textual);
-  text-align: center;
+  text-align: justify;
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
