@@ -14,7 +14,7 @@ function AnimatedModel({ url }) {
     if (animations.length > 0) {
       mixer.current = new AnimationMixer(scene);
       animations.forEach((clip) => {
-        mixer.current.clipAction(clip, group.current).play();
+        mixer.current.clipAction(clip).play();
       });
     }
 
@@ -137,7 +137,8 @@ export default function GLBViewer({
             zIndex: 2,
           }}
         >
-          💡 Presiona <strong>Ctrl</strong> + <strong>Scroll</strong> para hacer zoom
+          💡 Presiona <strong>Ctrl</strong> + <strong>Scroll</strong> para hacer
+          zoom
         </div>
       )}
     </div>
