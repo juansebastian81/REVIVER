@@ -10,7 +10,15 @@ const Header = () => {
         </NavLink>{" "}
         &nbsp;
         <NavLink to="/models" end>
-          Modelos
+          Corazones
+        </NavLink>{" "}
+        &nbsp;
+        <NavLink to="/quiz" end>
+          Quiz interactivo
+        </NavLink>{" "}
+        &nbsp;
+        <NavLink to="/aboutus" end>
+          Nosotros
         </NavLink>{" "}
         &nbsp;
       </nav>
