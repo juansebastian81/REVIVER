@@ -26,9 +26,8 @@ const CoronaryDiseases = () => {
           cameraPosition={[0, 0, 5]}
           fov={6}
           titleHeart="Enfermedad Coronaria"
+          titleSize={0.06}
           titlePosition={[0, 0.2, -0.1]}
-          titleColor="black"
-          titleSize=".05"
           shadowPosition={[0, -0.1, 0]}
         />
       </div>

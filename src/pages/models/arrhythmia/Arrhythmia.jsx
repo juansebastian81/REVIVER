@@ -3,23 +3,20 @@ import "./Arrhythmia.css";
 import React, { useEffect } from "react";
 
 const Arrhythmia = () => {
+  useEffect(() => {
+    // Prevenir el zoom en la página (fuera del canvas) solo cuando no se presiona Ctrl
+    const preventZoom = (e) => {
+      if (e.ctrlKey) {
+        e.preventDefault(); // Previene el zoom de la página
+      }
+    };
 
-    useEffect(() => {
-      // Prevenir el zoom en la página (fuera del canvas) solo cuando no se presiona Ctrl
-      const preventZoom = (e) => {
-        if (e.ctrlKey) {
-          e.preventDefault(); // Previene el zoom de la página
-        }
-      };
-  
-     
-      window.addEventListener("wheel", preventZoom, { passive: false });
-  
-  
-      return () => {
-        window.removeEventListener("wheel", preventZoom);
-      };
-    }, []);
+    window.addEventListener("wheel", preventZoom, { passive: false });
+
+    return () => {
+      window.removeEventListener("wheel", preventZoom);
+    };
+  }, []);
 
   return (
     <>
@@ -30,8 +27,7 @@ const Arrhythmia = () => {
           fov={1.5}
           titleHeart="Arritmia cardiaca"
           titlePosition={[0, 0.05, -0.03]}
-          titleColor="black"
-          titleSize={0.02}
+          titleSize={0.01}
           shadowPosition={[0, -0.02, 0]}
         />
       </div>
