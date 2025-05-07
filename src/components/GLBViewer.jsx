@@ -38,9 +38,8 @@ export default function GLBViewer({
   cameraPosition = [0, 0, 1.5],
   fov = 20,
   titleHeart = "Tu título",
+  titleSize = 0.03,
   titlePosition = [0, 0.5, -1],
-  titleColor = "black",
-  titleSize = "0.2",
   shadowPosition = [0, -0.5, 0],
 }) {
   const controlsRef = useRef();
@@ -102,10 +101,11 @@ export default function GLBViewer({
             <Title
               title={titleHeart}
               position={titlePosition}
-              color={titleColor}
-              fontSize={titleSize}
+              size={titleSize}
             />
+
             <AnimatedModel url={modelUrl} />
+
             <Environment preset="sunset" />
           </Suspense>
 
