@@ -1,9 +1,10 @@
 import "./GLBViewer.css";
 import { useRef, Suspense, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, useGLTF, Environment, Html } from "@react-three/drei";
+import { OrbitControls, useGLTF, Loader } from "@react-three/drei";
 import { AnimationMixer } from "three";
 import Title from "../pages/texts/Title";
+import Staging from "../pages/staging/Staging";
 
 function AnimatedModel({ url }) {
   const group = useRef();
@@ -67,28 +68,14 @@ export default function GLBViewer({
 
   return (
     <div style={{ height: "100vh", width: "100vw", position: "relative" }}>
-      {/* Fondo desenfocado */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: 'url("/background/backgroundHome.jpeg")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          filter: "blur(8px)",
-          zIndex: 0,
-        }}
-      />
-
-      {/* Canvas 3D */}
-      <div style={{ position: "absolute", inset: 0, zIndex: 1 }}>
+      <Suspense fallback={<Loader />}>
         <Canvas
           shadows
           camera={{ position: cameraPosition, fov }}
           style={{ background: "transparent" }}
         >
           <ambientLight intensity={0.4} />
+
           <directionalLight
             castShadow
             position={[5, 10, 5]}
@@ -97,17 +84,11 @@ export default function GLBViewer({
             shadow-mapSize-height={2048}
           />
 
-          <Suspense fallback={<Html center>Cargando...</Html>}>
-            <Title
-              title={titleHeart}
-              position={titlePosition}
-              size={titleSize}
-            />
+          <Title title={titleHeart} position={titlePosition} size={titleSize} />
 
-            <AnimatedModel url={modelUrl} />
+          <AnimatedModel url={modelUrl} />
 
-            <Environment preset="sunset" />
-          </Suspense>
+          <Staging />
 
           <OrbitControls ref={controlsRef} enableZoom={false} />
 
@@ -120,7 +101,7 @@ export default function GLBViewer({
             <shadowMaterial opacity={0.3} />
           </mesh>
         </Canvas>
-      </div>
+      </Suspense>
 
       {/* 💬 Tooltip en la parte superior derecha */}
       {showTooltip && (
