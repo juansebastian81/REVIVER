@@ -10,9 +10,11 @@ import CoronaryDiseases from "./pages/models/coronary-disease/CoronaryDiseases";
 import CongenitalHeartDisease from "./pages/models/congenital-heart-disease/CongenitalHeartDisease";
 import Layout from "./pages/layout/Layout";
 
+
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <Layout>
+      
       <Routes>
         <Route index path="/" element={<Home />} />
         <Route path="/models" element={<Models />} />
