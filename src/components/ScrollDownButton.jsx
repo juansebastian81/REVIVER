@@ -13,7 +13,7 @@ const ScrollDownButton = ({ onClick }) => {
         xmlns="http://www.w3.org/2000/svg"
         width="36"
         height="36"
-        fill="white"
+        fill="black"
         viewBox="0 0 24 24"
       >
         <path d="M12 16.5l-8-8 1.41-1.42L12 13.66l6.59-6.58L20 8.5z" />

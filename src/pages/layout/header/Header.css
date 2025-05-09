@@ -4,7 +4,7 @@ header {
 
 nav {
   display: flex;
-  justify-content: Center;
+  justify-content: space-between;
   align-items: center;
   background-color: #545c65;
 }
@@ -30,9 +30,16 @@ nav a:hover {
   }
 }
 
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 .logo {
   display: flex;
-  height: 50px;
+  height: 32px;
   justify-content: center;
   align-items: center;
 }
