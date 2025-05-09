@@ -11,9 +11,7 @@ const HeartFailure = () => {
       }
     };
 
-   
     window.addEventListener("wheel", preventZoom, { passive: false });
-
 
     return () => {
       window.removeEventListener("wheel", preventZoom);
@@ -29,8 +27,7 @@ const HeartFailure = () => {
           fov={30}
           titleHeart="Insuficiencia Cardiaca"
           titlePosition={[0, 0.7, -0.1]}
-          titleColor="black"
-          titleSize=".1"
+          titleSize={0.2}
         />
       </div>
       <div className="container">

@@ -3,36 +3,31 @@ import GLBViewer from "../../../components/GLBViewer";
 import React, { useEffect } from "react";
 
 const CoronaryDiseases = () => {
+  useEffect(() => {
+    // Prevenir el zoom en la página (fuera del canvas) solo cuando no se presiona Ctrl
+    const preventZoom = (e) => {
+      if (e.ctrlKey) {
+        e.preventDefault(); // Previene el zoom de la página
+      }
+    };
 
-    useEffect(() => {
-      // Prevenir el zoom en la página (fuera del canvas) solo cuando no se presiona Ctrl
-      const preventZoom = (e) => {
-        if (e.ctrlKey) {
-          e.preventDefault(); // Previene el zoom de la página
-        }
-      };
-  
-     
-      window.addEventListener("wheel", preventZoom, { passive: false });
-  
-  
-      return () => {
-        window.removeEventListener("wheel", preventZoom);
-      };
-    }, []);
+    window.addEventListener("wheel", preventZoom, { passive: false });
 
-  
+    return () => {
+      window.removeEventListener("wheel", preventZoom);
+    };
+  }, []);
+
   return (
     <>
       <div style={{ height: "100vh", width: "100vw" }}>
         <GLBViewer
-          modelUrl="/models-3d/coronary-disease/RealHeartCoronary1.glb"
+          modelUrl="/models-3d/coronary-disease/RealHeartCoronary1Beating.glb"
           cameraPosition={[0, 0, 5]}
           fov={6}
           titleHeart="Enfermedad Coronaria"
+          titleSize={0.06}
           titlePosition={[0, 0.2, -0.1]}
-          titleColor="black"
-          titleSize=".05"
           shadowPosition={[0, -0.1, 0]}
         />
       </div>

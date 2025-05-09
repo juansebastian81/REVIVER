@@ -3,23 +3,20 @@ import GLBViewer from "../../../components/GLBViewer";
 import React, { useEffect } from "react";
 
 const CongenitalHeartDisease = () => {
+  useEffect(() => {
+    // Prevenir el zoom en la página (fuera del canvas) solo cuando no se presiona Ctrl
+    const preventZoom = (e) => {
+      if (e.ctrlKey) {
+        e.preventDefault(); // Previene el zoom de la página
+      }
+    };
 
-      useEffect(() => {
-        // Prevenir el zoom en la página (fuera del canvas) solo cuando no se presiona Ctrl
-        const preventZoom = (e) => {
-          if (e.ctrlKey) {
-            e.preventDefault(); // Previene el zoom de la página
-          }
-        };
-    
-       
-        window.addEventListener("wheel", preventZoom, { passive: false });
-    
-    
-        return () => {
-          window.removeEventListener("wheel", preventZoom);
-        };
-      }, []);
+    window.addEventListener("wheel", preventZoom, { passive: false });
+
+    return () => {
+      window.removeEventListener("wheel", preventZoom);
+    };
+  }, []);
   return (
     <>
       <div style={{ height: "100vh", width: "100vw" }}>
@@ -33,8 +30,7 @@ const CongenitalHeartDisease = () => {
           fov={20}
           titleHeart="Cardiopatia congenita"
           titlePosition={[0, 0.7, -0.5]}
-          titleColor="black"
-          titleSize=".2"
+          titleSize={0.2}
         />
       </div>
       <div className="container">
