@@ -103,6 +103,8 @@ export default function GLBViewer({
         </Canvas>
       </Suspense>
 
+      
+
       {/* 💬 Tooltip en la parte superior derecha */}
       {showTooltip && (
         <div
@@ -122,6 +124,8 @@ export default function GLBViewer({
           zoom
         </div>
       )}
+
+
     </div>
   );
 }
