@@ -1,42 +1,56 @@
 import "./CoronaryDiseases.css";
 import GLBViewer from "../../../components/GLBViewer";
-import React, { useEffect } from "react";
+import ScrollDownButton from "../../../components/ScrollDownButton";
+import React, { useEffect, useState } from "react";
 
 const CoronaryDiseases = () => {
+  const [scrollEnabled, setScrollEnabled] = useState(false);
 
-    useEffect(() => {
-      // Prevenir el zoom en la página (fuera del canvas) solo cuando no se presiona Ctrl
-      const preventZoom = (e) => {
-        if (e.ctrlKey) {
-          e.preventDefault(); // Previene el zoom de la página
-        }
-      };
-  
-     
-      window.addEventListener("wheel", preventZoom, { passive: false });
-  
-  
-      return () => {
-        window.removeEventListener("wheel", preventZoom);
-      };
-    }, []);
+  useEffect(() => {
+    // Prevenir el zoom en la página (fuera del canvas) solo cuando no se presiona Ctrl
+    const preventZoom = (e) => {
+      if (e.ctrlKey) {
+        e.preventDefault(); // Previene el zoom de la página
+      }
+    };
 
+    
   
+
+    window.addEventListener("wheel", preventZoom, { passive: false });
+
+    return () => {
+      window.removeEventListener("wheel", preventZoom);
+    };
+  }, []);
+
+  const handleScrollDown = () => {
+    document.body.style.overflow = "auto";
+    setScrollEnabled(true);
+
+    const section = document.getElementById("info-section");
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
-      <div style={{ height: "100vh", width: "100vw" }}>
+      <div className="viewer-container">
         <GLBViewer
-          modelUrl="/models-3d/coronary-disease/RealHeartCoronary1.glb"
+          modelUrl="/models-3d/coronary-disease/RealHeartCoronary1Beating.glb"
           cameraPosition={[0, 0, 5]}
           fov={6}
           titleHeart="Enfermedad Coronaria"
+          titleSize={0.06}
           titlePosition={[0, 0.2, -0.1]}
-          titleColor="black"
-          titleSize=".05"
           shadowPosition={[0, -0.1, 0]}
         />
+
+        {!scrollEnabled && (
+          <ScrollDownButton onClick={handleScrollDown} />
+        )}
       </div>
-      <div className="container">
+
+      <div className="container" id="info-section">
         <h1>
           <strong>¿Qué es?</strong>
         </h1>

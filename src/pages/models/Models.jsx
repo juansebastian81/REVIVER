@@ -25,7 +25,7 @@ const Models = () => {
             onClick={() => goTo("/models/arrhythmia")}
           >
             <img
-              src="./cards/arritmiaCard.jpg"
+              src="./cards/arritmiaCard.png"
               className="card-img-top"
               alt="Arritmia"
             />
@@ -44,7 +44,7 @@ const Models = () => {
             onClick={() => goTo("/models/heart-failure")}
           >
             <img
-              src="./cards/insuficienciaCard.jpeg"
+              src="./cards/insuficienciaCard.png"
               className="card-img-top"
               alt="Insuficiencia Cardíaca"
             />
@@ -63,7 +63,7 @@ const Models = () => {
             onClick={() => goTo("/models/coronary-disease")}
           >
             <img
-              src="./cards/enfermedadCoronariaCard.jpg"
+              src="./cards/coronariaCard.png"
               className="card-img-top"
               alt="Enfermedad Coronaria"
             />
@@ -82,7 +82,7 @@ const Models = () => {
             onClick={() => goTo("/models/congenital-heart-disease")}
           >
             <img
-              src="./cards/cardioCongenitaCard.jpg"
+              src="./cards/cardioCongenitaCard.png"
               className="card-img-top"
               alt="Cardiopatía Congénita"
             />

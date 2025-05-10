@@ -1,31 +1,45 @@
 header {
-    background-color: #f8f9fa;
+  background-color: #f8f9fa;
 }
 
 nav {
-    display: flex;
-    justify-content: Center;
-    align-items: center;
-    background-color: #545c65;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #545c65;
 }
 
 nav a {
-    text-decoration: none;
-    color: #eceaea;
-    padding: 10px;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #eceaea;
+  padding: 10px;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #007bff;
+  color: #007bff;
 }
 
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-    }
+  nav {
+    flex-direction: column;
+  }
 
-    nav a {
-        padding: 10px 0;
-    }
+  nav a {
+    padding: 10px 0;
+  }
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
 }

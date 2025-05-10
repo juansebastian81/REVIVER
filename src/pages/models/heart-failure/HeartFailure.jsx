@@ -1,39 +1,51 @@
 import "./HeartFailure.css";
 import GLBViewer from "../../../components/GLBViewer";
-import React, { useEffect } from "react";
+import ScrollDownButton from "../../../components/ScrollDownButton";
+import React, { useEffect, useState } from "react";
 
 const HeartFailure = () => {
+  const [scrollEnabled, setScrollEnabled] = useState(false);
+
   useEffect(() => {
-    // Prevenir el zoom en la página (fuera del canvas) solo cuando no se presiona Ctrl
+   
+
     const preventZoom = (e) => {
       if (e.ctrlKey) {
-        e.preventDefault(); // Previene el zoom de la página
+        e.preventDefault();
       }
     };
 
-   
     window.addEventListener("wheel", preventZoom, { passive: false });
-
 
     return () => {
       window.removeEventListener("wheel", preventZoom);
     };
-  }, []);
+  }, []); 
+
+  const handleScrollDown = () => {
+    document.body.style.overflow = "auto";
+    setScrollEnabled(true);
+
+    const section = document.getElementById("info-section");
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <>
-      <div style={{ height: "100vh", width: "100vw" }}>
+      <div className="viewer-container">
         <GLBViewer
           modelUrl="/models-3d/heart-failure/Confusion.glb"
           cameraPosition={[0, 1.5, 4]}
           fov={30}
           titleHeart="Insuficiencia Cardiaca"
           titlePosition={[0, 0.7, -0.1]}
-          titleColor="black"
-          titleSize=".1"
+          titleSize={0.2}
         />
+
+        {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
       </div>
-      <div className="container">
+
+      <div className="container" id="info-section">
         <h1>
           <strong>¿Qué es?</strong>
         </h1>

@@ -1,57 +1,67 @@
 import "./CongenitalHeartDisease.css";
 import GLBViewer from "../../../components/GLBViewer";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import ScrollDownButton from "../../../components/ScrollDownButton";
 
 const CongenitalHeartDisease = () => {
+  const [scrollEnabled, setScrollEnabled] = useState(false);
 
-      useEffect(() => {
-        // Prevenir el zoom en la página (fuera del canvas) solo cuando no se presiona Ctrl
-        const preventZoom = (e) => {
-          if (e.ctrlKey) {
-            e.preventDefault(); // Previene el zoom de la página
-          }
-        };
-    
-       
-        window.addEventListener("wheel", preventZoom, { passive: false });
-    
-    
-        return () => {
-          window.removeEventListener("wheel", preventZoom);
-        };
-      }, []);
+  useEffect(() => {
+    // Prevenir el zoom en la página (fuera del canvas) solo cuando no se presiona Ctrl
+    const preventZoom = (e) => {
+      if (e.ctrlKey) {
+        e.preventDefault(); // Previene el zoom de la página
+      }
+    };
+
+    window.addEventListener("wheel", preventZoom, { passive: false });
+
+    return () => {
+      window.removeEventListener("wheel", preventZoom);
+    };
+  }, []);
+
+  const handleScrollDown = () => {
+    document.body.style.overflow = "auto";
+    setScrollEnabled(true);
+
+    const section = document.getElementById("info-section");
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
-      <div style={{ height: "100vh", width: "100vw" }}>
-        {/*Muchachos es para acomodar la posicion de la camara 
-      cameraPosition{x,y,z} y fov es para el zoom de la camara
-      como se que cada modelo es distinto lo deje dinamico */}
-
+      <div className="viewer-container">
         <GLBViewer
           modelUrl="/models-3d/congenital-heart-disease/Heart.glb"
           cameraPosition={[0, 0, 5]}
           fov={20}
-          titleHeart="Cardiopatia congenita"
+          titleHeart="Cardiopatía Congénita"
           titlePosition={[0, 0.7, -0.5]}
-          titleColor="black"
-          titleSize=".2"
+          titleSize={0.2}
         />
+
+        {!scrollEnabled && (
+          <ScrollDownButton onClick={handleScrollDown} />
+        )}
       </div>
-      <div className="container">
+
+      <div className="container" id="info-section">
         <h1>
-          <strong>¿Que es?</strong>
+          <strong>¿Qué es?</strong>
         </h1>
         <p>
           Una cardiopatía congénita es una alteración en la estructura del
-          corazón que se presenta desde el nacimiento.Surge debido a un
+          corazón que se presenta desde el nacimiento. Surge debido a un
           desarrollo anormal del corazón durante la gestación. Este tipo de
           condición puede afectar el flujo sanguíneo dentro del corazón y su
           gravedad puede variar: algunas son leves y no necesitan tratamiento,
           mientras que otras son más complejas y requieren intervenciones
           quirúrgicas desde los primeros días de vida.
         </p>
+
         <h1>
-          <strong>¿Cuales son sus causas?</strong>
+          <strong>¿Cuáles son sus causas?</strong>
         </h1>
         <p>
           Las cardiopatías congénitas son alteraciones del corazón que están
@@ -60,6 +70,7 @@ const CongenitalHeartDisease = () => {
           una causa única, pero se sabe que existen distintos factores que
           pueden influir en su aparición, tanto genéticos como ambientales:
         </p>
+
         <h2>
           <strong>Genéticos</strong>
         </h2>
@@ -68,6 +79,7 @@ const CongenitalHeartDisease = () => {
           espontáneamente durante el desarrollo del feto, pueden afectar la
           formación del corazón.
         </p>
+
         <h2>
           <strong>Ambientales</strong>
         </h2>
@@ -77,6 +89,7 @@ const CongenitalHeartDisease = () => {
           no controlada, así como el consumo de alcohol y tabaco, son factores
           que pueden interferir en el desarrollo cardíaco.
         </p>
+
         <h2>
           <strong>Síndromes genéticos</strong>
         </h2>
@@ -84,6 +97,7 @@ const CongenitalHeartDisease = () => {
           Algunas condiciones como el síndrome de Down están estrechamente
           relacionadas con un mayor riesgo de presentar cardiopatías congénitas.
         </p>
+
         <h2>
           <strong>Origen multifactorial</strong>
         </h2>
@@ -104,6 +118,7 @@ const CongenitalHeartDisease = () => {
           de vida, que puede incluir cirugía, cateterismo, medicamentos o el uso
           de dispositivos médicos.
         </p>
+
         <h2>
           <strong>Cirugía cardíaca</strong>
         </h2>
@@ -113,6 +128,7 @@ const CongenitalHeartDisease = () => {
           reemplazo de válvulas. En situaciones más complejas, se puede requerir
           un trasplante de corazón o el uso de un corazón artificial.
         </p>
+
         <h2>
           <strong>Cateterismo cardíaco</strong>
         </h2>
@@ -121,6 +137,7 @@ const CongenitalHeartDisease = () => {
           (catéter) guiado a través de una vena hacia el corazón para reparar
           defectos simples sin necesidad de cirugía abierta.
         </p>
+
         <h2>
           <strong>Medicamentos</strong>
         </h2>
@@ -128,6 +145,7 @@ const CongenitalHeartDisease = () => {
           Se prescriben para mejorar la función cardíaca, prevenir coágulos
           sanguíneos o controlar arritmias (latidos irregulares del corazón).
         </p>
+
         <h2>
           <strong>Dispositivos implantables</strong>
         </h2>
@@ -136,6 +154,7 @@ const CongenitalHeartDisease = () => {
           desfibriladores implantables para ayudar al corazón a mantener un
           ritmo adecuado o mejorar su funcionamiento.
         </p>
+
         <h2>
           <strong>Seguimiento a largo plazo</strong>
         </h2>

@@ -1,41 +1,53 @@
 import GLBViewer from "../../../components/GLBViewer";
 import "./Arrhythmia.css";
-import React, { useEffect } from "react";
+import ScrollDownButton from "../../../components/ScrollDownButton";
+import React, { useEffect, useState } from "react";
 
 const Arrhythmia = () => {
+  const [scrollEnabled, setScrollEnabled] = useState(false);
 
-    useEffect(() => {
-      // Prevenir el zoom en la página (fuera del canvas) solo cuando no se presiona Ctrl
-      const preventZoom = (e) => {
-        if (e.ctrlKey) {
-          e.preventDefault(); // Previene el zoom de la página
-        }
-      };
-  
-     
-      window.addEventListener("wheel", preventZoom, { passive: false });
-  
-  
-      return () => {
-        window.removeEventListener("wheel", preventZoom);
-      };
-    }, []);
+  useEffect(() => {
+    // Prevenir el zoom en la página (fuera del canvas) solo cuando no se presiona Ctrl
+    const preventZoom = (e) => {
+      if (e.ctrlKey) {
+        e.preventDefault(); // Previene el zoom de la página
+      }
+    };
+
+    window.addEventListener("wheel", preventZoom, { passive: false });
+
+    return () => {
+      window.removeEventListener("wheel", preventZoom);
+    };
+  }, []);
+
+  const handleScrollDown = () => {
+    document.body.style.overflow = "auto";
+    setScrollEnabled(true);
+
+    const section = document.getElementById("info-section");
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <>
-      <div class="container-modelo">
+      <div className="viewer-container">
         <GLBViewer
           modelUrl="/models-3d/arrhythmia/adultHeart.glb"
           cameraPosition={[0, 0, 5]}
           fov={1.5}
           titleHeart="Arritmia cardiaca"
           titlePosition={[0, 0.05, -0.03]}
-          titleColor="black"
-          titleSize={0.02}
+          titleSize={0.01}
           shadowPosition={[0, -0.02, 0]}
         />
+
+        {!scrollEnabled && (
+          <ScrollDownButton onClick={handleScrollDown} />
+        )}
       </div>
-      <div className="container">
+
+      <div className="container" id="info-section">
         <h1>
           <strong>¿Qué es?</strong>
         </h1>
