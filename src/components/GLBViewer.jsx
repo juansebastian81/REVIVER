@@ -1,7 +1,12 @@
 import "./GLBViewer.css";
-import { useRef, Suspense, useEffect, useState } from "react";
+import { useRef, Suspense, useEffect, useState, useCallback } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, useGLTF, Loader } from "@react-three/drei";
+import {
+  OrbitControls,
+  useGLTF,
+  Loader,
+  PositionalAudio,
+} from "@react-three/drei";
 import { AnimationMixer } from "three";
 import Title from "../pages/texts/Title";
 import Staging from "../pages/staging/Staging";
@@ -46,6 +51,14 @@ export default function GLBViewer({
   const controlsRef = useRef();
   const [showTooltip, setShowTooltip] = useState(true);
 
+  const audioRef = useRef();
+
+  const handleClick = useCallback(() => {
+    audioRef.current.playbackRate = 1.5;
+    audioRef.current.setVolume(1);
+    audioRef.current.play();
+  }, [audioRef]);
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
 
@@ -86,7 +99,16 @@ export default function GLBViewer({
 
           <Title title={titleHeart} position={titlePosition} size={titleSize} />
 
-          <AnimatedModel url={modelUrl} />
+          <group onClick={handleClick}>
+            <AnimatedModel url={modelUrl} />
+          </group>
+
+          <PositionalAudio
+            ref={audioRef}
+            loop
+            url="/sounds/heartBeating.mp3"
+            distance={5}
+          />
 
           <Staging />
 
@@ -102,8 +124,6 @@ export default function GLBViewer({
           </mesh>
         </Canvas>
       </Suspense>
-
-      
 
       {/* 💬 Tooltip en la parte superior derecha */}
       {showTooltip && (
@@ -124,8 +144,6 @@ export default function GLBViewer({
           zoom
         </div>
       )}
-
-
     </div>
   );
 }
