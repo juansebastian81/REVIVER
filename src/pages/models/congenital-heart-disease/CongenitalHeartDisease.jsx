@@ -33,7 +33,10 @@ const CongenitalHeartDisease = () => {
     <>
       <div className="viewer-container">
         <GLBViewer
-          modelUrl="/models-3d/congenital-heart-disease/Heart.glb"
+          modelUrls={[
+            "/models-3d/congenital-heart-disease/Heart.glb",
+            "/models-3d/congenital-heart-disease/agitacion.glb",
+          ]}
           cameraPosition={[0, 0, 5]}
           fov={20}
           titleHeart="Cardiopatía Congénita"
@@ -41,9 +44,7 @@ const CongenitalHeartDisease = () => {
           titleSize={0.2}
         />
 
-        {!scrollEnabled && (
-          <ScrollDownButton onClick={handleScrollDown} />
-        )}
+        {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
       </div>
 
       <div className="container" id="info-section">

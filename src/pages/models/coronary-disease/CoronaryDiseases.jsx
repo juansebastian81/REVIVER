@@ -14,9 +14,6 @@ const CoronaryDiseases = () => {
       }
     };
 
-    
-  
-
     window.addEventListener("wheel", preventZoom, { passive: false });
 
     return () => {
@@ -36,7 +33,10 @@ const CoronaryDiseases = () => {
     <>
       <div className="viewer-container">
         <GLBViewer
-          modelUrl="/models-3d/coronary-disease/RealHeartCoronary1Beating.glb"
+          modelUrls={[
+            "/models-3d/coronary-disease/RealHeartCoronary1Beating.glb",
+            "/models-3d/coronary-disease/RealHeartCoronary2Beating.glb",
+          ]}
           cameraPosition={[0, 0, 5]}
           fov={6}
           titleHeart="Enfermedad Coronaria"
@@ -45,9 +45,7 @@ const CoronaryDiseases = () => {
           shadowPosition={[0, -0.1, 0]}
         />
 
-        {!scrollEnabled && (
-          <ScrollDownButton onClick={handleScrollDown} />
-        )}
+        {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
       </div>
 
       <div className="container" id="info-section">

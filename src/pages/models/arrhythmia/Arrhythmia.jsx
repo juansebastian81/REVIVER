@@ -33,7 +33,7 @@ const Arrhythmia = () => {
     <>
       <div className="viewer-container">
         <GLBViewer
-          modelUrl="/models-3d/arrhythmia/adultHeart.glb"
+          modelUrls={["/models-3d/arrhythmia/adultHeart.glb"]}
           cameraPosition={[0, 0, 5]}
           fov={1.5}
           titleHeart="Arritmia cardiaca"
@@ -42,9 +42,7 @@ const Arrhythmia = () => {
           shadowPosition={[0, -0.02, 0]}
         />
 
-        {!scrollEnabled && (
-          <ScrollDownButton onClick={handleScrollDown} />
-        )}
+        {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
       </div>
 
       <div className="container" id="info-section">

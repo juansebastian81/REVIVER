@@ -6,6 +6,7 @@ import {
   useGLTF,
   Loader,
   PositionalAudio,
+  Html,
 } from "@react-three/drei";
 import { AnimationMixer } from "three";
 import Title from "../pages/texts/Title";
@@ -40,7 +41,7 @@ function AnimatedModel({ url }) {
 }
 
 export default function GLBViewer({
-  modelUrl,
+  modelUrls = [],
   cameraPosition = [0, 0, 1.5],
   fov = 20,
   titleHeart = "Tu título",
@@ -58,6 +59,12 @@ export default function GLBViewer({
     audioRef.current.setVolume(1);
     audioRef.current.play();
   }, [audioRef]);
+
+  const [currentModelIndex, setCurrentModelIndex] = useState(0);
+
+  const nextModel = () => {
+    setCurrentModelIndex((prev) => (prev + 1) % modelUrls.length);
+  };
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -100,8 +107,12 @@ export default function GLBViewer({
           <Title title={titleHeart} position={titlePosition} size={titleSize} />
 
           <group onClick={handleClick}>
-            <AnimatedModel url={modelUrl} />
+            <AnimatedModel url={modelUrls[currentModelIndex]} />
           </group>
+
+          <Html center>
+            <button onClick={nextModel}>Explorar mas corazones</button>
+          </Html>
 
           <PositionalAudio
             ref={audioRef}

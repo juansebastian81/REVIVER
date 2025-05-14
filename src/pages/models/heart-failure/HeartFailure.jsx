@@ -7,8 +7,6 @@ const HeartFailure = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
 
   useEffect(() => {
-   
-
     const preventZoom = (e) => {
       if (e.ctrlKey) {
         e.preventDefault();
@@ -20,7 +18,7 @@ const HeartFailure = () => {
     return () => {
       window.removeEventListener("wheel", preventZoom);
     };
-  }, []); 
+  }, []);
 
   const handleScrollDown = () => {
     document.body.style.overflow = "auto";
@@ -34,7 +32,7 @@ const HeartFailure = () => {
     <>
       <div className="viewer-container">
         <GLBViewer
-          modelUrl="/models-3d/heart-failure/Confusion.glb"
+          modelUrls={["/models-3d/heart-failure/Confusion.glb"]}
           cameraPosition={[0, 1.5, 4]}
           fov={30}
           titleHeart="Insuficiencia Cardiaca"
