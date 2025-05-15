@@ -6,8 +6,10 @@ import {
   useGLTF,
   Loader,
   PositionalAudio,
+  SpotLight,
+  useHelper,
 } from "@react-three/drei";
-import { AnimationMixer } from "three";
+import { AnimationMixer, SpotLightHelper } from "three";
 import Title from "../pages/texts/Title";
 import Staging from "../pages/staging/Staging";
 
@@ -83,6 +85,7 @@ export default function GLBViewer({
     };
   }, [showTooltip]);
 
+
   return (
     <div style={{ height: "100vh", width: "100vw", position: "relative" }}>
       <Suspense fallback={<Loader />}>
@@ -100,6 +103,8 @@ export default function GLBViewer({
             shadow-mapSize-width={2048}
             shadow-mapSize-height={2048}
           />
+
+
 
           <Title title={titleHeart} position={titlePosition} size={titleSize} />
 
