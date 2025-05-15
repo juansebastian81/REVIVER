@@ -6,7 +6,6 @@ import {
   useGLTF,
   Loader,
   PositionalAudio,
-  Html,
 } from "@react-three/drei";
 import { AnimationMixer } from "three";
 import Title from "../pages/texts/Title";
@@ -51,16 +50,14 @@ export default function GLBViewer({
 }) {
   const controlsRef = useRef();
   const [showTooltip, setShowTooltip] = useState(true);
-
   const audioRef = useRef();
+  const [currentModelIndex, setCurrentModelIndex] = useState(0);
 
   const handleClick = useCallback(() => {
     audioRef.current.playbackRate = 1.5;
     audioRef.current.setVolume(1);
     audioRef.current.play();
-  }, [audioRef]);
-
-  const [currentModelIndex, setCurrentModelIndex] = useState(0);
+  }, []);
 
   const nextModel = () => {
     setCurrentModelIndex((prev) => (prev + 1) % modelUrls.length);
@@ -74,7 +71,7 @@ export default function GLBViewer({
         controlsRef.current.enableZoom = event.ctrlKey;
       }
       if (event.ctrlKey && showTooltip) {
-        setShowTooltip(false); // Oculta el mensaje después del primer zoom con Ctrl
+        setShowTooltip(false);
       }
     };
 
@@ -110,10 +107,6 @@ export default function GLBViewer({
             <AnimatedModel url={modelUrls[currentModelIndex]} />
           </group>
 
-          <Html center>
-            <button onClick={nextModel}>Explorar mas corazones</button>
-          </Html>
-
           <PositionalAudio
             ref={audioRef}
             loop
@@ -136,13 +129,34 @@ export default function GLBViewer({
         </Canvas>
       </Suspense>
 
-      {/* 💬 Tooltip en la parte superior derecha */}
+      {/* Botón fijo en el lado derecho */}
+      <button
+        onClick={nextModel}
+        style={{
+          position: "absolute",
+          top: "50%",
+          right: "30px",
+          transform: "translateY(-50%)",
+          padding: "12px 20px",
+          backgroundColor: "#545c65",
+          color: "#fff",
+          border: "none",
+          borderRadius: "8px",
+          cursor: "pointer",
+          zIndex: 10,
+          fontWeight: "bold",
+        }}
+      >
+        Explorar más corazones
+      </button>
+
+      {/* Tooltip en la parte superior derecha */}
       {showTooltip && (
         <div
           style={{
             position: "absolute",
-            top: "220px", // Mueve el mensaje a la parte superior
-            right: "30px", // Alineado a la derecha
+            top: "220px",
+            right: "30px",
             backgroundColor: "rgba(0,0,0,0.7)",
             color: "white",
             padding: "8px 12px",
@@ -151,9 +165,30 @@ export default function GLBViewer({
             zIndex: 2,
           }}
         >
-          💡 Presiona <strong>Ctrl</strong> + <strong>Scroll</strong> para hacer
-          zoom
+          💡 Presiona <strong>Ctrl</strong> + <strong>Scroll</strong> para hacer zoom
+      
         </div>
+
+      )}
+
+      {showTooltip && (
+        <div
+          style={{
+            position: "absolute",
+            top: "260px",
+            right: "30px",
+            backgroundColor: "rgba(0,0,0,0.7)",
+            color: "white",
+            padding: "8px 12px",
+            borderRadius: "8px",
+            fontSize: "14px",
+            zIndex: 2,
+          }}
+        >
+          💡 Presiona <strong>Click Izquierdo</strong> para hacer activar sonido
+      
+        </div>
+
       )}
     </div>
   );
