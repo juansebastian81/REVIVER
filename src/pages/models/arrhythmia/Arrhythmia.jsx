@@ -1,7 +1,7 @@
-import GLBViewer from "../../../components/GLBViewer";
 import "./Arrhythmia.css";
-import ScrollDownButton from "../../../components/ScrollDownButton";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import GLBViewer from "../../../components/viewer/GLBViewer.jsx";
+import ScrollDownButton from "../../../components/scroll/ScrollDownButton.jsx";
 
 const Arrhythmia = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
