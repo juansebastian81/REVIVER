@@ -32,11 +32,12 @@ const HeartFailure = () => {
     <>
       <div className="viewer-container">
         <GLBViewer
-          modelUrls={["/models-3d/heart-failure/Confusion.glb"]}
+          modelUrls={["/models-3d/heart-failure/heart.glb", 
+                      "/models-3d/heart-failure/Confusion.glb"]}
           cameraPosition={[0, 1.5, 4]}
-          fov={30}
+          fov={35}
           titleHeart="Insuficiencia Cardiaca"
-          titlePosition={[0, 0.7, -0.1]}
+          titlePosition={[0, 1, -0.1]}
           titleSize={0.2}
         />
 
