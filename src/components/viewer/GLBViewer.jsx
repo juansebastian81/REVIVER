@@ -96,29 +96,12 @@ const GLBViewer = ({
         </Suspense>
 
         {/* Botón fijo en el lado derecho */}
-        <button
-          onClick={nextModel}
-          style={{
-            position: "absolute",
-            top: "75%",
-            right: "30px",
-            transform: "translateY(-50%)",
-            padding: "12px 20px",
-            backgroundColor: "#545c65",
-            color: "#fff",
-            border: "none",
-            borderRadius: "8px",
-            cursor: "pointer",
-            zIndex: 10,
-            fontWeight: "bold",
-          }}
-        >
-          Explorar más corazones
-        </button>
+
+    
 
         {/* Tooltip en la parte superior derecha */}
         {showTooltip && (
-          <div
+          <div 
             style={{
               position: "absolute",
               top: "220px",

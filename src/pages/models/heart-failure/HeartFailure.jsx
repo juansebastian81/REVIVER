@@ -28,15 +28,22 @@ const HeartFailure = () => {
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleNextPage = () => {
+    window.location.href = "/models/heart-failure/prueba/cough"; 
+  };
+
   return (
     <>
       <div className="viewer-container">
         <GLBViewer
-          modelUrls={["/models-3d/heart-failure/Confusion.glb"]}
+          modelUrls={[
+            "/models-3d/heart-failure/heart.glb",
+            "/models-3d/heart-failure/Confusion.glb",
+          ]}
           cameraPosition={[0, 1.5, 4]}
-          fov={30}
+          fov={35}
           titleHeart="Insuficiencia Cardiaca"
-          titlePosition={[0, 0.7, -0.1]}
+          titlePosition={[0, 1, -0.1]}
           titleSize={0.2}
         />
 
@@ -79,6 +86,12 @@ const HeartFailure = () => {
           líquido en los pulmones y otros órganos. Si no se trata, puede
           empeorar progresivamente y poner en riesgo la vida.
         </p>
+
+        <div style={{ marginTop: "2rem", textAlign: "center" }}>
+          <button className="btn btn-primary" onClick={handleNextPage}>
+            Más síntomas
+          </button>
+        </div>
       </div>
     </>
   );
