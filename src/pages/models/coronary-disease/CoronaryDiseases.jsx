@@ -1,7 +1,7 @@
 import "./CoronaryDiseases.css";
-import GLBViewer from "../../../components/GLBViewer";
-import ScrollDownButton from "../../../components/ScrollDownButton";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import GLBViewer from "../../../components/viewer/GLBViewer.jsx";
+import ScrollDownButton from "../../../components/scroll/ScrollDownButton.jsx";
 
 const CoronaryDiseases = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
@@ -13,9 +13,6 @@ const CoronaryDiseases = () => {
         e.preventDefault(); // Previene el zoom de la página
       }
     };
-
-    
-  
 
     window.addEventListener("wheel", preventZoom, { passive: false });
 
@@ -36,7 +33,10 @@ const CoronaryDiseases = () => {
     <>
       <div className="viewer-container">
         <GLBViewer
-          modelUrl="/models-3d/coronary-disease/RealHeartCoronary1Beating.glb"
+          modelUrls={[
+            "/models-3d/coronary-disease/RealHeartCoronary1Beating.glb",
+            "/models-3d/coronary-disease/RealHeartCoronary2Beating.glb",
+          ]}
           cameraPosition={[0, 0, 5]}
           fov={6}
           titleHeart="Enfermedad Coronaria"
@@ -45,9 +45,7 @@ const CoronaryDiseases = () => {
           shadowPosition={[0, -0.1, 0]}
         />
 
-        {!scrollEnabled && (
-          <ScrollDownButton onClick={handleScrollDown} />
-        )}
+        {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
       </div>
 
       <div className="container" id="info-section">
