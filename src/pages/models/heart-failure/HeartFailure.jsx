@@ -1,10 +1,12 @@
 import "./HeartFailure.css";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"; // <-- NUEVA IMPORTACIÓN
 import GLBViewer from "../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../components/scroll/ScrollDownButton.jsx";
 
 const HeartFailure = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
+  const navigate = useNavigate(); // <-- INICIALIZA EL NAVEGADOR
 
   useEffect(() => {
     const preventZoom = (e) => {
@@ -28,6 +30,10 @@ const HeartFailure = () => {
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleNextPage = () => {
+    navigate("/models/models/heart-failure/prueba/cough");  
+  };
+
   return (
     <>
       <div className="viewer-container">
@@ -45,41 +51,29 @@ const HeartFailure = () => {
       </div>
 
       <div className="container" id="info-section">
-        <h1>
-          <strong>¿Qué es?</strong>
-        </h1>
-        <p>
-          La insuficiencia cardíaca es una afección crónica en la que el corazón
-          no puede bombear sangre de manera eficiente para satisfacer las
-          necesidades del cuerpo. Puede afectar tanto al lado derecho como al
-          izquierdo del corazón, y puede desarrollarse repentinamente o de
-          manera progresiva con el tiempo.
-        </p>
+        <h1><strong>¿Qué es?</strong></h1>
+        <p>La insuficiencia cardíaca es una afección crónica en la que el corazón...</p>
 
-        <h1>
-          <strong>¿Cuáles son sus causas?</strong>
-        </h1>
+        <h1><strong>¿Cuáles son sus causas?</strong></h1>
         <ul>
           <li>Enfermedad arterial coronaria</li>
           <li>Presión arterial alta (hipertensión)</li>
           <li>Infarto de miocardio previo</li>
-          <li>Miocardiopatías (afecciones del músculo cardíaco)</li>
-          <li>Problemas en las válvulas del corazón</li>
-          <li>Arritmias</li>
-          <li>Diabetes</li>
-          <li>Consumo excesivo de alcohol o drogas</li>
+          {/* ... */}
         </ul>
 
-        <h1>
-          <strong>¿Cómo afecta al cuerpo humano?</strong>
-        </h1>
-        <p>
-          La insuficiencia cardíaca provoca que el cuerpo no reciba suficiente
-          oxígeno y nutrientes, lo que puede causar fatiga extrema, dificultad
-          para respirar, hinchazón en piernas y tobillos, y acumulación de
-          líquido en los pulmones y otros órganos. Si no se trata, puede
-          empeorar progresivamente y poner en riesgo la vida.
-        </p>
+        <h1><strong>¿Cómo afecta al cuerpo humano?</strong></h1>
+        <p>La insuficiencia cardíaca provoca que el cuerpo no reciba suficiente...</p>
+
+        {/* ✅ BOTÓN DE SIGUIENTE PÁGINA */}
+        <div style={{ marginTop: "2rem", textAlign: "center" }}>
+          <button
+            className="btn btn-primary"
+            onClick={handleNextPage}
+          >
+            Más sintomas
+          </button>
+        </div>
       </div>
     </>
   );

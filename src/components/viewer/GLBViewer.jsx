@@ -96,10 +96,8 @@ const GLBViewer = ({
         </Suspense>
 
         {/* Botón fijo en el lado derecho */}
-        <button onClick={nextModel} className="next-button">
-            Explorar más corazones
-        </button>
 
+    
 
         {/* Tooltip en la parte superior derecha */}
         {showTooltip && (
