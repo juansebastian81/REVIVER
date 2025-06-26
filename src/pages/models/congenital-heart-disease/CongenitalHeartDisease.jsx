@@ -1,7 +1,7 @@
 import "./CongenitalHeartDisease.css";
-import GLBViewer from "../../../components/GLBViewer";
-import React, { useEffect, useState } from "react";
-import ScrollDownButton from "../../../components/ScrollDownButton";
+import { useEffect, useState } from "react";
+import GLBViewer from "../../../components/viewer/GLBViewer.jsx";
+import ScrollDownButton from "../../../components/scroll/ScrollDownButton.jsx";
 
 const CongenitalHeartDisease = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
