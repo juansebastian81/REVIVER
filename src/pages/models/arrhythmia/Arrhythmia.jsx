@@ -1,5 +1,6 @@
 import "./Arrhythmia.css";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router";
 import GLBViewer from "../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../components/scroll/ScrollDownButton.jsx";
 
@@ -33,7 +34,10 @@ const Arrhythmia = () => {
     <>
       <div className="viewer-container">
         <GLBViewer
-          modelUrls={["/models-3d/arrhythmia/adultHeart.glb"]}
+          modelUrls={[
+            "/models-3d/arrhythmia/adultHeart.glb",
+            "/models-3d/arrhythmia/chest-pain.glb",
+          ]}
           cameraPosition={[0, 0, 5]}
           fov={1.5}
           titleHeart="Arritmia cardiaca"
@@ -88,6 +92,13 @@ const Arrhythmia = () => {
           repentina de la función cardíaca y requiere intervención médica
           inmediata.
         </p>
+        <div style={{ marginTop: "2rem", textAlign: "center" }}>
+          <NavLink to="/models/arrhythmia/chest-pain">
+            <button className="btn btn-primary">
+              Más síntomas
+            </button>
+          </NavLink>
+        </div>
       </div>
     </>
   );
