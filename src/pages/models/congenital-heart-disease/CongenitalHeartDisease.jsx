@@ -29,17 +29,15 @@ const CongenitalHeartDisease = () => {
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
-   const handleNextPage = () => {
-    window.location.href = "/models/cianosis-symptom/cianosis"; 
+  const handleNextPage = () => {
+    window.location.href = "/models/cianosis-symptom/cianosis";
   };
 
   return (
     <>
       <div className="viewer-container">
         <GLBViewer
-          modelUrls={[
-            "/models-3d/congenital-heart-disease/Heart.glb",
-          ]}
+          modelUrls={["/models-3d/congenital-heart-disease/Heart.glb"]}
           cameraPosition={[0, 0, 5]}
           fov={20}
           titleHeart="Cardiopatía Congénita"
@@ -50,7 +48,7 @@ const CongenitalHeartDisease = () => {
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
       </div>
 
-      <div className="container" id="info-section">
+      <div className="text-container" id="info-section">
         <h1>
           <strong>¿Qué es?</strong>
         </h1>
@@ -172,7 +170,6 @@ const CongenitalHeartDisease = () => {
             Más síntomas
           </button>
         </div>
-
       </div>
     </>
   );

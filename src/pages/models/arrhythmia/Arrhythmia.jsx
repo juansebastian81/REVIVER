@@ -49,7 +49,7 @@ const Arrhythmia = () => {
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
       </div>
 
-      <div className="container" id="info-section">
+      <div className="text-container" id="info-section">
         <h1>
           <strong>¿Qué es?</strong>
         </h1>
@@ -94,9 +94,7 @@ const Arrhythmia = () => {
         </p>
         <div style={{ marginTop: "2rem", textAlign: "center" }}>
           <NavLink to="/models/arrhythmia/chest-pain">
-            <button className="btn btn-primary">
-              Más síntomas
-            </button>
+            <button className="btn btn-primary">Más síntomas</button>
           </NavLink>
         </div>
       </div>
