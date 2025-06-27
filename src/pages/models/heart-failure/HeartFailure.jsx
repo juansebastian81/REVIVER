@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router"; // ❗ Usando react-router directamente
 import GLBViewer from "../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../components/scroll/ScrollDownButton.jsx";
+//x
 
 const HeartFailure = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
