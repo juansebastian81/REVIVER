@@ -33,22 +33,20 @@ const ChestPain = () => {
     <>
       <div className="viewer-container">
         <GLBViewer
-          modelUrls={["/models-3d/arrhythmia/chest-pain.glb"]}
-          cameraPosition={[0, 1.5, 4]}
+          modelUrls={[
+            "/models-3d/arrhythmia/chest-pain.glb"
+          ]}
+          cameraPosition={[0, 0, 3]}
           fov={35}
           titleHeart="Síntoma: Dolor en el Pecho (Dolor Torácico)"
-          titlePosition={[0, 1, -0.1]}
-          titleSize={0.2}
+          titlePosition={[0, 0.8, -0.1]}
+          titleSize={0.1}
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
       </div>
 
-      <div className="text-container" id="info-section">
-        <h2>
-          <strong>Síntoma: Dolor en el pecho (Dolor Torácico)</strong>
-        </h2>
-
+      <div className="container" id="info-section">
         <h3>Descripción:</h3>
         <p>
           El <strong>dolor en el pecho</strong> es un síntoma frecuente en
