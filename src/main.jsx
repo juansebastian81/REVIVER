@@ -10,6 +10,8 @@ import CoronaryDiseases from "./pages/models/coronary-disease/CoronaryDiseases";
 import CongenitalHeartDisease from "./pages/models/congenital-heart-disease/CongenitalHeartDisease";
 import Cough from "./pages/models/heart-failure/fatigue-symptom/fatigue"; 
 import Layout from "./pages/layout/Layout";
+import AboutUs from "./pages/models/about-us/AboutUs";
+import Cianosis from "./pages/models/congenital-heart-disease/cianosis-symptom/Cianosis";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -20,8 +22,10 @@ createRoot(document.getElementById("root")).render(
         <Route path="/models/arrhythmia" element={<Arrhythmia />} />
         <Route path="/models/heart-failure" element={<HeartFailure />} />
         <Route path="/models/heart-failure/prueba/cough" element={<Cough />} />
+        <Route path="/models/cianosis-symptom/cianosis" element={<Cianosis />} />
         <Route path="/models/coronary-disease" element={<CoronaryDiseases />} />
         <Route path="/models/congenital-heart-disease" element={<CongenitalHeartDisease />} />
+        <Route path="/models/about-us" element={<AboutUs />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>

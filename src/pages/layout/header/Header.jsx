@@ -53,8 +53,8 @@ const Header = () => {
           Quiz interactivo
         </NavLink>{" "}
         &nbsp;
-        <NavLink to="/aboutus" end>
-          Nosotros
+        <NavLink to="/models/about-us" end>
+          Sobre nosotros
         </NavLink>{" "}
         &nbsp;
       </nav>
