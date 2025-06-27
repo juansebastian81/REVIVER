@@ -1,9 +1,9 @@
-import "./CongenitalHeartDisease.css";
+import "./cianosis.css";
 import { useEffect, useState } from "react";
-import GLBViewer from "../../../components/viewer/GLBViewer.jsx";
-import ScrollDownButton from "../../../components/scroll/ScrollDownButton.jsx";
+import GLBViewer from "../../../../components/viewer/GLBViewer.jsx";
+import ScrollDownButton from "../../../../components/scroll/ScrollDownButton.jsx";
 
-const CongenitalHeartDisease = () => {
+const Cianosis = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
 
   useEffect(() => {
@@ -29,20 +29,18 @@ const CongenitalHeartDisease = () => {
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
-   const handleNextPage = () => {
-    window.location.href = "/models/cianosis-symptom/cianosis"; 
-  };
+
 
   return (
     <>
       <div className="viewer-container">
         <GLBViewer
           modelUrls={[
-            "/models-3d/congenital-heart-disease/Heart.glb",
+            "/models-3d/congenital-heart-disease/Cianosis.glb",
           ]}
           cameraPosition={[0, 0, 5]}
           fov={20}
-          titleHeart="Cardiopatía Congénita"
+          titleHeart="Sintoma: Cianosis"
           titlePosition={[0, 0.7, -0.5]}
           titleSize={0.2}
         />
@@ -167,15 +165,10 @@ const CongenitalHeartDisease = () => {
           personas con cardiopatías congénitas tengan un control médico regular
           a lo largo de su vida, tanto en la infancia como en la adultez.
         </p>
-        <div style={{ marginTop: "2rem", textAlign: "center" }}>
-          <button className="btn btn-primary" onClick={handleNextPage}>
-            Más síntomas
-          </button>
-        </div>
 
       </div>
     </>
   );
 };
 
-export default CongenitalHeartDisease;
+export default Cianosis;
