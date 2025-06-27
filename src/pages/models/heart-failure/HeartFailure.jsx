@@ -29,7 +29,7 @@ const HeartFailure = () => {
   };
 
   const handleNextPage = () => {
-    window.location.href = "/models/heart-failure/prueba/cough"; 
+    window.location.href = "/models/heart-failure/fatigue-symptom"; 
   };
 
   return (
