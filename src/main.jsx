@@ -5,6 +5,7 @@ import Home from "./pages/home/Home";
 import NotFound from "./pages/not-found/NotFound";
 import Models from "./pages/models/Models";
 import Arrhythmia from "./pages/models/arrhythmia/Arrhythmia";
+import ChestPain from "./pages/models/arrhythmia/chest-pain-symptom/chest-pain";
 import HeartFailure from "./pages/models/heart-failure/HeartFailure";
 import CoronaryDiseases from "./pages/models/coronary-disease/CoronaryDiseases";
 import CongenitalHeartDisease from "./pages/models/congenital-heart-disease/CongenitalHeartDisease";
@@ -20,6 +21,7 @@ createRoot(document.getElementById("root")).render(
         <Route index path="/" element={<Home />} />
         <Route path="/models" element={<Models />} />
         <Route path="/models/arrhythmia" element={<Arrhythmia />} />
+        <Route path="/models/arrhythmia/chest-pain" element={<ChestPain />} />
         <Route path="/models/heart-failure" element={<HeartFailure />} />
         <Route path="/models/heart-failure/fatigue-symptom" element={<Cough />} />
         <Route path="/models/cianosis-symptom/cianosis" element={<Cianosis />} />
