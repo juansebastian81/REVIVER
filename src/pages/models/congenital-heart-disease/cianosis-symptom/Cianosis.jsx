@@ -29,15 +29,11 @@ const Cianosis = () => {
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
-
-
   return (
     <>
       <div className="viewer-container">
         <GLBViewer
-          modelUrls={[
-            "/models-3d/congenital-heart-disease/Cianosis.glb",
-          ]}
+          modelUrls={["/models-3d/congenital-heart-disease/Cianosis.glb"]}
           cameraPosition={[0, 0, 5]}
           fov={20}
           titleHeart="Sintoma: Cianosis"
@@ -48,7 +44,7 @@ const Cianosis = () => {
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
       </div>
 
-      <div className="container" id="info-section">
+      <div className="text-container" id="info-section">
         <h1>
           <strong>¿Qué es?</strong>
         </h1>
@@ -165,7 +161,6 @@ const Cianosis = () => {
           personas con cardiopatías congénitas tengan un control médico regular
           a lo largo de su vida, tanto en la infancia como en la adultez.
         </p>
-
       </div>
     </>
   );
