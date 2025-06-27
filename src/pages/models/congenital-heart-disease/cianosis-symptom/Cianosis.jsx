@@ -1,4 +1,4 @@
-import "./cianosis.css";
+import "./Cianosis.css";
 import { useEffect, useState } from "react";
 import GLBViewer from "../../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../../components/scroll/ScrollDownButton.jsx";
