@@ -29,6 +29,11 @@ const CoronaryDiseases = () => {
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleNextPage = () => {
+    window.location.href =
+      "/models/coronary-disease/symptoms-coronary-disease/symptoms-coronary";
+  };
+
   return (
     <>
       <div className="viewer-container">
@@ -48,7 +53,7 @@ const CoronaryDiseases = () => {
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
       </div>
 
-      <div className="container" id="info-section">
+      <div className="text-container" id="info-section">
         <h1>
           <strong>¿Qué es?</strong>
         </h1>
@@ -82,6 +87,11 @@ const CoronaryDiseases = () => {
           (angina), falta de aire, ataques cardíacos e insuficiencia cardíaca.
           Con el tiempo, esto puede provocar daños permanentes al corazón.
         </p>
+        <div style={{ marginTop: "2rem", textAlign: "center" }}>
+          <button className="btn btn-primary" onClick={handleNextPage}>
+            Los síntomas
+          </button>
+        </div>
       </div>
     </>
   );
