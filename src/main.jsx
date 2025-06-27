@@ -19,7 +19,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/models" element={<Models />} />
         <Route path="/models/arrhythmia" element={<Arrhythmia />} />
         <Route path="/models/heart-failure" element={<HeartFailure />} />
-        <Route path="/models/heart-failure/prueba/cough" element={<Cough />} />
+        <Route path="/models/heart-failure/fatigue-symptom" element={<Cough />} />
         <Route path="/models/coronary-disease" element={<CoronaryDiseases />} />
         <Route path="/models/congenital-heart-disease" element={<CongenitalHeartDisease />} />
         <Route path="*" element={<NotFound />} />
