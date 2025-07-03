@@ -5,7 +5,6 @@ import { Loader, OrbitControls, PositionalAudio } from "@react-three/drei";
 import Title from "../texts/Title";
 import Staging from "../staging/Staging";
 import AnimatedModel from "../animation/AnimatedModel";
-import Controls from "../controls/Controls";
 import Lights from "../lights/Lights";
 
 const GLBViewer = ({
@@ -97,11 +96,9 @@ const GLBViewer = ({
 
         {/* Botón fijo en el lado derecho */}
 
-    
-
         {/* Tooltip en la parte superior derecha */}
         {showTooltip && (
-          <div 
+          <div
             style={{
               position: "absolute",
               top: "220px",
