@@ -33,14 +33,12 @@ const SymptomsCoronary = () => {
     <>
       <div className="viewer-container">
         <GLBViewer
-          modelUrls={[
-            "/models-3d/coronary-disease/RealHeartCoronary2Beating.glb",
-          ]}
+          modelUrls={["/models-3d/coronary-disease/AvatarJSOM.glb"]}
           cameraPosition={[0, 0, 5]}
-          fov={6}
-          titleHeart="Sintomas: Enfermedad Coronaria"
+          fov={4}
+          titleHeart="Sintomas"
           titleSize={0.04}
-          titlePosition={[0, 0.2, -0.3]}
+          titlePosition={[0, 0.125, -0.1]}
           shadowPosition={[0, -0.1, 0]}
         />
 
