@@ -34,16 +34,16 @@ const Arrhythmia = () => {
     <>
       <div className="viewer-container">
         <GLBViewer
-          modelUrls={[
-            "/models-3d/arrhythmia/adultHeart.glb",
-            "/models-3d/arrhythmia/chest-pain.glb",
-          ]}
+          modelUrl="/models-3d/arrhythmia/adultHeart.glb"
           cameraPosition={[0, 0, 5]}
           fov={1.5}
           titleHeart="Arritmia cardiaca"
           titlePosition={[0, 0.05, -0.03]}
           titleSize={0.01}
           shadowPosition={[0, -0.02, 0]}
+          defaultAnimation={"Take 001"}
+          audioUrl="/sounds/heartBeating.mp3"
+          speedAudio={1.5}
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
