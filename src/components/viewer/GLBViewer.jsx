@@ -1,36 +1,65 @@
 import "./GLBViewer.css";
 import { useRef, Suspense, useEffect, useState, useCallback } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Loader, OrbitControls, PositionalAudio } from "@react-three/drei";
+import { Loader, OrbitControls } from "@react-three/drei";
 import Title from "../texts/Title";
 import Staging from "../staging/Staging";
 import AnimatedModel from "../animation/AnimatedModel";
 import Lights from "../lights/Lights";
+import AudioPlayer from "../audio/CustomAudio";
+import CustomAudio from "../audio/CustomAudio";
 
 const GLBViewer = ({
-  modelUrls = [],
+  //Modelo 3D
+  modelUrl,
+
+  //Camara
   cameraPosition = [0, 0, 1.5],
   fov = 20,
+
+  //Titulo 3D
   titleHeart = "Tu título",
   titleSize = 0.03,
   titlePosition = [0, 0.5, -1],
+
+  //Sombras
   shadowPosition = [0, -0.5, 0],
+
+  //animaciones
+  defaultAnimation,
+  animationMap,
+
+  //Audio
+  audioUrl = "/sounds/whiteNoise.mp3",
+  speedAudio,
 }) => {
+  //Controles
   const controlsRef = useRef();
+  //Tooltips
   const [showTooltip, setShowTooltip] = useState(true);
+  //Audio
   const audioRef = useRef();
-  const [currentModelIndex, setCurrentModelIndex] = useState(0);
+  //Modelo 3D
+  const [currentAnimation, setCurrentAnimation] = useState(
+    defaultAnimation || ""
+  );
 
-  const handleClick = useCallback(() => {
-    audioRef.current.playbackRate = 1.5;
-    audioRef.current.setVolume(1);
-    audioRef.current.play();
-  }, []);
+  //Animaciones
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (animationMap[event.code]) {
+        setCurrentAnimation(animationMap[event.code]);
+      }
+    };
 
-  const nextModel = () => {
-    setCurrentModelIndex((prev) => (prev + 1) % modelUrls.length);
-  };
+    window.addEventListener("keydown", handleKeyDown);
 
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [animationMap]);
+
+  const resetAnimation = () => setCurrentAnimation(defaultAnimation);
+
+  //evento rueda de raton
   useEffect(() => {
     document.body.style.overflow = "hidden";
 
@@ -66,16 +95,20 @@ const GLBViewer = ({
               size={titleSize}
             />
 
-            <group onClick={handleClick}>
-              <AnimatedModel url={modelUrls[currentModelIndex]} />
-            </group>
+            <CustomAudio ref={audioRef} url={audioUrl} speed={speedAudio} />
 
-            <PositionalAudio
-              ref={audioRef}
-              loop
-              url="/sounds/heartBeating.mp3"
-              distance={5}
-            />
+            <group
+              onClick={() => {
+                if (audioRef.current) {
+                  audioRef.current.toggleAudio(); // Hace play y pause con el mismo click
+                }
+              }}
+            >
+              <AnimatedModel
+                url={modelUrl}
+                currentAnimation={currentAnimation}
+              />
+            </group>
 
             <Lights />
 
@@ -93,6 +126,10 @@ const GLBViewer = ({
             </mesh>
           </Canvas>
         </Suspense>
+
+        <button className="next-button" onClick={resetAnimation}>
+          Volver a Animación por Defecto
+        </button>
 
         {/* Botón fijo en el lado derecho */}
 

@@ -33,7 +33,7 @@ const Cianosis = () => {
     <>
       <div className="viewer-container">
         <GLBViewer
-          modelUrls={["/models-3d/congenital-heart-disease/Cianosis.glb"]}
+          modelUrl="/models-3d/congenital-heart-disease/Cianosis.glb"
           cameraPosition={[0, 0, 5]}
           fov={20}
           titleHeart="Sintoma: Cianosis"

@@ -32,12 +32,13 @@ const Cough = () => {
     <>
       <div className="viewer-container">
         <GLBViewer
-          modelUrls={["/models-3d/heart-failure/Confusion.glb"]}
+          modelUrl="/models-3d/heart-failure/Confusion.glb"
           cameraPosition={[0, 1.5, 4]}
           fov={35}
           titleHeart="Sintoma: Cansancio o Fatiga"
           titlePosition={[0, 1, -0.1]}
           titleSize={0.2}
+          defaultAnimation="ArmatureAction"
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}

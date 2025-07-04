@@ -33,9 +33,7 @@ const ChestPain = () => {
     <>
       <div className="viewer-container">
         <GLBViewer
-          modelUrls={[
-            "/models-3d/arrhythmia/chest-pain.glb"
-          ]}
+          modelUrl="/models-3d/arrhythmia/chest-pain.glb"
           cameraPosition={[0, 0, 3]}
           fov={35}
           titleHeart="Síntoma: Dolor en el Pecho (Dolor Torácico)"
