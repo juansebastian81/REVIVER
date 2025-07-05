@@ -17,3 +17,48 @@ canvas {
   z-index: 10;
   font-weight: bold;
 }
+
+
+.viewer-container {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+
+
+.info-button {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tooltip-box {
+  position: absolute;
+  top: 70px;
+  right: 30px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  z-index: 2;
+  max-width: 250px;
+}
+
+/* Añadir esto: fuerza el color blanco en todos los hijos */
+.tooltip-box * {
+  color: white;
+}
