@@ -6,7 +6,6 @@ import Title from "../texts/Title";
 import Staging from "../staging/Staging";
 import AnimatedModel from "../animation/AnimatedModel";
 import Lights from "../lights/Lights";
-import AudioPlayer from "../audio/CustomAudio";
 import CustomAudio from "../audio/CustomAudio";
 
 const GLBViewer = ({
