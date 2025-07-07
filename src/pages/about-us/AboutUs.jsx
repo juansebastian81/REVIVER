@@ -20,9 +20,9 @@ const AboutUs = () => {
             <div className="card-body">
               <h5 className="card-title">Yeimer Armando Mendez Sanchez</h5>
               <p className="card-text text-center">
-                3168940484<br />
+                Backend Developer<br />
                 yeimer.mendez@correounivalle.edu.co<br />
-                Backend<br />
+                Linkedin<br />
                 2243583<br />
                 6to semestre<br />
                 Tecnologia en desarrollo de software
@@ -42,9 +42,9 @@ const AboutUs = () => {
             <div className="card-body">
               <h5 className="card-title">Daniel Esteban Celis Castillo</h5>
               <p className="card-text text-center">
-                3045255220<br />
+                Backend Developer<br />
                 celis.daniel@correounivalle.edu.co<br />
-                Backend<br />
+                Linkedin<br />
                 2041425<br />
                 6to semestre<br />
                 Tecnologia en desarrollo de software
@@ -64,9 +64,9 @@ const AboutUs = () => {
             <div className="card-body">
               <h5 className="card-title">Juan Sebastian Ospina Maya</h5>
               <p className="card-text text-center">
-                3127875131<br />
+                Backend Developer<br />
                 juan.sebastian.ospina@correounivalle.edu.co<br />
-                Backend<br />
+                Linkedin<br />
                 2041554<br />
                 6to semestre<br />
                 Tecnologia en desarrollo de software
@@ -86,9 +86,9 @@ const AboutUs = () => {
             <div className="card-body">
               <h5 className="card-title">Cesar Mauricio Hincapie Lopez</h5>
               <p className="card-text text-center">
-                3177936381<br />
-                cesar.hincapie@correounivalle.edu.co<br />
-                Frontend<br />
+                Frontend Developer<br />
+                cesarmauricio009@gmail.com<br />
+                Linkedin<br />
                 2228820<br />
                 6to semestre<br />
                 Tecnologia en desarrollo de software

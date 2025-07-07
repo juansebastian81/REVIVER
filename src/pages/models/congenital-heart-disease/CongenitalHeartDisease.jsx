@@ -43,9 +43,11 @@ const CongenitalHeartDisease = () => {
           titleHeart="Cardiopatía Congénita"
           titlePosition={[0, 0.7, -0.5]}
           titleSize={0.2}
+          shadowPosition={[0, -0.5, 0]}
           defaultAnimation="Beating"
           audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1}
+
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
