@@ -34,9 +34,8 @@ const Header = () => {
         &nbsp;
         {/* Aquí eliminamos NavLink que envolvía Dropdown */}
         <Dropdown isOpen={dropdown} toggle={openCloseDropdown}>
-          <DropdownToggle caret>Corazones</DropdownToggle>
+          <DropdownToggle caret>Enfermedades</DropdownToggle>
           <DropdownMenu>
-            <DropdownItem header>Enfermedades</DropdownItem>
             <DropdownItem tag={NavLink} to="/models/arrhythmia" end>
               Arritmia
             </DropdownItem>

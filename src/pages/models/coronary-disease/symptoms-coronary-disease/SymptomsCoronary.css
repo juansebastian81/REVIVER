@@ -4,3 +4,11 @@
   position: relative;
   overflow: hidden;
 }
+
+h2{
+  color: var(--color-title);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+
