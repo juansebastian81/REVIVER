@@ -30,7 +30,7 @@ const CongenitalHeartDisease = () => {
   };
 
   const handleNextPage = () => {
-    window.location.href = "/models/cianosis-symptom/cianosis";
+    window.location.href = "/models/cansancio-symptom/cansancio";
   };
 
   return (

@@ -20,7 +20,7 @@ const AboutUs = () => {
                 <br />
                 mendezyeimeres@gmail.com
                 <br />
-                Linkedin
+                GitHub: YeimerrrM
                 <br />
                 2243583
                 <br />
@@ -44,7 +44,9 @@ const AboutUs = () => {
                 <br />
                 daniel805228@gmail.com
                 <br />
-                Linkedin
+                GitHub: Happy_ghost
+                <br />
+                Linkedin: @Daniel Celis
                 <br />
                 2041425
                 <br />
@@ -92,7 +94,7 @@ const AboutUs = () => {
                 <br />
                 cesarmauricio009@gmail.com
                 <br />
-                Linkedin
+                GitHub: c3s4rXD
                 <br />
                 2228820
                 <br />
