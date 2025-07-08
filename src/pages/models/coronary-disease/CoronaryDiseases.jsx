@@ -44,7 +44,7 @@ const CoronaryDiseases = () => {
           titleHeart="Enfermedad Coronaria"
           titleSize={0.06}
           titlePosition={[0, 0.2, -0.1]}
-          shadowPosition={[0, -0.5, 0]}
+          shadowPosition={[0, -0.1, 0]}
           defaultAnimation="Beating"
           audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1.75}
