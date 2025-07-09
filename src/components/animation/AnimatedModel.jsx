@@ -3,7 +3,7 @@ import { useGLTF } from "@react-three/drei";
 import { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 
-const AnimatedModel = ({ url, currentAnimation }) => {
+const AnimatedModel = ({ url, currentAnimation, scale, position }) => {
   const group = useRef();
   const { scene, animations } = useGLTF(url);
   const mixer = useRef();
@@ -61,7 +61,15 @@ const AnimatedModel = ({ url, currentAnimation }) => {
     mixer.current?.update(delta);
   });
 
-  return <primitive ref={group} object={scene} dispose={null} />;
+  return (
+    <primitive
+      ref={group}
+      object={scene}
+      dispose={null}
+      scale={scale}
+      position={position}
+    />
+  );
 };
 
 export default AnimatedModel;

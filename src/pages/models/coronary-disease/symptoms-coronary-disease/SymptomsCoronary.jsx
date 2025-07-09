@@ -34,16 +34,18 @@ const SymptomsCoronary = () => {
       <div className="viewer-container">
         <GLBViewer
           modelUrl="/models-3d/coronary-disease/AvatarJSOM.glb"
+          scaleModel={[0.1, 0.1, 0.1]}
+          positionModel={[0, -0.1, 0]}
           cameraPosition={[0, 0, 5]}
           fov={4}
           titleHeart="Sintomas"
           titleSize={0.04}
           titlePosition={[0, 0.125, -0.1]}
           shadowPosition={[0, -0.1, 0]}
-          defaultAnimation="Mirar"
+          defaultAnimation="Look"
           animationMap={{
-            KeyQ: "Mareo",
-            KeyW: "Sudor",
+            KeyQ: "Dizzy",
+            KeyW: "Sweat",
           }}
         />
 
