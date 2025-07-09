@@ -10,14 +10,14 @@ const Home = () => {
         <div>
           <h2>
             Somos una plataforma dedicada a explorar modelos 3D de enfermedades
-            cardíacas.
+            cardíacas
           </h2>
           <p>
             Pon a prueba tus conocimientos con nuestro cuestionario interactivo
-            y aprende más sobre la salud del corazón.
+            y aprende más sobre la salud del corazón
           </p>
         </div>
-        <button onClick={() => navigate("/models")}>Corazones</button>
+        <button onClick={() => navigate("/models")}>Enfermedades</button>
       </div>
     </div>
   );

@@ -29,25 +29,31 @@ const CongenitalHeartDisease = () => {
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleNextPage = () => {
+    window.location.href = "/models/cansancio-symptom/cansancio";
+  };
+
   return (
     <>
       <div className="viewer-container">
         <GLBViewer
-          modelUrls={[
-            "/models-3d/congenital-heart-disease/Heart.glb",
-            "/models-3d/congenital-heart-disease/agitacion.glb",
-          ]}
+          modelUrl="/models-3d/congenital-heart-disease/Heart.glb"
           cameraPosition={[0, 0, 5]}
           fov={20}
           titleHeart="Cardiopatía Congénita"
           titlePosition={[0, 0.7, -0.5]}
           titleSize={0.2}
+          shadowPosition={[0, -0.5, 0]}
+          defaultAnimation="Beating"
+          audioUrl="/sounds/heartBeating.mp3"
+          speedAudio={1}
+
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
       </div>
 
-      <div className="container" id="info-section">
+      <div className="text-container" id="info-section">
         <h1>
           <strong>¿Qué es?</strong>
         </h1>
@@ -164,6 +170,11 @@ const CongenitalHeartDisease = () => {
           personas con cardiopatías congénitas tengan un control médico regular
           a lo largo de su vida, tanto en la infancia como en la adultez.
         </p>
+        <div style={{ marginTop: "2rem", textAlign: "center" }}>
+          <button className="btn btn-primary" onClick={handleNextPage}>
+            Más síntomas
+          </button>
+        </div>
       </div>
     </>
   );

@@ -15,6 +15,7 @@
   --color-neutral: whitesmoke;
   --color-textual: black;
   --color-normal: #333;
+  --color-title:red;;
 }
 
 html,
@@ -38,6 +39,7 @@ body,
   min-height: 100%;
 }
 
+
 h1,
 h2,
 h3,
@@ -46,6 +48,9 @@ h5,
 h6 {
   color: var(--color-textual);
 }
+
+
+
 
 span,
 ul,
@@ -86,3 +91,30 @@ a {
   font-size: 1.4rem;
   margin-top: 1.5rem;
 }
+
+.text-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem;
+}
+
+.text-container p,
+.text-container ul {
+  text-align: justify;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.text-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.text-container h2 {
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+}
+
+

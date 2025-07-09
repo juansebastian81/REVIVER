@@ -1,5 +1,6 @@
 import "./Arrhythmia.css";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router";
 import GLBViewer from "../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../components/scroll/ScrollDownButton.jsx";
 
@@ -33,19 +34,22 @@ const Arrhythmia = () => {
     <>
       <div className="viewer-container">
         <GLBViewer
-          modelUrls={["/models-3d/arrhythmia/adultHeart.glb"]}
+          modelUrl="/models-3d/arrhythmia/adultHeart.glb"
           cameraPosition={[0, 0, 5]}
           fov={1.5}
           titleHeart="Arritmia cardiaca"
           titlePosition={[0, 0.05, -0.03]}
           titleSize={0.01}
           shadowPosition={[0, -0.02, 0]}
+          defaultAnimation={"Take 001"}
+          audioUrl="/sounds/heartBeating.mp3"
+          speedAudio={1.5}
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
       </div>
 
-      <div className="container" id="info-section">
+      <div className="text-container" id="info-section">
         <h1>
           <strong>¿Qué es?</strong>
         </h1>
@@ -88,6 +92,11 @@ const Arrhythmia = () => {
           repentina de la función cardíaca y requiere intervención médica
           inmediata.
         </p>
+        <div style={{ marginTop: "2rem", textAlign: "center" }}>
+          <NavLink to="/models/arrhythmia/chest-pain">
+            <button className="btn btn-primary">Más síntomas</button>
+          </NavLink>
+        </div>
       </div>
     </>
   );

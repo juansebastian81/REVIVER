@@ -29,26 +29,31 @@ const CoronaryDiseases = () => {
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleNextPage = () => {
+    window.location.href =
+      "/models/coronary-disease/symptoms-coronary-disease/symptoms-coronary";
+  };
+
   return (
     <>
       <div className="viewer-container">
         <GLBViewer
-          modelUrls={[
-            "/models-3d/coronary-disease/RealHeartCoronary1Beating.glb",
-            "/models-3d/coronary-disease/RealHeartCoronary2Beating.glb",
-          ]}
+          modelUrl="/models-3d/coronary-disease/RealHeartCoronary1Beating.glb"
           cameraPosition={[0, 0, 5]}
           fov={6}
           titleHeart="Enfermedad Coronaria"
           titleSize={0.06}
           titlePosition={[0, 0.2, -0.1]}
           shadowPosition={[0, -0.1, 0]}
+          defaultAnimation="Beating"
+          audioUrl="/sounds/heartBeating.mp3"
+          speedAudio={1.75}
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
       </div>
 
-      <div className="container" id="info-section">
+      <div className="text-container" id="info-section">
         <h1>
           <strong>¿Qué es?</strong>
         </h1>
@@ -82,6 +87,11 @@ const CoronaryDiseases = () => {
           (angina), falta de aire, ataques cardíacos e insuficiencia cardíaca.
           Con el tiempo, esto puede provocar daños permanentes al corazón.
         </p>
+        <div style={{ marginTop: "2rem", textAlign: "center" }}>
+          <button className="btn btn-primary" onClick={handleNextPage}>
+            Los síntomas
+          </button>
+        </div>
       </div>
     </>
   );
