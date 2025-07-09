@@ -11,6 +11,8 @@ import { Color } from "three";
 
 const GLBViewer = ({
   modelUrl,
+  scaleModel,
+  positionModel,
   cameraPosition = [0, 0, 1.5],
   fov = 20,
   titleHeart = "Tu título",
@@ -80,6 +82,8 @@ const GLBViewer = ({
             <AnimatedModel
               url={modelUrl}
               currentAnimation={currentAnimation}
+              scale={scaleModel}
+              position={positionModel}
             />
           </group>
 
