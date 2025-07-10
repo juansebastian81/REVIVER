@@ -33,7 +33,9 @@ const Cansancio = () => {
     <>
       <div className="viewer-container">
         <GLBViewer
-          modelUrl="/models-3d/congenital-heart-disease/AvatarCMHL.glb"
+          modelUrl="/models-3d/congenital-heart-disease/Cansancio.glb"
+          scaleModel={[0.1, 0.1, 0.1]}
+          positionModel={[0, -0.1, 0]}
           cameraPosition={[0, 0, 5]}
           fov={4}
           titleHeart="Cansancio"
@@ -42,7 +44,11 @@ const Cansancio = () => {
           shadowPosition={[0, -0.1, 2]}
           audioUrl="/sounds/cansancio.mp3"
           speedAudio={1}
-          defaultAnimation="Cansancio"
+          defaultAnimation="Yawn"
+          animationMap={{
+            KeyQ: "Cansancio",
+            KeyW: "Yawn",
+          }}
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
