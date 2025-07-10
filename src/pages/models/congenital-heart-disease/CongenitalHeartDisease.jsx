@@ -1,5 +1,6 @@
 import "./CongenitalHeartDisease.css";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router";
 import GLBViewer from "../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../components/scroll/ScrollDownButton.jsx";
 
@@ -29,10 +30,6 @@ const CongenitalHeartDisease = () => {
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleNextPage = () => {
-    window.location.href = "/models/cansancio-symptom/cansancio";
-  };
-
   return (
     <>
       <div className="viewer-container">
@@ -47,7 +44,6 @@ const CongenitalHeartDisease = () => {
           defaultAnimation="Beating"
           audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1}
-
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
@@ -171,9 +167,9 @@ const CongenitalHeartDisease = () => {
           a lo largo de su vida, tanto en la infancia como en la adultez.
         </p>
         <div style={{ marginTop: "2rem", textAlign: "center" }}>
-          <button className="btn btn-primary" onClick={handleNextPage}>
-            Más síntomas
-          </button>
+          <NavLink to="/models/cansancio-symptom/cansancio">
+            <button className="btn btn-primary">Más síntomas</button>
+          </NavLink>
         </div>
       </div>
     </>
