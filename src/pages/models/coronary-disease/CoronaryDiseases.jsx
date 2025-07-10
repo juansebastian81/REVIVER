@@ -85,7 +85,12 @@ const CoronaryDiseases = () => {
         </p>
         <div style={{ marginTop: "2rem", textAlign: "center" }}>
           <NavLink to="/models/coronary-disease/symptoms-coronary-disease/symptoms-coronary">
-            <button className="btn btn-primary">Más síntomas</button>
+            <button className="btn btn-primary">Sintomas</button>
+          </NavLink>
+        </div>
+        <div style={{ marginTop: "2rem", textAlign: "center" }}>
+          <NavLink to="/models/coronary-disease/treatment-coronary-disease/treatment-coronary">
+            <button className="btn btn-primary">Tratamiento</button>
           </NavLink>
         </div>
       </div>
