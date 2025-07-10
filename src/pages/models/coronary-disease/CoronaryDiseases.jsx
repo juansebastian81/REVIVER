@@ -1,5 +1,6 @@
 import "./CoronaryDiseases.css";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router";
 import GLBViewer from "../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../components/scroll/ScrollDownButton.jsx";
 
@@ -27,11 +28,6 @@ const CoronaryDiseases = () => {
 
     const section = document.getElementById("info-section");
     section?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleNextPage = () => {
-    window.location.href =
-      "/models/coronary-disease/symptoms-coronary-disease/symptoms-coronary";
   };
 
   return (
@@ -88,9 +84,9 @@ const CoronaryDiseases = () => {
           Con el tiempo, esto puede provocar daños permanentes al corazón.
         </p>
         <div style={{ marginTop: "2rem", textAlign: "center" }}>
-          <button className="btn btn-primary" onClick={handleNextPage}>
-            Los síntomas
-          </button>
+          <NavLink to="/models/coronary-disease/symptoms-coronary-disease/symptoms-coronary">
+            <button className="btn btn-primary">Más síntomas</button>
+          </NavLink>
         </div>
       </div>
     </>
