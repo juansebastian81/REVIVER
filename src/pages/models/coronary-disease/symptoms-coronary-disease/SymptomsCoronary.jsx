@@ -1,5 +1,6 @@
 import "./SymptomsCoronary.css";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router";
 import GLBViewer from "../../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../../components/scroll/ScrollDownButton.jsx";
 
@@ -161,6 +162,14 @@ const SymptomsCoronary = () => {
             náuseas sin dolor torácico evidente.
           </li>
         </ul>
+        <div className="button-group-centered">
+          <NavLink to="/models/coronary-disease">
+            <button className="btn btn-primary">Enfermedad</button>
+          </NavLink>
+          <NavLink to="/models/coronary-disease/treatment-coronary-disease/treatment-coronary">
+            <button className="btn btn-primary">Tratamiento</button>
+          </NavLink>
+        </div>
       </div>
     </>
   );

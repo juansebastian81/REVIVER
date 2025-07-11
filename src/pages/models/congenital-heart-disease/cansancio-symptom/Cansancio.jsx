@@ -59,10 +59,10 @@ const Cansancio = () => {
           <strong>¿Qué es?</strong>
         </h1>
         <p>
-          El cansancio es una sensación física o mental de falta de energía, 
-          debilidad o agotamiento puede ser un síntoma de enfermedades 
-          (como anemia, hipotiroidismo, infecciones, depresión, entre otras), 
-          o el resultado de malos hábitos de vida (poca actividad física, mala 
+          El cansancio es una sensación física o mental de falta de energía,
+          debilidad o agotamiento puede ser un síntoma de enfermedades (como
+          anemia, hipotiroidismo, infecciones, depresión, entre otras), o el
+          resultado de malos hábitos de vida (poca actividad física, mala
           alimentación, mal sueño).
         </p>
 
@@ -70,33 +70,37 @@ const Cansancio = () => {
           <strong>Tipos de cansancio</strong>
         </h1>
         <p>
-          <strong>Físico:</strong> cuando el cuerpo se siente débil o fatigado después de esfuerzo,
-          trabajo o falta de descanso (como después de hacer ejercicio o no dormir bien).
+          <strong>Físico:</strong> cuando el cuerpo se siente débil o fatigado
+          después de esfuerzo, trabajo o falta de descanso (como después de
+          hacer ejercicio o no dormir bien).
           <br />
-          <strong>Mental o Emocional:</strong> cuando hay agotamiento por estrés, preocupaciones, exceso 
-          de trabajo intelectual o situaciones emocionales intensas.
+          <strong>Mental o Emocional:</strong> cuando hay agotamiento por
+          estrés, preocupaciones, exceso de trabajo intelectual o situaciones
+          emocionales intensas.
         </p>
 
         <h1>
           <strong>¿Qué indica?</strong>
         </h1>
         <p>
-          Es un signo de alerta para que mejores tu calidad de vida
-          y busques atención médica si es persistente o severo. Puede indicar
-          problemas de salud subyacentes que necesitan diagnóstico y tratamiento.
+          Es un signo de alerta para que mejores tu calidad de vida y busques
+          atención médica si es persistente o severo. Puede indicar problemas de
+          salud subyacentes que necesitan diagnóstico y tratamiento.
         </p>
 
         <h1>
           <strong>Tratamiento</strong>
         </h1>
         <p>
-          <strong>Comer Sano</strong><br/>
-          Una alimentación equilibrada y rica en nutrientes es esencial para
-          una dieta saludable y sin complicaciones medicas.<br/>
-
-          <strong>Hacer ejercicio</strong><br/>
-          Se recomienda hacer ejercicio regularmente para mejorar
-          la oxigenacion en sangre y mejorar el ritmo cardiaco.
+          <strong>Comer Sano</strong>
+          <br />
+          Una alimentación equilibrada y rica en nutrientes es esencial para una
+          dieta saludable y sin complicaciones medicas.
+          <br />
+          <strong>Hacer ejercicio</strong>
+          <br />
+          Se recomienda hacer ejercicio regularmente para mejorar la oxigenacion
+          en sangre y mejorar el ritmo cardiaco.
         </p>
       </div>
     </>

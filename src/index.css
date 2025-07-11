@@ -15,7 +15,7 @@
   --color-neutral: whitesmoke;
   --color-textual: black;
   --color-normal: #333;
-  --color-title:red;;
+  --color-title: red;
 }
 
 html,
@@ -39,7 +39,6 @@ body,
   min-height: 100%;
 }
 
-
 h1,
 h2,
 h3,
@@ -48,9 +47,6 @@ h5,
 h6 {
   color: var(--color-textual);
 }
-
-
-
 
 span,
 ul,
@@ -117,4 +113,9 @@ a {
   margin-top: 1.5rem;
 }
 
-
+.button-group-centered {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}

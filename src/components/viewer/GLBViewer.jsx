@@ -7,12 +7,12 @@ import Staging from "../staging/Staging";
 import AnimatedModel from "../animation/AnimatedModel";
 import Lights from "../lights/Lights";
 import CustomAudio from "../audio/CustomAudio";
-import { Color } from "three";
 
 const GLBViewer = ({
   modelUrl,
   scaleModel,
   positionModel,
+  targetModel,
   cameraPosition = [0, 0, 1.5],
   fov = 20,
   titleHeart = "Tu título",
@@ -88,8 +88,14 @@ const GLBViewer = ({
           </group>
 
           <Lights />
+
           <Staging />
-          <OrbitControls ref={controlsRef} enableZoom={false} />
+
+          <OrbitControls
+            ref={controlsRef}
+            enableZoom={false}
+            target={targetModel}
+          />
 
           <mesh
             receiveShadow

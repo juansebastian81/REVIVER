@@ -14,6 +14,7 @@ import Layout from "./pages/layout/Layout";
 import Cansancio from "./pages/models/congenital-heart-disease/cansancio-symptom/Cansancio";
 import AboutUs from "./pages/about-us/AboutUs";
 import SymptomsCoronary from "./pages/models/coronary-disease/symptoms-coronary-disease/SymptomsCoronary";
+import TreatmentCoronary from "./pages/models/coronary-disease/treatment-coronary-disease/TreatmentCoronary";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -36,6 +37,10 @@ createRoot(document.getElementById("root")).render(
         <Route
           path="/models/coronary-disease/symptoms-coronary-disease/symptoms-coronary"
           element={<SymptomsCoronary />}
+        />
+        <Route
+          path="/models/coronary-disease/treatment-coronary-disease/treatment-coronary"
+          element={<TreatmentCoronary />}
         />
         <Route
           path="/models/congenital-heart-disease"
