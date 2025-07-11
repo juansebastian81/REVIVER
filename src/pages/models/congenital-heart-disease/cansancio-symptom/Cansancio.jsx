@@ -40,14 +40,14 @@ const Cansancio = () => {
           fov={4}
           titleHeart="Cansancio"
           titleSize={0.04}
-          titlePosition={[0, 0.125, -0.1]}
+          titlePosition={[0, 0.145, -0.1]}
           shadowPosition={[0, -0.1, 2]}
           audioUrl="/sounds/cansancio.mp3"
           speedAudio={1}
           defaultAnimation="Yawn"
           animationMap={{
-            KeyQ: "Cansancio",
             KeyW: "Yawn",
+            KeyQ: "Cansancio",
           }}
         />
 

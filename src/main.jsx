@@ -11,7 +11,7 @@ import CoronaryDiseases from "./pages/models/coronary-disease/CoronaryDiseases";
 import CongenitalHeartDisease from "./pages/models/congenital-heart-disease/CongenitalHeartDisease";
 import Cough from "./pages/models/heart-failure/fatigue-symptom/fatigue";
 import Layout from "./pages/layout/Layout";
-import Cansancio from "./pages/models/congenital-heart-disease/cianosis-symptom/Cansancio";
+import Cansancio from "./pages/models/congenital-heart-disease/cansancio-symptom/Cansancio";
 import AboutUs from "./pages/about-us/AboutUs";
 import SymptomsCoronary from "./pages/models/coronary-disease/symptoms-coronary-disease/SymptomsCoronary";
 import TreatmentCoronary from "./pages/models/coronary-disease/treatment-coronary-disease/TreatmentCoronary";
