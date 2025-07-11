@@ -1,6 +1,6 @@
 import "./GLBViewer.css";
 import { useRef, Suspense, useEffect, useState } from "react";
-import { Canvas, useThree, useFrame } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import { Loader, OrbitControls } from "@react-three/drei";
 import Title from "../texts/Title";
 import Staging from "../staging/Staging";
@@ -30,22 +30,6 @@ const GLBViewer = ({
   const [currentAnimation, setCurrentAnimation] = useState(
     defaultAnimation || ""
   );
-
-  const CameraDebugger = () => {
-    const { camera } = useThree();
-
-    useFrame(() => {
-      console.log(
-        `Camera position: x=${camera.position.x.toFixed(
-          2
-        )}, y=${camera.position.y.toFixed(2)}, z=${camera.position.z.toFixed(
-          2
-        )}`
-      );
-    });
-
-    return null;
-  };
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -104,14 +88,14 @@ const GLBViewer = ({
           </group>
 
           <Lights />
+
           <Staging />
+
           <OrbitControls
             ref={controlsRef}
             enableZoom={false}
             target={targetModel}
           />
-
-          <CameraDebugger />
 
           <mesh
             receiveShadow
