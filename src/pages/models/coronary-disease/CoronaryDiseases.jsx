@@ -83,12 +83,10 @@ const CoronaryDiseases = () => {
           (angina), falta de aire, ataques cardíacos e insuficiencia cardíaca.
           Con el tiempo, esto puede provocar daños permanentes al corazón.
         </p>
-        <div style={{ marginTop: "2rem", textAlign: "center" }}>
+        <div className="button-group-centered">
           <NavLink to="/models/coronary-disease/symptoms-coronary-disease/symptoms-coronary">
             <button className="btn btn-primary">Sintomas</button>
           </NavLink>
-        </div>
-        <div style={{ marginTop: "2rem", textAlign: "center" }}>
           <NavLink to="/models/coronary-disease/treatment-coronary-disease/treatment-coronary">
             <button className="btn btn-primary">Tratamiento</button>
           </NavLink>

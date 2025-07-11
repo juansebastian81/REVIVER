@@ -12,6 +12,7 @@ const GLBViewer = ({
   modelUrl,
   scaleModel,
   positionModel,
+  targetModel,
   cameraPosition = [0, 0, 1.5],
   fov = 20,
   titleHeart = "Tu título",
@@ -104,7 +105,11 @@ const GLBViewer = ({
 
           <Lights />
           <Staging />
-          <OrbitControls ref={controlsRef} enableZoom={false} />
+          <OrbitControls
+            ref={controlsRef}
+            enableZoom={false}
+            target={targetModel}
+          />
 
           <CameraDebugger />
 

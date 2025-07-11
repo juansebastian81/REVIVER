@@ -37,6 +37,7 @@ const TreatmentCoronary = () => {
           modelUrl="/models-3d/coronary-disease/3DHeartCoronary1.glb"
           scaleModel={[5, 5, 5]}
           positionModel={[0, 0.25, 0]}
+          targetModel={[0, 0.25, 0]}
           cameraPosition={[0, 1, 5]}
           fov={15}
           titleHeart="Tratamiento"
@@ -109,15 +110,13 @@ const TreatmentCoronary = () => {
           gravedad de la enfermedad. Siempre debe realizarse bajo orientación
           médica especializada.
         </p>
-        <div style={{ marginTop: "2rem", textAlign: "center" }}>
+        <div className="button-group-centered">
           <NavLink to="/models/coronary-disease">
             <button className="btn btn-primary">Enfermedad</button>
           </NavLink>
-          <div style={{ marginTop: "2rem", textAlign: "center" }}>
-            <NavLink to="/models/coronary-disease/symptoms-coronary-disease/symptoms-coronary">
-              <button className="btn btn-primary">Sintomas</button>
-            </NavLink>
-          </div>
+          <NavLink to="/models/coronary-disease/symptoms-coronary-disease/symptoms-coronary">
+            <button className="btn btn-primary">Sintomas</button>
+          </NavLink>
         </div>
       </div>
     </>
