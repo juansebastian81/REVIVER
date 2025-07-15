@@ -1,47 +1,49 @@
-import "./BreadCrumbs.css";
 import { NavLink, useLocation } from "react-router";
-import { useMemo } from "react";
-
-const pathNameMap = {
-  models: "Enfermedades",
-  "coronary-disease": "Enfermedad Coronaria",
-  "symptoms-coronary-disease": "Síntomas",
-};
+import "./Breadcrumbs.css";
 
 const Breadcrumbs = () => {
   const location = useLocation();
-  const pathParts = location.pathname.split("/").filter(Boolean);
 
-  const breadcrumbs = useMemo(() => {
-    return pathParts.map((part, index) => {
-      const url = "/" + pathParts.slice(0, index + 1).join("/");
-      const label = pathNameMap[part] || decodeURIComponent(part);
-      return { label, url };
-    });
-  }, [location]);
+  const pathnames = location.pathname
+    .split("/")
+    .filter((x) => x)
+    .map((part) => decodeURIComponent(part));
+
+  const crumbs = pathnames.map((value, index) => {
+    const to = "/" + pathnames.slice(0, index + 1).join("/");
+
+    const isLast = index === pathnames.length - 1;
+
+    return isLast ? (
+      <span className="breadcrumb-current" key={to}>
+        {formatName(value)}
+      </span>
+    ) : (
+      <NavLink to={to} className="breadcrumb-link" key={to}>
+        {formatName(value)}
+      </NavLink>
+    );
+  });
 
   return (
-    <nav className="breadcrumb-container">
+    <nav className="breadcrumb-container" aria-label="Breadcrumb">
       <NavLink to="/" className="breadcrumb-link">
         Inicio
       </NavLink>
-      {breadcrumbs.map((crumb, index) => {
-        const isLast = index === breadcrumbs.length - 1;
-        return (
-          <span key={crumb.url}>
-            <span className="breadcrumb-separator">/</span>
-            {isLast ? (
-              <span className="breadcrumb-current">{crumb.label}</span>
-            ) : (
-              <NavLink to={crumb.url} className="breadcrumb-link">
-                {crumb.label}
-              </NavLink>
-            )}
+      {crumbs.length > 0 && <span className="breadcrumb-separator">/</span>}
+      {crumbs.flatMap((crumb, index) => [
+        crumb,
+        index !== crumbs.length - 1 && (
+          <span key={index + "-sep"} className="breadcrumb-separator">
+            /
           </span>
-        );
-      })}
+        ),
+      ])}
     </nav>
   );
 };
+
+const formatName = (name) =>
+  name.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
 
 export default Breadcrumbs;
