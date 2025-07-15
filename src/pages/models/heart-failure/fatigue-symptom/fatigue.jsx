@@ -45,10 +45,6 @@ const Cough = () => {
       </div>
 
       <div className="text-container" id="info-section">
-        <h2>
-          <strong>Síntoma: Cansancio (Fatiga)</strong>
-        </h2>
-
         <h3>Descripción:</h3>
         <p>
           El <strong>cansancio o fatiga</strong> es uno de los síntomas más

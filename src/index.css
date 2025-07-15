@@ -68,24 +68,11 @@ a {
   text-decoration: none;
 }
 
-.container {
-  /* Crea un contenedor en el centro para el texto */
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 2rem;
-}
-
-.container h1 {
-  color: var(--color-textual);
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.container h2 {
-  color: var(--color-textual);
-  font-size: 1.4rem;
-  margin-top: 1.5rem;
+.viewer-container {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
 }
 
 .text-container {
@@ -103,14 +90,12 @@ a {
   margin-bottom: 1.5rem;
 }
 
-.text-container h1 {
+.text-container h1,
+.text-container h2,
+.text-container h3 {
+  color: var(--color-title);
   font-size: 2rem;
   margin-bottom: 1rem;
-}
-
-.text-container h2 {
-  font-size: 1.4rem;
-  margin-top: 1.5rem;
 }
 
 .button-group-centered {

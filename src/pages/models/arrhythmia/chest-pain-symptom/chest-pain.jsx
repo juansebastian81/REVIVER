@@ -44,7 +44,7 @@ const ChestPain = () => {
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
       </div>
 
-      <div className="container" id="info-section">
+      <div className="text-container" id="info-section">
         <h3>Descripción:</h3>
         <p>
           El <strong>dolor en el pecho</strong> es un síntoma frecuente en
