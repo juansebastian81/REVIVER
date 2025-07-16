@@ -2,7 +2,7 @@ import "./BreadCrumbs.css";
 import { NavLink, useLocation } from "react-router";
 
 const pathNameMap = {
-  models: "Enfermedades",
+  diseases: "Enfermedades",
   "coronary-disease": "Enfermedad Coronaria",
   "symptoms-coronary-disease": "Síntomas",
   "treatment-coronary-disease": "Tratamiento",

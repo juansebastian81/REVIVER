@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router"; // Usando react-router
 import Home from "./pages/home/Home";
 import NotFound from "./pages/not-found/NotFound";
-import Models from "./pages/models/Models";
+import Diseases from "./pages/models/Diseases";
 import Arrhythmia from "./pages/models/arrhythmia/Arrhythmia";
 import ChestPain from "./pages/models/arrhythmia/chest-pain-symptom/chest-pain";
 import HeartFailure from "./pages/models/heart-failure/HeartFailure";
@@ -21,29 +21,32 @@ createRoot(document.getElementById("root")).render(
     <Layout>
       <Routes>
         <Route index path="/" element={<Home />} />
-        <Route path="/models" element={<Models />} />
-        <Route path="/models/arrhythmia" element={<Arrhythmia />} />
-        <Route path="/models/arrhythmia/chest-pain" element={<ChestPain />} />
-        <Route path="/models/heart-failure" element={<HeartFailure />} />
+        <Route path="/diseases" element={<Diseases />} />
+        <Route path="/diseases/arrhythmia" element={<Arrhythmia />} />
+        <Route path="/diseases/arrhythmia/chest-pain" element={<ChestPain />} />
+        <Route path="/diseases/heart-failure" element={<HeartFailure />} />
         <Route
-          path="/models/heart-failure/fatigue-symptom"
+          path="/diseases/heart-failure/fatigue-symptom"
           element={<Cough />}
         />
         <Route
-          path="/models/congenital-heart-disease"
+          path="/diseases/congenital-heart-disease"
           element={<CongenitalHeartDisease />}
         />
         <Route
-          path="/models/congenital-heart-disease/fatigue"
+          path="/diseases/congenital-heart-disease/fatigue"
           element={<Fatigue />}
         />
-        <Route path="/models/coronary-disease" element={<CoronaryDiseases />} />
         <Route
-          path="/models/coronary-disease/symptoms-coronary-disease"
+          path="/diseases/coronary-disease"
+          element={<CoronaryDiseases />}
+        />
+        <Route
+          path="/diseases/coronary-disease/symptoms-coronary-disease"
           element={<SymptomsCoronary />}
         />
         <Route
-          path="/models/coronary-disease/treatment-coronary-disease"
+          path="/diseases/coronary-disease/treatment-coronary-disease"
           element={<TreatmentCoronary />}
         />
         <Route path="/aboutus" element={<AboutUs />} />

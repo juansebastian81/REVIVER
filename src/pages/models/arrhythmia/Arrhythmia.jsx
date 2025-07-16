@@ -95,7 +95,7 @@ const Arrhythmia = () => {
           inmediata.
         </p>
         <div style={{ marginTop: "2rem", textAlign: "center" }}>
-          <NavLink to="/models/arrhythmia/chest-pain">
+          <NavLink to="/diseases/arrhythmia/chest-pain">
             <button className="btn btn-primary">Más síntomas</button>
           </NavLink>
         </div>

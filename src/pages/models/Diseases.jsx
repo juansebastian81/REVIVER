@@ -1,8 +1,8 @@
-import "./Models.css";
+import "./Diseases.css";
 import { useNavigate } from "react-router";
 import { useCallback } from "react";
 
-const Models = () => {
+const Diseases = () => {
   const navigate = useNavigate();
 
   const goTo = useCallback(
@@ -22,7 +22,7 @@ const Models = () => {
           <div
             className="card m-3"
             style={{ width: "18rem", cursor: "pointer" }}
-            onClick={() => goTo("/models/arrhythmia")}
+            onClick={() => goTo("/diseases/arrhythmia")}
           >
             <img
               src="./cards/hearts/arrhythmiaCard.png"
@@ -41,7 +41,7 @@ const Models = () => {
           <div
             className="card m-3"
             style={{ width: "18rem", cursor: "pointer" }}
-            onClick={() => goTo("/models/heart-failure")}
+            onClick={() => goTo("/diseases/heart-failure")}
           >
             <img
               src="./cards/hearts/heartFailureCard.png"
@@ -60,7 +60,7 @@ const Models = () => {
           <div
             className="card m-3"
             style={{ width: "18rem", cursor: "pointer" }}
-            onClick={() => goTo("/models/coronary-disease")}
+            onClick={() => goTo("/diseases/coronary-disease")}
           >
             <img
               src="./cards/hearts/coronaryDiseaseCard.png"
@@ -79,7 +79,7 @@ const Models = () => {
           <div
             className="card m-3"
             style={{ width: "18rem", cursor: "pointer" }}
-            onClick={() => goTo("/models/congenital-heart-disease")}
+            onClick={() => goTo("/diseases/congenital-heart-disease")}
           >
             <img
               src="./cards/hearts/congenitalDiseaseCard.png"
@@ -98,4 +98,4 @@ const Models = () => {
     </div>
   );
 };
-export default Models;
+export default Diseases;

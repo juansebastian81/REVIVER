@@ -88,7 +88,7 @@ const HeartFailure = () => {
         </p>
 
         <div style={{ marginTop: "2rem", textAlign: "center" }}>
-          <NavLink to="/models/heart-failure/fatigue-symptom">
+          <NavLink to="/diseases/heart-failure/fatigue-symptom">
             <button className="btn btn-primary">Más síntomas</button>
           </NavLink>
         </div>

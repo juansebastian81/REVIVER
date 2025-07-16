@@ -165,10 +165,10 @@ const SymptomsCoronary = () => {
           </li>
         </ul>
         <div className="button-group-centered">
-          <NavLink to="/models/coronary-disease">
+          <NavLink to="/diseases/coronary-disease">
             <button className="btn btn-primary">Enfermedad</button>
           </NavLink>
-          <NavLink to="/models/coronary-disease/treatment-coronary-disease">
+          <NavLink to="/diseases/coronary-disease/treatment-coronary-disease">
             <button className="btn btn-primary">Tratamiento</button>
           </NavLink>
         </div>
