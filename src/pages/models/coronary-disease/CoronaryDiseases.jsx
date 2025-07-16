@@ -33,9 +33,8 @@ const CoronaryDiseases = () => {
 
   return (
     <>
+      <BreadCrumb />
       <div className="viewer-container">
-        <BreadCrumb />
-
         <GLBViewer
           modelUrl="/models-3d/coronary-disease/RealHeartCoronary1Beating.glb"
           cameraPosition={[0, 0, 5]}
