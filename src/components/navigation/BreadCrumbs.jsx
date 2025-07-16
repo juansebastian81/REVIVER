@@ -1,9 +1,21 @@
 import "./BreadCrumbs.css";
 import { NavLink, useLocation } from "react-router";
 
-const Breadcrumbs = () => {
-  const location = useLocation();
+const pathNameMap = {
+  models: "Enfermedades",
+  "coronary-disease": "Enfermedad Coronaria",
+  "symptoms-coronary-disease": "Síntomas",
+  "treatment-coronary-disease": "Tratamiento",
+  arrhythmia: "Arritmia",
+  "chest-pain": "Dolor torácico",
+  "heart-failure": "Insuficiencia Cardiaca",
+  "fatigue-symptom": "Fatiga",
+  "congenital-heart-disease": "Cardiopatía Congénita",
+  fatigue: "Cansancio",
+};
 
+const BreadCrumbs = () => {
+  const location = useLocation();
   const pathnames = location.pathname
     .split("/")
     .filter((x) => x)
@@ -11,16 +23,17 @@ const Breadcrumbs = () => {
 
   const crumbs = pathnames.map((value, index) => {
     const to = "/" + pathnames.slice(0, index + 1).join("/");
-
     const isLast = index === pathnames.length - 1;
+
+    const label = formatName(value);
 
     return isLast ? (
       <span className="breadcrumb-current" key={to}>
-        {formatName(value)}
+        {label}
       </span>
     ) : (
       <NavLink to={to} className="breadcrumb-link" key={to}>
-        {formatName(value)}
+        {label}
       </NavLink>
     );
   });
@@ -43,7 +56,11 @@ const Breadcrumbs = () => {
   );
 };
 
-const formatName = (name) =>
-  name.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
+const formatName = (slug) => {
+  return (
+    pathNameMap[slug] ||
+    slug.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())
+  );
+};
 
-export default Breadcrumbs;
+export default BreadCrumbs;

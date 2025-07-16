@@ -11,7 +11,7 @@ import CoronaryDiseases from "./pages/models/coronary-disease/CoronaryDiseases";
 import CongenitalHeartDisease from "./pages/models/congenital-heart-disease/CongenitalHeartDisease";
 import Cough from "./pages/models/heart-failure/fatigue-symptom/fatigue";
 import Layout from "./pages/layout/Layout";
-import Cansancio from "./pages/models/congenital-heart-disease/cansancio-symptom/Cansancio";
+import Fatigue from "./pages/models/congenital-heart-disease/symptom-fatigue/Fatigue";
 import AboutUs from "./pages/about-us/AboutUs";
 import SymptomsCoronary from "./pages/models/coronary-disease/symptoms-coronary-disease/SymptomsCoronary";
 import TreatmentCoronary from "./pages/models/coronary-disease/treatment-coronary-disease/TreatmentCoronary";
@@ -30,21 +30,21 @@ createRoot(document.getElementById("root")).render(
           element={<Cough />}
         />
         <Route
-          path="/models/cansancio-symptom/cansancio"
-          element={<Cansancio />}
+          path="/models/congenital-heart-disease"
+          element={<CongenitalHeartDisease />}
+        />
+        <Route
+          path="/models/congenital-heart-disease/fatigue"
+          element={<Fatigue />}
         />
         <Route path="/models/coronary-disease" element={<CoronaryDiseases />} />
         <Route
-          path="/models/coronary-disease/symptoms-coronary-disease/symptoms-coronary"
+          path="/models/coronary-disease/symptoms-coronary-disease"
           element={<SymptomsCoronary />}
         />
         <Route
-          path="/models/coronary-disease/treatment-coronary-disease/treatment-coronary"
+          path="/models/coronary-disease/treatment-coronary-disease"
           element={<TreatmentCoronary />}
-        />
-        <Route
-          path="/models/congenital-heart-disease"
-          element={<CongenitalHeartDisease />}
         />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="*" element={<NotFound />} />

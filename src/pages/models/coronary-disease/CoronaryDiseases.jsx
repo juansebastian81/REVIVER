@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
 import GLBViewer from "../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../components/scroll/ScrollDownButton.jsx";
-import BreadCrumb from "../../../components/navigation/BreadCrumbs.jsx";
+import BreadCrumbs from "../../../components/navigation/BreadCrumbs.jsx";
 
 const CoronaryDiseases = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
@@ -33,7 +33,7 @@ const CoronaryDiseases = () => {
 
   return (
     <>
-      <BreadCrumb />
+      <BreadCrumbs />
       <div className="viewer-container">
         <GLBViewer
           modelUrl="/models-3d/coronary-disease/RealHeartCoronary1Beating.glb"
@@ -86,10 +86,10 @@ const CoronaryDiseases = () => {
           Con el tiempo, esto puede provocar daños permanentes al corazón.
         </p>
         <div className="button-group-centered">
-          <NavLink to="/models/coronary-disease/symptoms-coronary-disease/symptoms-coronary">
+          <NavLink to="/models/coronary-disease/symptoms-coronary-disease">
             <button className="btn btn-primary">Sintomas</button>
           </NavLink>
-          <NavLink to="/models/coronary-disease/treatment-coronary-disease/treatment-coronary">
+          <NavLink to="/models/coronary-disease/treatment-coronary-disease">
             <button className="btn btn-primary">Tratamiento</button>
           </NavLink>
         </div>

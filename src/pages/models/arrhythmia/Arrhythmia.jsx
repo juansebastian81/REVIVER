@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
 import GLBViewer from "../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../components/scroll/ScrollDownButton.jsx";
+import BreadCrumbs from "../../../components/navigation/BreadCrumbs.jsx";
 
 const Arrhythmia = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
@@ -32,6 +33,7 @@ const Arrhythmia = () => {
 
   return (
     <>
+      <BreadCrumbs />
       <div className="viewer-container">
         <GLBViewer
           modelUrl="/models-3d/arrhythmia/adultHeart.glb"
