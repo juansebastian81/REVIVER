@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
 import GLBViewer from "../../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../../components/scroll/ScrollDownButton.jsx";
+import BreadCrumbs from "../../../../components/navigation/BreadCrumbs.jsx";
 
 const SymptomsCoronary = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
@@ -32,6 +33,7 @@ const SymptomsCoronary = () => {
 
   return (
     <>
+      <BreadCrumbs />
       <div className="viewer-container">
         <GLBViewer
           modelUrl="/models-3d/coronary-disease/AvatarJSOM.glb"
@@ -166,7 +168,7 @@ const SymptomsCoronary = () => {
           <NavLink to="/models/coronary-disease">
             <button className="btn btn-primary">Enfermedad</button>
           </NavLink>
-          <NavLink to="/models/coronary-disease/treatment-coronary-disease/treatment-coronary">
+          <NavLink to="/models/coronary-disease/treatment-coronary-disease">
             <button className="btn btn-primary">Tratamiento</button>
           </NavLink>
         </div>

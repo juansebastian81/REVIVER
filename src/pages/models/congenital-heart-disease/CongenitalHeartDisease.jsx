@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
 import GLBViewer from "../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../components/scroll/ScrollDownButton.jsx";
+import BreadCrumbs from "../../../components/navigation/BreadCrumbs.jsx";
 
 const CongenitalHeartDisease = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
@@ -32,6 +33,7 @@ const CongenitalHeartDisease = () => {
 
   return (
     <>
+      <BreadCrumbs />
       <div className="viewer-container">
         <GLBViewer
           modelUrl="/models-3d/congenital-heart-disease/Heart.glb"
@@ -167,7 +169,7 @@ const CongenitalHeartDisease = () => {
           a lo largo de su vida, tanto en la infancia como en la adultez.
         </p>
         <div style={{ marginTop: "2rem", textAlign: "center" }}>
-          <NavLink to="/models/cansancio-symptom/cansancio">
+          <NavLink to="/models/congenital-heart-disease/fatigue">
             <button className="btn btn-primary">Más síntomas</button>
           </NavLink>
         </div>

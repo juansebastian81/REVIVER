@@ -1,9 +1,10 @@
-import "./Cansancio.css";
+import "./Fatigue.css";
 import { useEffect, useState } from "react";
 import GLBViewer from "../../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../../components/scroll/ScrollDownButton.jsx";
+import BreadCrumbs from "../../../../components/navigation/BreadCrumbs.jsx";
 
-const Cansancio = () => {
+const Fatigue = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
 
   useEffect(() => {
@@ -31,6 +32,7 @@ const Cansancio = () => {
 
   return (
     <>
+      <BreadCrumbs />
       <div className="viewer-container">
         <GLBViewer
           modelUrl="/models-3d/congenital-heart-disease/Cansancio.glb"
@@ -107,4 +109,4 @@ const Cansancio = () => {
   );
 };
 
-export default Cansancio;
+export default Fatigue;
