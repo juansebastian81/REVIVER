@@ -1,5 +1,5 @@
+import "./BreadCrumbs.css";
 import { NavLink, useLocation } from "react-router";
-import "./Breadcrumbs.css";
 
 const Breadcrumbs = () => {
   const location = useLocation();
