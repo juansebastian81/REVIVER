@@ -12,21 +12,33 @@ const AboutUs = () => {
             className="card m-4"
             style={{ width: "18rem", cursor: "pointer" }}
           >
-            <img src="../cards/about-us/yeimer.jpg" className="card-img-top" />
-            <div className="card-body">
-              <h5 className="card-title">Yeimer Armando Mendez Sanchez</h5>
-              <p className="card-text text-center">
-                Backend Developer
-                <br />
-                mendezyeimeres@gmail.com
-                <br />
-                GitHub: YeimerrrM
-                <br />
-                2243583
-                <br />
-                6to semestre
-                <br />
-                Tecnologia en desarrollo de software
+            <img
+              src="../cards/about-us/yeimer.jpg"
+              className="card-img-top"
+              alt="Yeimer"
+            />
+            <div className="card-body text-center">
+              <h5 className="card-title">Yeimer A. Mendez Sanchez</h5>
+              <p className="card-text text-center">Backend Developer</p>
+              <div className="d-flex flex-column gap-2">
+                <a
+                  href="mailto:mendezyeimeres@gmail.com"
+                  className="btn btn-outline-primary btn-sm"
+                >
+                  📧 Email
+                </a>
+                <a
+                  href="https://github.com/YeimerrrM"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline-dark btn-sm"
+                >
+                  🐱 GitHub
+                </a>
+              </div>
+              <p className="mt-3 mb-0 text-center">6to semestre</p>
+              <p className="mb-0 text-center">
+                Tecnología en Desarrollo de Software
               </p>
             </div>
           </div>
@@ -36,23 +48,33 @@ const AboutUs = () => {
             className="card m-4"
             style={{ width: "18rem", cursor: "pointer" }}
           >
-            <img src="../cards/about-us/daniel.jpg" className="card-img-top" />
-            <div className="card-body">
-              <h5 className="card-title">Daniel Esteban Celis Castillo</h5>
-              <p className="card-text text-center">
-                Backend Developer
-                <br />
-                daniel805228@gmail.com
-                <br />
-                GitHub: Happy_ghost
-                <br />
-                Linkedin: @Daniel Celis
-                <br />
-                2041425
-                <br />
-                6to semestre
-                <br />
-                Tecnologia en desarrollo de software
+            <img
+              src="../cards/about-us/daniel.jpg"
+              className="card-img-top"
+              alt="Daniel"
+            />
+            <div className="card-body text-center">
+              <h5 className="card-title">Daniel E. Celis Castillo</h5>
+              <p className="card-text text-center">Backend Developer</p>
+              <div className="d-flex flex-column gap-2">
+                <a
+                  href="mailto:daniel805228@gmail.com"
+                  className="btn btn-outline-primary btn-sm"
+                >
+                  📧 Email
+                </a>
+                <a
+                  href="https://github.com/H4ppyGh0st"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline-dark btn-sm"
+                >
+                  🐱 GitHub
+                </a>
+              </div>
+              <p className="mt-3 mb-0 text-center">6to semestre</p>
+              <p className="mb-0 text-center">
+                Tecnología en Desarrollo de Software
               </p>
             </div>
           </div>
@@ -62,21 +84,33 @@ const AboutUs = () => {
             className="card m-4"
             style={{ width: "18rem", cursor: "pointer" }}
           >
-            <img src="../cards/about-us/juan.jpg" className="card-img-top" />
-            <div className="card-body">
-              <h5 className="card-title">Juan Sebastian Ospina Maya</h5>
-              <p className="card-text text-center">
-                Backend Developer
-                <br />
-                juansebastianospina2002@hotmail.com
-                <br />
-                GitHub: juansebastian81
-                <br />
-                2041554
-                <br />
-                6to semestre
-                <br />
-                Tecnologia en desarrollo de software
+            <img
+              src="../cards/about-us/juan.jpg"
+              className="card-img-top"
+              alt="Juan"
+            />
+            <div className="card-body text-center">
+              <h5 className="card-title">Juan S. Ospina Maya</h5>
+              <p className="card-text text-center">Backend Developer</p>
+              <div className="d-flex flex-column gap-2">
+                <a
+                  href="mailto:juan.sebastian.ospina@correounivalle.edu.co"
+                  className="btn btn-outline-primary btn-sm"
+                >
+                  📧 Email
+                </a>
+                <a
+                  href="https://github.com/juansebastian81"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline-dark btn-sm"
+                >
+                  🐱 GitHub
+                </a>
+              </div>
+              <p className="mt-3 mb-0 text-center">6to semestre</p>
+              <p className="mb-0 text-center">
+                Tecnología en Desarrollo de Software
               </p>
             </div>
           </div>
@@ -86,21 +120,33 @@ const AboutUs = () => {
             className="card m-4"
             style={{ width: "18rem", cursor: "pointer" }}
           >
-            <img src="../cards/about-us/cesar.jpg" className="card-img-top" />
-            <div className="card-body">
-              <h5 className="card-title">Cesar Mauricio Hincapie Lopez</h5>
-              <p className="card-text text-center">
-                Frontend Developer
-                <br />
-                cesarmauricio009@gmail.com
-                <br />
-                GitHub: c3s4rXD
-                <br />
-                2228820
-                <br />
-                6to semestre
-                <br />
-                Tecnologia en desarrollo de software
+            <img
+              src="../cards/about-us/cesar.jpg"
+              className="card-img-top"
+              alt="Cesar"
+            />
+            <div className="card-body text-center">
+              <h5 className="card-title">Cesar M. Hincapie Lopez</h5>
+              <p className="card-text text-center">Frontend Developer</p>
+              <div className="d-flex flex-column gap-2">
+                <a
+                  href="mailto:cesarmauricio009@gmail.com"
+                  className="btn btn-outline-primary btn-sm"
+                >
+                  📧 Email
+                </a>
+                <a
+                  href="https://github.com/c3s4rXD"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline-dark btn-sm"
+                >
+                  🐱 GitHub
+                </a>
+              </div>
+              <p className="mt-3 mb-0 text-center">6to semestre</p>
+              <p className="mb-0 text-center">
+                Tecnología en Desarrollo de Software
               </p>
             </div>
           </div>
