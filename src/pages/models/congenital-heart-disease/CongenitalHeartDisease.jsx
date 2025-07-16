@@ -169,7 +169,7 @@ const CongenitalHeartDisease = () => {
           a lo largo de su vida, tanto en la infancia como en la adultez.
         </p>
         <div style={{ marginTop: "2rem", textAlign: "center" }}>
-          <NavLink to="/models/congenital-heart-disease/fatigue">
+          <NavLink to="/diseases/congenital-heart-disease/fatigue">
             <button className="btn btn-primary">Más síntomas</button>
           </NavLink>
         </div>

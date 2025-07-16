@@ -36,18 +36,18 @@ const Header = () => {
         <Dropdown isOpen={dropdown} toggle={openCloseDropdown}>
           <DropdownToggle caret>Enfermedades</DropdownToggle>
           <DropdownMenu>
-            <DropdownItem tag={NavLink} to="/models/arrhythmia" end>
+            <DropdownItem tag={NavLink} to="/diseases/arrhythmia" end>
               Arritmia
             </DropdownItem>
-            <DropdownItem tag={NavLink} to="/models/heart-failure" end>
+            <DropdownItem tag={NavLink} to="/diseases/heart-failure" end>
               Insuficiencia Cardiaca
             </DropdownItem>
-            <DropdownItem tag={NavLink} to="/models/coronary-disease" end>
+            <DropdownItem tag={NavLink} to="/diseases/coronary-disease" end>
               Enfermedad Coronaria
             </DropdownItem>
             <DropdownItem
               tag={NavLink}
-              to="/models/congenital-heart-disease"
+              to="/diseases/congenital-heart-disease"
               end
             >
               Cardiopatia Congenita

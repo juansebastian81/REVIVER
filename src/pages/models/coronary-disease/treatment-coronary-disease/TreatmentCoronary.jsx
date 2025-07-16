@@ -113,10 +113,10 @@ const TreatmentCoronary = () => {
           médica especializada.
         </p>
         <div className="button-group-centered">
-          <NavLink to="/models/coronary-disease">
+          <NavLink to="/diseases/coronary-disease">
             <button className="btn btn-primary">Enfermedad</button>
           </NavLink>
-          <NavLink to="/models/coronary-disease/symptoms-coronary-disease">
+          <NavLink to="/diseases/coronary-disease/symptoms-coronary-disease">
             <button className="btn btn-primary">Sintomas</button>
           </NavLink>
         </div>

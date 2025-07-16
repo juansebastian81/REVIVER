@@ -17,7 +17,7 @@ const Home = () => {
             y aprende más sobre la salud del corazón
           </p>
         </div>
-        <button onClick={() => navigate("/models")}>Enfermedades</button>
+        <button onClick={() => navigate("/diseases")}>Enfermedades</button>
       </div>
     </div>
   );
