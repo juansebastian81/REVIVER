@@ -9,7 +9,8 @@ import ChestPain from "./pages/models/arrhythmia/chest-pain-symptom/chest-pain";
 import HeartFailure from "./pages/models/heart-failure/HeartFailure";
 import CoronaryDiseases from "./pages/models/coronary-disease/CoronaryDiseases";
 import CongenitalHeartDisease from "./pages/models/congenital-heart-disease/CongenitalHeartDisease";
-import Cough from "./pages/models/heart-failure/fatigue-symptom/fatigue";
+import FatigueFailure from "./pages/models/heart-failure/fatigue-symptom/fatigue";
+import Cough from "./pages/models/heart-failure/cough-symptom/cough";
 import Layout from "./pages/layout/Layout";
 import Fatigue from "./pages/models/congenital-heart-disease/symptom-fatigue/Fatigue";
 import AboutUs from "./pages/about-us/AboutUs";
@@ -27,6 +28,10 @@ createRoot(document.getElementById("root")).render(
         <Route path="/diseases/heart-failure" element={<HeartFailure />} />
         <Route
           path="/diseases/heart-failure/fatigue-symptom"
+          element={<FatigueFailure />}
+        />
+        <Route
+          path="/diseases/heart-failure/cough-symptom"
           element={<Cough />}
         />
         <Route

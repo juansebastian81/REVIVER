@@ -3,7 +3,7 @@ import { useGLTF } from "@react-three/drei";
 import { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 
-const AnimatedModel = ({ url, currentAnimation, scale, position }) => {
+const AnimatedModel = ({ url, currentAnimation, scale, position, rotation }) => {
   const group = useRef();
   const { scene, animations } = useGLTF(url);
   const mixer = useRef();
@@ -32,7 +32,6 @@ const AnimatedModel = ({ url, currentAnimation, scale, position }) => {
       }
     });
 
-    // 🔥 Reproducir la animación inicial de forma segura
     if (actions.current[currentAnimation]) {
       activeAction.current = actions.current[currentAnimation];
       activeAction.current.play();
@@ -43,7 +42,7 @@ const AnimatedModel = ({ url, currentAnimation, scale, position }) => {
     return () => mixer.current?.stopAllAction();
   }, [scene, animations, url]);
 
-  // Cambio de animaciones dinámico (teclas y botón)
+  // Cambio de animaciones dinámico
   useEffect(() => {
     if (!mixer.current || !actions.current) return;
 
@@ -68,6 +67,7 @@ const AnimatedModel = ({ url, currentAnimation, scale, position }) => {
       dispose={null}
       scale={scale}
       position={position}
+      rotation={rotation} 
     />
   );
 };
