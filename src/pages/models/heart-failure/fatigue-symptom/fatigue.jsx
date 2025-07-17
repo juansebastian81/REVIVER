@@ -1,10 +1,11 @@
 import "./fatigue.css";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router"; // ❗ Usando react-router directamente
 import GLBViewer from "../../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../../components/scroll/ScrollDownButton.jsx";
 import BreadCrumbs from "../../../../components/navigation/BreadCrumbs.jsx";
 
-const Cough = () => {
+const FatigueFailure = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
 
   useEffect(() => {
@@ -41,6 +42,7 @@ const Cough = () => {
           titlePosition={[0, 1, -0.1]}
           titleSize={0.2}
           defaultAnimation="ArmatureAction"
+          audioUrl="/sounds/heartBeating.mp3"
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
@@ -114,9 +116,15 @@ const Cough = () => {
           un profesional de la salud, ya que cada paciente puede responder de
           forma diferente a las terapias.
         </p>
+
+        <div style={{ marginTop: "2rem", textAlign: "center" }}>
+          <NavLink to="/diseases/heart-failure/cough-symptom">
+            <button className="btn btn-primary">Más síntomas</button>
+          </NavLink>
+        </div>
       </div>
     </>
   );
 };
 
-export default Cough;
+export default FatigueFailure;
