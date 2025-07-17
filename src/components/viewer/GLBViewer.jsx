@@ -9,6 +9,7 @@ import Lights from "../lights/Lights";
 import CustomAudio from "../audio/CustomAudio";
 
 const GLBViewer = ({
+  stagingModel,
   modelUrl,
   scaleModel,
   positionModel,
@@ -27,7 +28,9 @@ const GLBViewer = ({
   const controlsRef = useRef();
   const audioRef = useRef();
   const [showTooltip, setShowTooltip] = useState(false);
-  const [currentAnimation, setCurrentAnimation] = useState(defaultAnimation || "");
+  const [currentAnimation, setCurrentAnimation] = useState(
+    defaultAnimation || ""
+  );
   const [rotationY, setRotationY] = useState(0);
 
   useEffect(() => {
@@ -97,7 +100,8 @@ const GLBViewer = ({
           </group>
 
           <Lights />
-          <Staging />
+
+          <Staging environmentName={stagingModel} />
 
           <OrbitControls
             ref={controlsRef}
@@ -134,10 +138,12 @@ const GLBViewer = ({
       {showTooltip && (
         <div className="tooltip-box">
           <p>
-            💡 Presiona <strong>Ctrl</strong> + <strong>Scroll</strong> para hacer zoom.
+            💡 Presiona <strong>Ctrl</strong> + <strong>Scroll</strong> para
+            hacer zoom.
           </p>
           <p>
-            💡 Haz <strong>clic en el corazón</strong> para activar o pausar el sonido.
+            💡 Haz <strong>clic en el corazón</strong> para activar o pausar el
+            sonido.
           </p>
           <p>
             💡 Usa las flechas <strong>← →</strong> para rotar el modelo.

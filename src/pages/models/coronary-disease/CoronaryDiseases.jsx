@@ -36,6 +36,7 @@ const CoronaryDiseases = () => {
       <BreadCrumbs />
       <div className="viewer-container">
         <GLBViewer
+          stagingModel="surgery"
           modelUrl="/models-3d/coronary-disease/RealHeartCoronary1Beating.glb"
           cameraPosition={[0, 0, 5]}
           fov={6}
