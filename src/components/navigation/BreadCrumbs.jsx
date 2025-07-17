@@ -12,6 +12,8 @@ const pathNameMap = {
   "fatigue-symptom": "Fatiga",
   "congenital-heart-disease": "Cardiopatía Congénita",
   fatigue: "Cansancio",
+  "cough-symptom": "Tos"
+  
 };
 
 const BreadCrumbs = () => {
