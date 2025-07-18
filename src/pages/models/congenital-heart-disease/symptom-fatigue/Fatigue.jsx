@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import GLBViewer from "../../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../../components/scroll/ScrollDownButton.jsx";
 import BreadCrumbs from "../../../../components/navigation/BreadCrumbs.jsx";
+import { NavLink } from "react-router";
+
 
 const Fatigue = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
@@ -91,21 +93,14 @@ const Fatigue = () => {
           atención médica si es persistente o severo. Puede indicar problemas de
           salud subyacentes que necesitan diagnóstico y tratamiento.
         </p>
-
-        <h1>
-          <strong>Tratamiento</strong>
-        </h1>
-        <p>
-          <strong>Comer Sano</strong>
-          <br />
-          Una alimentación equilibrada y rica en nutrientes es esencial para una
-          dieta saludable y sin complicaciones medicas.
-          <br />
-          <strong>Hacer ejercicio</strong>
-          <br />
-          Se recomienda hacer ejercicio regularmente para mejorar la oxigenacion
-          en sangre y mejorar el ritmo cardiaco.
-        </p>
+        <div className="button-group-centered">
+          <NavLink to="/diseases/congenital-heart-disease/fatigue">
+            <button className="btn btn-primary">Sintomas</button>
+          </NavLink>
+          <NavLink to="/diseases/congenital-heart-disease/treatment-congenital">
+            <button className="btn btn-primary">Tratamiento</button>
+          </NavLink>
+        </div>
       </div>
     </>
   );

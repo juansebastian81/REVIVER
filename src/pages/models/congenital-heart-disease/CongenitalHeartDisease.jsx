@@ -44,7 +44,7 @@ const CongenitalHeartDisease = () => {
           cameraPosition={[0, 0, 5]}
           fov={5}
           titleHeart="Cardiopatía Congénita"
-          titlePosition={[0, 0.35, -0.1]}
+          titlePosition={[0, 0.42, -0.1]}
           titleSize={0.04}
           shadowPosition={[0, 0.15, 0]}
           defaultAnimation="Beating"
