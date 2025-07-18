@@ -1,14 +1,14 @@
 import { Environment } from "@react-three/drei";
 
-const Staging = () => {
+const Staging = ({ environmentName }) => {
   return (
     <Environment
+      path={`/staging/cubemaps/${environmentName}/`}
       files={["px.png", "nx.png", "py.png", "ny.png", "pz.png", "nz.png"]}
-      path="/stading/cubemaps/surgery/"
       ground={{
-        height: 60,
-        radius: 100,
-        scale: 8,
+        height: 0.15,
+        radius: 1,
+        scale: 100,
       }}
       background
     />

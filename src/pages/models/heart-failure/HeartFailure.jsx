@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router"; // ❗ Usando react-router directamente
 import GLBViewer from "../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../components/scroll/ScrollDownButton.jsx";
+import BreadCrumbs from "../../../components/navigation/BreadCrumbs.jsx";
 //x
 
 const HeartFailure = () => {
@@ -32,14 +33,20 @@ const HeartFailure = () => {
 
   return (
     <>
+      <BreadCrumbs />
       <div className="viewer-container">
         <GLBViewer
+          stagingModel="surgery"
+          scaleModel={[0.125, 0.125, 0.125]}
+          positionModel={[0, 0.225, 0]}
+          targetModel={[0, 0.25, 0]}
+          shadowPosition={[0, 0.1, 0]}
           modelUrl="/models-3d/heart-failure/heart.glb"
           cameraPosition={[0, 1.5, 4]}
-          fov={35}
+          fov={5}
           titleHeart="Insuficiencia Cardiaca"
-          titlePosition={[0, 1, -0.1]}
-          titleSize={0.2}
+          titlePosition={[0, 0.35, -0.1]}
+          titleSize={0.04}
           defaultAnimation="ArmatureAction"
           audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1.2}
@@ -86,7 +93,7 @@ const HeartFailure = () => {
         </p>
 
         <div style={{ marginTop: "2rem", textAlign: "center" }}>
-          <NavLink to="/models/heart-failure/fatigue-symptom">
+          <NavLink to="/diseases/heart-failure/fatigue-symptom">
             <button className="btn btn-primary">Más síntomas</button>
           </NavLink>
         </div>

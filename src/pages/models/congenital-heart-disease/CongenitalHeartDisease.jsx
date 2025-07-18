@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
 import GLBViewer from "../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../components/scroll/ScrollDownButton.jsx";
+import BreadCrumbs from "../../../components/navigation/BreadCrumbs.jsx";
 
 const CongenitalHeartDisease = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
@@ -32,15 +33,20 @@ const CongenitalHeartDisease = () => {
 
   return (
     <>
+      <BreadCrumbs />
       <div className="viewer-container">
         <GLBViewer
+          stagingModel="surgery"
+          scaleModel={[0.2, 0.2, 0.2]}
+          positionModel={[0, 0.225, 0]}
+          targetModel={[0, 0.25, 0]}
           modelUrl="/models-3d/congenital-heart-disease/Heart.glb"
           cameraPosition={[0, 0, 5]}
-          fov={20}
+          fov={5}
           titleHeart="Cardiopatía Congénita"
-          titlePosition={[0, 0.7, -0.5]}
-          titleSize={0.2}
-          shadowPosition={[0, -0.5, 0]}
+          titlePosition={[0, 0.42, -0.1]}
+          titleSize={0.04}
+          shadowPosition={[0, 0.15, 0]}
           defaultAnimation="Beating"
           audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1}
@@ -167,7 +173,7 @@ const CongenitalHeartDisease = () => {
           a lo largo de su vida, tanto en la infancia como en la adultez.
         </p>
         <div style={{ marginTop: "2rem", textAlign: "center" }}>
-          <NavLink to="/models/cansancio-symptom/cansancio">
+          <NavLink to="/diseases/congenital-heart-disease/fatigue">
             <button className="btn btn-primary">Más síntomas</button>
           </NavLink>
         </div>

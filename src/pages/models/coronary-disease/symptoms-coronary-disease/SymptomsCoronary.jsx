@@ -1,7 +1,9 @@
 import "./SymptomsCoronary.css";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router";
 import GLBViewer from "../../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../../components/scroll/ScrollDownButton.jsx";
+import BreadCrumbs from "../../../../components/navigation/BreadCrumbs.jsx";
 
 const SymptomsCoronary = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
@@ -31,16 +33,19 @@ const SymptomsCoronary = () => {
 
   return (
     <>
+      <BreadCrumbs />
       <div className="viewer-container">
         <GLBViewer
+          stagingModel="park"
           modelUrl="/models-3d/coronary-disease/AvatarJSOM.glb"
           scaleModel={[0.1, 0.1, 0.1]}
-          positionModel={[0, -0.1, 0]}
-          cameraPosition={[0, 0, 5]}
-          fov={4}
+          positionModel={[0, 0.001, 0]}
+          cameraPosition={[0, 0.5, 4.5]}
+          targetModel={[0, 0.05, 0]}
+          fov={5}
           titleHeart="Sintomas"
           titleSize={0.04}
-          titlePosition={[0, 0.125, -0.1]}
+          titlePosition={[0, 0.21, -0.1]}
           shadowPosition={[0, -0.1, 0]}
           defaultAnimation="Look"
           animationMap={{
@@ -161,6 +166,14 @@ const SymptomsCoronary = () => {
             náuseas sin dolor torácico evidente.
           </li>
         </ul>
+        <div className="button-group-centered">
+          <NavLink to="/diseases/coronary-disease">
+            <button className="btn btn-primary">Enfermedad</button>
+          </NavLink>
+          <NavLink to="/diseases/coronary-disease/treatment-coronary-disease">
+            <button className="btn btn-primary">Tratamiento</button>
+          </NavLink>
+        </div>
       </div>
     </>
   );

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
 import GLBViewer from "../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../components/scroll/ScrollDownButton.jsx";
+import BreadCrumbs from "../../../components/navigation/BreadCrumbs.jsx";
 
 const Arrhythmia = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
@@ -32,8 +33,10 @@ const Arrhythmia = () => {
 
   return (
     <>
+      <BreadCrumbs />
       <div className="viewer-container">
         <GLBViewer
+          stagingModel="surgery"
           modelUrl="/models-3d/arrhythmia/adultHeart.glb"
           cameraPosition={[0, 0, 5]}
           fov={1.5}
@@ -92,9 +95,12 @@ const Arrhythmia = () => {
           repentina de la función cardíaca y requiere intervención médica
           inmediata.
         </p>
-        <div style={{ marginTop: "2rem", textAlign: "center" }}>
-          <NavLink to="/models/arrhythmia/chest-pain">
+        <div className="button-group-centered">
+          <NavLink to="/diseases/arrhythmia/symptoms-arrhythmia">
             <button className="btn btn-primary">Más síntomas</button>
+          </NavLink>
+          <NavLink to="/diseases/arrhythmia/treatment-arrhythmia">
+            <button className="btn btn-primary">Tratamiento</button>
           </NavLink>
         </div>
       </div>

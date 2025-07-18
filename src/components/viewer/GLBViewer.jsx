@@ -7,12 +7,13 @@ import Staging from "../staging/Staging";
 import AnimatedModel from "../animation/AnimatedModel";
 import Lights from "../lights/Lights";
 import CustomAudio from "../audio/CustomAudio";
-import { Color } from "three";
 
 const GLBViewer = ({
+  stagingModel,
   modelUrl,
   scaleModel,
   positionModel,
+  targetModel,
   cameraPosition = [0, 0, 1.5],
   fov = 20,
   titleHeart = "Tu título",
@@ -20,21 +21,30 @@ const GLBViewer = ({
   titlePosition = [0, 0.5, -1],
   shadowPosition = [0, -0.5, 0],
   defaultAnimation,
-  animationMap,
+  animationMap = {},
   audioUrl = "/sounds/whiteNoise.mp3",
   speedAudio,
 }) => {
   const controlsRef = useRef();
-  const [showTooltip, setShowTooltip] = useState(false);
   const audioRef = useRef();
+  const [showTooltip, setShowTooltip] = useState(false);
   const [currentAnimation, setCurrentAnimation] = useState(
     defaultAnimation || ""
   );
+  const [rotationY, setRotationY] = useState(0);
 
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (animationMap[event.code]) {
         setCurrentAnimation(animationMap[event.code]);
+      }
+
+      if (event.code === "ArrowRight") {
+        setRotationY((prev) => prev + 0.1);
+      }
+
+      if (event.code === "ArrowLeft") {
+        setRotationY((prev) => prev - 0.1);
       }
     };
 
@@ -42,7 +52,9 @@ const GLBViewer = ({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [animationMap]);
 
-  const resetAnimation = () => setCurrentAnimation(defaultAnimation);
+  const resetAnimation = () => {
+    setCurrentAnimation(defaultAnimation);
+  };
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -69,7 +81,6 @@ const GLBViewer = ({
           style={{ background: "transparent" }}
         >
           <Title title={titleHeart} position={titlePosition} size={titleSize} />
-
           <CustomAudio ref={audioRef} url={audioUrl} speed={speedAudio} />
 
           <group
@@ -84,12 +95,19 @@ const GLBViewer = ({
               currentAnimation={currentAnimation}
               scale={scaleModel}
               position={positionModel}
+              rotation={[0, rotationY, 0]}
             />
           </group>
 
           <Lights />
-          <Staging />
-          <OrbitControls ref={controlsRef} enableZoom={false} />
+
+          <Staging environmentName={stagingModel} />
+
+          <OrbitControls
+            ref={controlsRef}
+            enableZoom={false}
+            target={targetModel}
+          />
 
           <mesh
             receiveShadow
@@ -102,10 +120,7 @@ const GLBViewer = ({
         </Canvas>
       </Suspense>
 
-      <button className="next-button" onClick={resetAnimation}>
-        Volver a Animación por Defecto
-      </button>
-
+      {/* Botón tooltip de información */}
       <button
         className="info-button"
         onClick={() => setShowTooltip(!showTooltip)}
@@ -114,6 +129,7 @@ const GLBViewer = ({
         💡
       </button>
 
+      {/* Tooltip informativo */}
       {showTooltip && (
         <div className="tooltip-box">
           <p>
@@ -123,6 +139,9 @@ const GLBViewer = ({
           <p>
             💡 Haz <strong>clic en el corazón</strong> para activar o pausar el
             sonido.
+          </p>
+          <p>
+            💡 Usa las flechas <strong>← →</strong> para rotar el modelo.
           </p>
         </div>
       )}

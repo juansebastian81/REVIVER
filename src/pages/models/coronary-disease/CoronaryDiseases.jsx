@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
 import GLBViewer from "../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../components/scroll/ScrollDownButton.jsx";
+import BreadCrumbs from "../../../components/navigation/BreadCrumbs.jsx";
 
 const CoronaryDiseases = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
@@ -32,15 +33,20 @@ const CoronaryDiseases = () => {
 
   return (
     <>
+      <BreadCrumbs />
       <div className="viewer-container">
         <GLBViewer
-          modelUrl="/models-3d/coronary-disease/RealHeartCoronary1Beating.glb"
+          stagingModel="surgery"
+          scaleModel={[1, 1, 1]}
+          positionModel={[0, 0.225, 0]}
+          targetModel={[0, 0.25, 0]}
           cameraPosition={[0, 0, 5]}
+          modelUrl="/models-3d/coronary-disease/RealHeartCoronary1Beating.glb"
           fov={6}
           titleHeart="Enfermedad Coronaria"
           titleSize={0.06}
-          titlePosition={[0, 0.2, -0.1]}
-          shadowPosition={[0, -0.1, 0]}
+          titlePosition={[0, 0.425, -0.125]}
+          shadowPosition={[0, 0.11, 0]}
           defaultAnimation="Beating"
           audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1.75}
@@ -83,9 +89,12 @@ const CoronaryDiseases = () => {
           (angina), falta de aire, ataques cardíacos e insuficiencia cardíaca.
           Con el tiempo, esto puede provocar daños permanentes al corazón.
         </p>
-        <div style={{ marginTop: "2rem", textAlign: "center" }}>
-          <NavLink to="/models/coronary-disease/symptoms-coronary-disease/symptoms-coronary">
-            <button className="btn btn-primary">Más síntomas</button>
+        <div className="button-group-centered">
+          <NavLink to="/diseases/coronary-disease/symptoms-coronary-disease">
+            <button className="btn btn-primary">Sintomas</button>
+          </NavLink>
+          <NavLink to="/diseases/coronary-disease/treatment-coronary-disease">
+            <button className="btn btn-primary">Tratamiento</button>
           </NavLink>
         </div>
       </div>
