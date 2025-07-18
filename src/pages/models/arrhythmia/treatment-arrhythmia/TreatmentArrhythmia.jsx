@@ -36,7 +36,7 @@ const TreatmentArrhythmia = () => {
       <BreadCrumbs />
       <div className="viewer-container">
         <GLBViewer
-          stagingModel="surgery"
+          stagingModel="park"
           modelUrl="/models-3d/arrhythmia/running.glb"
           scaleModel={[1, 1, 1]}
           positionModel={[0, 0.13, 0]}
@@ -48,7 +48,6 @@ const TreatmentArrhythmia = () => {
           titlePosition={[0, 0.35, -0.1]}
           shadowPosition={[0, -0.1, 0]}
           defaultAnimation={"mixamo.com"}
-          audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1.75}
         />
 
@@ -65,11 +64,23 @@ const TreatmentArrhythmia = () => {
           <li>Dormir adecuadamente</li>
         </ul>
         <p>
-          Además, los medicamentos pueden ayudar a controlar el ritmo cardíaco y prevenir complicaciones, como los antiarrítmicos para regular el ritmo del corazón, betabloqueadores para disminuir la frecuencia cardíaca y la presión arterial, y anticoagulantes para reducir el riesgo de formación de coágulos.
+          Además, los medicamentos pueden ayudar a controlar el ritmo cardíaco y
+          prevenir complicaciones, como los antiarrítmicos para regular el ritmo
+          del corazón, betabloqueadores para disminuir la frecuencia cardíaca y
+          la presión arterial, y anticoagulantes para reducir el riesgo de
+          formación de coágulos.
         </p>
         <h3>Procedimientos médicos</h3>
         <p>
-          Entre los procedimientos médicos especializados se encuentran la cardioversión eléctrica, que se utiliza para restaurar el ritmo cardíaco normal mediante una descarga controlada; la ablación por catéter, que elimina las áreas del corazón que causan la arritmia; y el implante de marcapasos o desfibrilador, dispositivos que ayudan a regular el ritmo cardíaco. El tratamiento debe ser personalizado y supervisado por un especialista en cardiología. La actividad física, como correr, puede ser parte del tratamiento si el médico lo recomienda.
+          Entre los procedimientos médicos especializados se encuentran la
+          cardioversión eléctrica, que se utiliza para restaurar el ritmo
+          cardíaco normal mediante una descarga controlada; la ablación por
+          catéter, que elimina las áreas del corazón que causan la arritmia; y
+          el implante de marcapasos o desfibrilador, dispositivos que ayudan a
+          regular el ritmo cardíaco. El tratamiento debe ser personalizado y
+          supervisado por un especialista en cardiología. La actividad física,
+          como correr, puede ser parte del tratamiento si el médico lo
+          recomienda.
         </p>
         <div className="button-group-centered">
           <NavLink to="/diseases/arrhythmia">

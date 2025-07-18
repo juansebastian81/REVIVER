@@ -96,7 +96,7 @@ const Arrhythmia = () => {
           inmediata.
         </p>
         <div className="button-group-centered">
-          <NavLink to="/diseases/arrhythmia/chest-pain">
+          <NavLink to="/diseases/arrhythmia/symptoms-arrhythmia">
             <button className="btn btn-primary">Más síntomas</button>
           </NavLink>
           <NavLink to="/diseases/arrhythmia/treatment-arrhythmia">
