@@ -36,6 +36,7 @@ const Arrhythmia = () => {
       <BreadCrumbs />
       <div className="viewer-container">
         <GLBViewer
+          stagingModel="surgery"
           modelUrl="/models-3d/arrhythmia/adultHeart.glb"
           cameraPosition={[0, 0, 5]}
           fov={1.5}

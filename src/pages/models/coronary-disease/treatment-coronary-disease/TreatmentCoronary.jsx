@@ -36,15 +36,16 @@ const TreatmentCoronary = () => {
       <BreadCrumbs />
       <div className="viewer-container">
         <GLBViewer
+          stagingModel="surgery"
           modelUrl="/models-3d/coronary-disease/3DHeartCoronary1.glb"
-          scaleModel={[5, 5, 5]}
-          positionModel={[0, 0.25, 0]}
+          scaleModel={[1, 1, 1]}
+          positionModel={[0, 0.225, 0]}
           targetModel={[0, 0.25, 0]}
-          cameraPosition={[0, 1, 5]}
-          fov={15}
+          cameraPosition={[0, 0, 3]}
+          fov={6}
           titleHeart="Tratamiento"
-          titleSize={0.1}
-          titlePosition={[0, 0.7, -0.1]}
+          titleSize={0.05}
+          titlePosition={[0, 0.35, -0.1]}
           shadowPosition={[0, -0.1, 0]}
           audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1.75}

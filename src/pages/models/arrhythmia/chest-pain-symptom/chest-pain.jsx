@@ -35,12 +35,16 @@ const ChestPain = () => {
       <BreadCrumbs />
       <div className="viewer-container">
         <GLBViewer
+          stagingModel="surgery"
+          scaleModel={[0.5, 0.5, 0.5]}
+          positionModel={[0, 0.225, 0]}
+          targetModel={[0, 0.225, 0]}
           modelUrl="/models-3d/arrhythmia/chest-pain.glb"
           cameraPosition={[0, 0, 3]}
-          fov={35}
-          titleHeart="Síntoma: Dolor en el Pecho (Dolor Torácico)"
-          titlePosition={[0, 0.8, -0.1]}
-          titleSize={0.1}
+          fov={15}
+          titleHeart="Síntoma: Dolor en el Pecho"
+          titlePosition={[0, 0.525, -0.1]}
+          titleSize={0.05}
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
