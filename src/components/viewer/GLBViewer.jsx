@@ -120,11 +120,6 @@ const GLBViewer = ({
         </Canvas>
       </Suspense>
 
-      {/* Botón para reiniciar animación */}
-      <button className="next-button" onClick={resetAnimation}>
-        Volver a Animación por Defecto
-      </button>
-
       {/* Botón tooltip de información */}
       <button
         className="info-button"

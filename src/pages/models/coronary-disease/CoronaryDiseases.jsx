@@ -37,13 +37,16 @@ const CoronaryDiseases = () => {
       <div className="viewer-container">
         <GLBViewer
           stagingModel="surgery"
-          modelUrl="/models-3d/coronary-disease/RealHeartCoronary1Beating.glb"
+          scaleModel={[1, 1, 1]}
+          positionModel={[0, 0.225, 0]}
+          targetModel={[0, 0.25, 0]}
           cameraPosition={[0, 0, 5]}
+          modelUrl="/models-3d/coronary-disease/RealHeartCoronary1Beating.glb"
           fov={6}
           titleHeart="Enfermedad Coronaria"
           titleSize={0.06}
-          titlePosition={[0, 0.2, -0.1]}
-          shadowPosition={[0, -0.1, 0]}
+          titlePosition={[0, 0.425, -0.125]}
+          shadowPosition={[0, 0.11, 0]}
           defaultAnimation="Beating"
           audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1.75}
