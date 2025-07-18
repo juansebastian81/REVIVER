@@ -35,7 +35,7 @@ const FatigueFailure = () => {
       <BreadCrumbs />
       <div className="viewer-container">
         <GLBViewer
-          stagingModel="surgery"
+          stagingModel="park"
           scaleModel={[0.125, 0.125, 0.125]}
           positionModel={[0, 0.225, 0]}
           targetModel={[0, 0.25, 0]}
