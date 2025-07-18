@@ -5,7 +5,8 @@ import Home from "./pages/home/Home";
 import NotFound from "./pages/not-found/NotFound";
 import Diseases from "./pages/models/Diseases";
 import Arrhythmia from "./pages/models/arrhythmia/Arrhythmia";
-import ChestPain from "./pages/models/arrhythmia/chest-pain-symptom/chest-pain";
+import ChestPain from "./pages/models/arrhythmia/symptoms-arrhythmia/chest-pain";
+import ArrhythmiaTreatment from "./pages/models/arrhythmia/treatment-arrhythmia/TreatmentArrhythmia";
 import HeartFailure from "./pages/models/heart-failure/HeartFailure";
 import CoronaryDiseases from "./pages/models/coronary-disease/CoronaryDiseases";
 import CongenitalHeartDisease from "./pages/models/congenital-heart-disease/CongenitalHeartDisease";
@@ -25,7 +26,8 @@ createRoot(document.getElementById("root")).render(
         <Route index path="/" element={<Home />} />
         <Route path="/diseases" element={<Diseases />} />
         <Route path="/diseases/arrhythmia" element={<Arrhythmia />} />
-        <Route path="/diseases/arrhythmia/chest-pain" element={<ChestPain />} />
+        <Route path="/diseases/arrhythmia/symptoms-arrhythmia" element={<ChestPain />} />
+        <Route path="/diseases/arrhythmia/treatment-arrhythmia" element={<ArrhythmiaTreatment />} />
         <Route path="/diseases/heart-failure" element={<HeartFailure />} />
         <Route
           path="/diseases/heart-failure/fatigue-symptom"

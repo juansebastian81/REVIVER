@@ -95,9 +95,12 @@ const Arrhythmia = () => {
           repentina de la función cardíaca y requiere intervención médica
           inmediata.
         </p>
-        <div style={{ marginTop: "2rem", textAlign: "center" }}>
+        <div className="button-group-centered">
           <NavLink to="/diseases/arrhythmia/chest-pain">
             <button className="btn btn-primary">Más síntomas</button>
+          </NavLink>
+          <NavLink to="/diseases/arrhythmia/treatment-arrhythmia">
+            <button className="btn btn-primary">Tratamiento</button>
           </NavLink>
         </div>
       </div>
