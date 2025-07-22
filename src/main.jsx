@@ -1,6 +1,7 @@
 import "./index.css";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router"; // Usando react-router
+import { AuthProvider } from "./lib/firebase";
 import Home from "./pages/home/Home";
 import NotFound from "./pages/not-found/NotFound";
 import Diseases from "./pages/models/Diseases";
@@ -20,9 +21,10 @@ import SymptomsCoronary from "./pages/models/coronary-disease/symptoms-coronary-
 import TreatmentCoronary from "./pages/models/coronary-disease/treatment-coronary-disease/TreatmentCoronary";
 
 createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <Layout>
-      <Routes>
+  <AuthProvider>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
         <Route index path="/" element={<Home />} />
         <Route path="/diseases" element={<Diseases />} />
         <Route path="/diseases/arrhythmia" element={<Arrhythmia />} />
@@ -66,4 +68,5 @@ createRoot(document.getElementById("root")).render(
       </Routes>
     </Layout>
   </BrowserRouter>
+</AuthProvider>
 );
