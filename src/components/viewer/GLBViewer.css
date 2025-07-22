@@ -2,7 +2,6 @@ canvas {
   touch-action: none;
 }
 
-
 .next-button {
   position: absolute;
   top: 75%;
@@ -18,14 +17,12 @@ canvas {
   font-weight: bold;
 }
 
-
 .viewer-container {
-  height: 100vh;
-  width: 100vw;
   position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
-
-
 
 .info-button {
   position: absolute;

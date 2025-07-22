@@ -9,7 +9,7 @@ const AboutUs = () => {
         <div className="col-md-12 d-flex flex-wrap justify-content-center">
           {/* Card 1 */}
           <div
-            className="card m-4"
+            className="card card-hover m-4"
             style={{ width: "18rem", cursor: "pointer" }}
           >
             <img
@@ -45,7 +45,7 @@ const AboutUs = () => {
 
           {/* Card 2 */}
           <div
-            className="card m-4"
+            className="card card-hover m-4"
             style={{ width: "18rem", cursor: "pointer" }}
           >
             <img
@@ -81,7 +81,7 @@ const AboutUs = () => {
 
           {/* Card 3 */}
           <div
-            className="card m-4"
+            className="card card-hover m-4"
             style={{ width: "18rem", cursor: "pointer" }}
           >
             <img
@@ -117,7 +117,7 @@ const AboutUs = () => {
 
           {/* Card 4 */}
           <div
-            className="card m-4"
+            className="card card-hover m-4"
             style={{ width: "18rem", cursor: "pointer" }}
           >
             <img

@@ -15,6 +15,7 @@ const pathNameMap = {
   "cough-symptom": "Tos",
   "symptoms-arrhythmia": "Síntomas Arritmia",
   "treatment-arrhythmia": "Tratamiento Arritmia",
+  "treatment-congenital": "Tratamiento Cardiopatía",
 };
 
 const BreadCrumbs = () => {
