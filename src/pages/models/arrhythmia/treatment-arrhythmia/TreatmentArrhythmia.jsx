@@ -37,14 +37,14 @@ const TreatmentArrhythmia = () => {
           stagingModel="park"
           modelUrl="/models-3d/arrhythmia/running.glb"
           scaleModel={[1, 1, 1]}
-          positionModel={[0, 0.13, 0]}
-          targetModel={[0, 0.25, 0]}
-          cameraPosition={[0, 0, 3]}
-          fov={6}
+          positionModel={[0, 0.001, 0]}
+          cameraPosition={[0, 0.5, 4.5]}
+          targetModel={[0, 0.09, 0]}
+          fov={5}
           titleHeart="Tratamiento"
           titleSize={0.04}
-          titlePosition={[0, 0.35, -0.1]}
-          shadowPosition={[0, -0.1, 0]}
+          titlePosition={[0, 0.21, -0.1]}
+          shadowPosition={[0, -0.01, 0]}
           defaultAnimation={"mixamo.com"}
           speedAudio={1.75}
         />
