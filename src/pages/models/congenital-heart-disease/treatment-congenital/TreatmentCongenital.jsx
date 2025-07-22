@@ -1,9 +1,8 @@
 import "./TreatmentCongenital.css";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import GLBViewer from "../../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../../components/scroll/ScrollDownButton.jsx";
-import BreadCrumbs from "../../../../components/navigation/BreadCrumbs.jsx";
-import { NavLink } from "react-router-dom";
 
 const TreatmentCongenital = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
@@ -33,7 +32,6 @@ const TreatmentCongenital = () => {
 
   return (
     <>
-      <BreadCrumbs />
       <div className="viewer-container">
         <GLBViewer
           stagingModel={"park"}

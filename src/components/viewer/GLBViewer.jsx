@@ -7,6 +7,7 @@ import Staging from "../staging/Staging";
 import AnimatedModel from "../animation/AnimatedModel";
 import Lights from "../lights/Lights";
 import CustomAudio from "../audio/CustomAudio";
+import BreadCrumbs from "../navigation/BreadCrumbs";
 
 const GLBViewer = ({
   stagingModel,
@@ -74,6 +75,7 @@ const GLBViewer = ({
 
   return (
     <div className="viewer-container">
+      <BreadCrumbs />
       <Suspense fallback={<Loader />}>
         <Canvas
           shadows
