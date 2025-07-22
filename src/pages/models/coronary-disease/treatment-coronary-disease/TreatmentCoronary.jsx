@@ -1,6 +1,6 @@
 import "./TreatmentCoronary.css";
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 import GLBViewer from "../../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../../components/scroll/ScrollDownButton.jsx";
 import BreadCrumbs from "../../../../components/navigation/BreadCrumbs.jsx";

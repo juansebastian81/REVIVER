@@ -3,8 +3,7 @@ import { useEffect, useState } from "react";
 import GLBViewer from "../../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../../components/scroll/ScrollDownButton.jsx";
 import BreadCrumbs from "../../../../components/navigation/BreadCrumbs.jsx";
-import { NavLink } from "react-router";
-
+import { NavLink } from "react-router-dom";
 
 const Fatigue = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
