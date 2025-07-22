@@ -1,5 +1,5 @@
 import "./Diseases.css";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { useCallback } from "react";
 
 const Diseases = () => {

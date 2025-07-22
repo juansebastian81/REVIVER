@@ -1,5 +1,5 @@
 import "./Home.css";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { googleLogin, useUser, logout } from "../../lib/firebase";
 
 const Home = () => {
@@ -9,18 +9,18 @@ const Home = () => {
   const handleGoogleLogin = async () => {
     try {
       await googleLogin();
-      console.log('Usuario autenticado exitosamente');
+      console.log("Usuario autenticado exitosamente");
     } catch (error) {
-      console.error('Error al iniciar sesión:', error);
+      console.error("Error al iniciar sesión:", error);
     }
   };
 
   const handleLogout = async () => {
     try {
       await logout();
-      console.log('Sesión cerrada exitosamente');
+      console.log("Sesión cerrada exitosamente");
     } catch (error) {
-      console.error('Error al cerrar sesión:', error);
+      console.error("Error al cerrar sesión:", error);
     }
   };
   return (

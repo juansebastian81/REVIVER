@@ -1,6 +1,6 @@
 import "./Header.css";
 import { useState } from "react";
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   Dropdown,
