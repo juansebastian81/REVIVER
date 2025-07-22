@@ -39,12 +39,12 @@ const SymptomsCoronary = () => {
           scaleModel={[0.1, 0.1, 0.1]}
           positionModel={[0, 0.001, 0]}
           cameraPosition={[0, 0.5, 4.5]}
-          targetModel={[0, 0.05, 0]}
+          targetModel={[0, 0.09, 0]}
           fov={5}
           titleHeart="Sintomas"
           titleSize={0.04}
           titlePosition={[0, 0.21, -0.1]}
-          shadowPosition={[0, -0.1, 0]}
+          shadowPosition={[0, -0.01, 0]}
           defaultAnimation="Look"
           animationMap={{
             KeyQ: "Dizzy",
