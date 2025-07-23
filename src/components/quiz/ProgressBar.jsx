@@ -24,8 +24,7 @@
    */
 
   import './ProgressBar.css'
-  import { useQuizStore } from '../../hooks/useQuizStore'
-
+  import { useAppStore } from '../../store/useAppStore'
   /**
    * Componente de barra de progreso para quiz
    * 
@@ -56,8 +55,8 @@
    */
   export default function ProgressBar () {
     // Obtener estado del quiz desde el store global de Zustand
-    const current        = useQuizStore(s => s.current)
-    const totalQuestions = useQuizStore(s => s.questions.length)
+    const current        = useAppStore(s => s.current)
+    const totalQuestions = useAppStore(s => s.questions.length)
 
     /**
      * Calcular porcentaje de progreso
