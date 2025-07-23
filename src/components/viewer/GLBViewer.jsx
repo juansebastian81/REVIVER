@@ -7,6 +7,7 @@ import Staging from "../staging/Staging";
 import AnimatedModel from "../animation/AnimatedModel";
 import Lights from "../lights/Lights";
 import CustomAudio from "../audio/CustomAudio";
+import BreadCrumbs from "../navigation/BreadCrumbs";
 
 const GLBViewer = ({
   stagingModel,
@@ -33,6 +34,24 @@ const GLBViewer = ({
   );
   const [rotationY, setRotationY] = useState(0);
 
+  //Staging
+  const [showStaging, setShowStaging] = useState(true);
+  const [currentEnv, setCurrentEnv] = useState(stagingModel);
+
+  //Staging
+  useEffect(() => {
+    if (stagingModel !== currentEnv) {
+      // Paso 1: desactivar fondo
+      setShowStaging(false);
+
+      // Paso 2: esperar brevemente y luego reactivar con nuevo entorno
+      setTimeout(() => {
+        setCurrentEnv(stagingModel);
+        setShowStaging(true);
+      }, 50); // puedes ajustar el delay si es necesario
+    }
+  }, [stagingModel, currentEnv]);
+
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (animationMap[event.code]) {
@@ -52,10 +71,6 @@ const GLBViewer = ({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [animationMap]);
 
-  const resetAnimation = () => {
-    setCurrentAnimation(defaultAnimation);
-  };
-
   useEffect(() => {
     document.body.style.overflow = "hidden";
 
@@ -74,6 +89,7 @@ const GLBViewer = ({
 
   return (
     <div className="viewer-container">
+      <BreadCrumbs />
       <Suspense fallback={<Loader />}>
         <Canvas
           shadows
@@ -101,7 +117,7 @@ const GLBViewer = ({
 
           <Lights />
 
-          <Staging environmentName={stagingModel} />
+          <Staging environmentName={currentEnv} />
 
           <OrbitControls
             ref={controlsRef}

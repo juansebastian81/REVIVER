@@ -2,7 +2,6 @@ import "./cough.css";
 import { useEffect, useState } from "react";
 import GLBViewer from "../../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../../components/scroll/ScrollDownButton.jsx";
-import BreadCrumbs from "../../../../components/navigation/BreadCrumbs.jsx";
 
 const Cough = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
@@ -31,7 +30,6 @@ const Cough = () => {
 
   return (
     <>
-      <BreadCrumbs />
       <div className="viewer-container">
         <GLBViewer
           stagingModel="surgery"

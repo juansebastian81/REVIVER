@@ -1,16 +1,16 @@
 .breadcrumb-container {
-  all: unset;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  padding: 0.75rem 1rem;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  margin: 1rem auto;
-  max-width: 90%;
+  gap: 6px;
 }
 
 .breadcrumb-link {
@@ -19,6 +19,7 @@
   color: #007bff;
   font-weight: 500;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .breadcrumb-link:hover {
@@ -34,7 +35,7 @@
 
 .breadcrumb-current {
   all: unset;
-  font-weight: 600;
+  font-weight: bold;
   color: #333;
   pointer-events: none;
   user-select: none;
