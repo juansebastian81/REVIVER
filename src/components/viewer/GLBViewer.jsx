@@ -1,7 +1,7 @@
 import "./GLBViewer.css";
 import { useRef, Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Loader, OrbitControls } from "@react-three/drei";
+import { Loader, OrbitControls, Html, Center } from "@react-three/drei";
 import Title from "../texts/Title";
 import Staging from "../staging/Staging";
 import AnimatedModel from "../animation/AnimatedModel";
@@ -26,16 +26,38 @@ const GLBViewer = ({
   audioUrl = "/sounds/whiteNoise.mp3",
   speedAudio,
 }) => {
+  //Canvas
+  const [activeCanvas, setActiveCanvas] = useState(0);
+
+  const goToPreviousCanvas = () => {
+    setActiveCanvas((prev) => (prev === 0 ? 1 : prev - 1));
+  };
+
+  const goToNextCanvas = () => {
+    setActiveCanvas((prev) => (prev === 1 ? 0 : prev + 1));
+  };
+
+  //video
+  const [showVideo, setShowVideo] = useState(false);
+
+  //Controles
   const controlsRef = useRef();
+
+  //Audio
   const audioRef = useRef();
+
+  //Tooltips
   const [showTooltip, setShowTooltip] = useState(false);
+
+  //Animaciones
   const [currentAnimation, setCurrentAnimation] = useState(
     defaultAnimation || ""
   );
+
+  //Rotacion
   const [rotationY, setRotationY] = useState(0);
 
   //Staging
-  const [showStaging, setShowStaging] = useState(true);
   const [currentEnv, setCurrentEnv] = useState(stagingModel);
 
   //Staging
@@ -52,6 +74,7 @@ const GLBViewer = ({
     }
   }, [stagingModel, currentEnv]);
 
+  //Rotacion
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (animationMap[event.code]) {
@@ -71,6 +94,7 @@ const GLBViewer = ({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [animationMap]);
 
+  //Zoom
   useEffect(() => {
     document.body.style.overflow = "hidden";
 
@@ -96,45 +120,51 @@ const GLBViewer = ({
           camera={{ position: cameraPosition, fov }}
           style={{ background: "transparent" }}
         >
-          <Title title={titleHeart} position={titlePosition} size={titleSize} />
-          <CustomAudio ref={audioRef} url={audioUrl} speed={speedAudio} />
+          {activeCanvas === 0 && (
+            <>
+              <Title
+                title={titleHeart}
+                position={titlePosition}
+                size={titleSize}
+              />
+              <CustomAudio ref={audioRef} url={audioUrl} speed={speedAudio} />
 
-          <group
-            onClick={() => {
-              if (audioRef.current) {
-                audioRef.current.toggleAudio();
-              }
-            }}
-          >
-            <AnimatedModel
-              url={modelUrl}
-              currentAnimation={currentAnimation}
-              scale={scaleModel}
-              position={positionModel}
-              rotation={[0, rotationY, 0]}
-            />
-          </group>
-
-          <Lights />
-
-          <Staging environmentName={currentEnv} />
-
-          <OrbitControls
-            ref={controlsRef}
-            enableZoom={false}
-            target={targetModel}
-          />
-
-          <mesh
-            receiveShadow
-            rotation={[-Math.PI / 2, 0, 0]}
-            position={shadowPosition}
-          >
-            <planeGeometry args={[20, 20]} />
-            <shadowMaterial opacity={0.3} />
-          </mesh>
+              <group onClick={() => audioRef.current?.toggleAudio()}>
+                <AnimatedModel
+                  url={modelUrl}
+                  currentAnimation={currentAnimation}
+                  scale={scaleModel}
+                  position={positionModel}
+                  rotation={[0, rotationY, 0]}
+                />
+              </group>
+              <Lights />
+              <Staging environmentName={currentEnv} />
+              <OrbitControls
+                ref={controlsRef}
+                enableZoom={false}
+                target={targetModel}
+              />
+              <mesh
+                receiveShadow
+                rotation={[-Math.PI / 2, 0, 0]}
+                position={shadowPosition}
+              >
+                <planeGeometry args={[20, 20]} />
+                <shadowMaterial opacity={0.3} />
+              </mesh>
+            </>
+          )}
+          {activeCanvas === 1 && (
+            <>{/* Segundo canvas: texto 2D y botón de video */}</>
+          )}
         </Canvas>
       </Suspense>
+
+      <div className="canvas-switch-buttons">
+        <button onClick={goToPreviousCanvas}>←</button>
+        <button onClick={goToNextCanvas}>→</button>
+      </div>
 
       {/* Botón tooltip de información */}
       <button
