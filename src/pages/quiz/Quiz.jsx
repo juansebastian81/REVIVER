@@ -1,108 +1,98 @@
-import { useState } from 'react'
+import './Quiz.css'
+import { useEffect } from 'react'
 import { saveAttempt } from '../../services/quiz.jsx'
 import { useUser } from '../../lib/firebase.jsx'
 import { googleLogin } from '../../lib/firebase.jsx'
-import './Quiz.css'
+import ProgressBar from '../../components/quiz/ProgressBar.jsx'
+import { useQuizStore } from '../../hooks/useQuizStore.jsx'
+import { QUESTIONS } from '../../data/questions.js';
 
-const questions = [
-  {
-    question: '¿Capital de Francia?',
-    options: ['Madrid', 'París', 'Roma', 'Berlín'],
-    answer: 1
-  },
-  {
-    question: '¿2 + 2?',
-    options: ['3', '4', '5', '6'],
-    answer: 1
-  }
-]
 
 export default function Quiz() {
-  const [current, setCurrent] = useState(0)
-  const [selected, setSelected] = useState([])
-  const [finished, setFinished] = useState(false)
   const user = useUser()
+  const {
+    status,
+    questions,
+    current,
+    selected,
+    correct,
+    load,
+    select,
+    next,
+    finish
+  } = useQuizStore();
+  
+  useEffect(() => {
+    if (status === 'idle') load(QUESTIONS);
+  }, [status, load]);
 
-  if (!user) {
+  if (!user)
     return (
-    <>
-      <div className="quiz-login-required">
-        Debes iniciar sesión para hacer el quiz
-      </div>
-      <button className="quiz-login-button" onClick={googleLogin}>
-        Iniciar sesión con Google
-      </button>
-    </>
-    )
-  }
+      <>
+        <p className="quiz-login-required">Debes iniciar sesión para hacer el quiz</p>
+        <button className="quiz-login-button" onClick={googleLogin}>
+          Iniciar sesión con Google
+        </button>
+      </>
+    );
+  
+  if (status === 'idle') return <p>Cargando preguntas…</p>;
 
-  function finishQuiz(correct, total) {
-    console.log(
-      'uid:', user.uid,
-      'displayName:', user.displayName ?? 'Anónimo',
-      'correct:', correct,
-      'total:', total
-    )
+  if (status === 'finished') {
     saveAttempt({
       uid: user.uid,
       displayName: user.displayName ?? 'Anónimo',
       correct,
-      total
-    }).catch((error) => {
-      console.error('❌ Error al guardar intento:', error);
-      alert('Error al guardar el resultado. Inténtalo más tarde.');
-    })
-  }
+      total: questions.length
+    }).catch((e) => console.error('Error al guardar intento:', e));
 
-  function handleSelect(optionIdx) {
-    const newSelected = [...selected]
-    newSelected[current] = optionIdx
-    setSelected(newSelected)
-  }
-
-  function handleNext() {
-    if (current < questions.length - 1) {
-      setCurrent(current + 1)
-    } else {
-      setFinished(true)
-      const correct = selected.filter((sel, idx) => sel === questions[idx].answer).length
-      finishQuiz(correct, questions.length)
-    }
-  }
-
-  if (finished) {
-    const correct = selected.filter((sel, idx) => sel === questions[idx].answer).length
     return (
       <div className="quiz-finished">
         <h2>¡Quiz terminado!</h2>
-        <p className="quiz-score">Correctas: {correct} / {questions.length}</p>
+        <p className="quiz-score">
+          Correctas: {correct} / {questions.length}
+        </p>
       </div>
-    )
+    );
   }
 
-  const q = questions[current]
+  const q = questions[current];
+  const isAnswered = selected[current] != null;
+
+  function handleNext() {
+    if (current < questions.length - 1) {
+      next();
+    } else {
+      finish();
+    }
+  }
+
   return (
     <div className="quiz-container">
+      <ProgressBar />
+
       <h2 className="quiz-question">{q.question}</h2>
+
       <ul className="quiz-options">
-        {q.options.map((opt, idx) => (
-          <li key={idx} className="quiz-option">
-            <button
-              className={`quiz-option-button ${selected[current] === idx ? 'selected' : ''}`}
-              onClick={() => handleSelect(idx)}
-            >
-              {opt}
-            </button>
-          </li>
-        ))}
+        {q.options.map((opt, idx) => {
+          const pressed = selected[current] === idx;
+          return (
+            <li key={idx} className="quiz-option">
+              <button
+                className={`quiz-option-button ${pressed ? 'selected' : ''}`}
+                aria-pressed={pressed}
+                onClick={() => select(idx)}
+              >
+                {opt}
+              </button>
+            </li>
+          );
+        })}
       </ul>
-      <button
-        className="quiz-next-button" 
-        onClick={handleNext} 
-        disabled={selected[current] == null}
-      >
+
+      <button className="quiz-next-button" onClick={handleNext} disabled={!isAnswered}>
         {current < questions.length - 1 ? 'Siguiente' : 'Terminar'}
       </button>
     </div>
-  )
+  );
 }
