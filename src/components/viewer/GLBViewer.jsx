@@ -8,6 +8,7 @@ import AnimatedModel from "../animation/AnimatedModel";
 import Lights from "../lights/Lights";
 import CustomAudio from "../audio/CustomAudio";
 import BreadCrumbs from "../navigation/BreadCrumbs";
+import Text2D from "../texts/Text2D";
 
 const GLBViewer = ({
   stagingModel,
@@ -25,6 +26,7 @@ const GLBViewer = ({
   animationMap = {},
   audioUrl = "/sounds/whiteNoise.mp3",
   speedAudio,
+  textCase = "tu texto",
 }) => {
   //Canvas
   const [activeCanvas, setActiveCanvas] = useState(0);
@@ -156,7 +158,10 @@ const GLBViewer = ({
             </>
           )}
           {activeCanvas === 1 && (
-            <>{/* Segundo canvas: texto 2D y botón de video */}</>
+              <Text2D 
+              text={textCase} 
+              />
+    
           )}
         </Canvas>
       </Suspense>
