@@ -1,10 +1,8 @@
 import "./HeartFailure.css";
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router"; // ❗ Usando react-router directamente
+import { NavLink } from "react-router-dom";
 import GLBViewer from "../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../components/scroll/ScrollDownButton.jsx";
-import BreadCrumbs from "../../../components/navigation/BreadCrumbs.jsx";
-//x
 
 const HeartFailure = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
@@ -33,7 +31,6 @@ const HeartFailure = () => {
 
   return (
     <>
-      <BreadCrumbs />
       <div className="viewer-container">
         <GLBViewer
           stagingModel="surgery"

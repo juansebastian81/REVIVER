@@ -1,5 +1,5 @@
 import "./Diseases.css";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { useCallback } from "react";
 
 const Diseases = () => {
@@ -20,7 +20,7 @@ const Diseases = () => {
         <div className="col-md-12 d-flex flex-wrap justify-content-center">
           {/* Card 1 */}
           <div
-            className="card m-3"
+            className="card card-hover m-3"
             style={{ width: "18rem", cursor: "pointer" }}
             onClick={() => goTo("/diseases/arrhythmia")}
           >
@@ -39,7 +39,7 @@ const Diseases = () => {
 
           {/* Card 2 */}
           <div
-            className="card m-3"
+            className="card card-hover m-3"
             style={{ width: "18rem", cursor: "pointer" }}
             onClick={() => goTo("/diseases/heart-failure")}
           >
@@ -58,7 +58,7 @@ const Diseases = () => {
 
           {/* Card 3 */}
           <div
-            className="card m-3"
+            className="card card-hover m-3"
             style={{ width: "18rem", cursor: "pointer" }}
             onClick={() => goTo("/diseases/coronary-disease")}
           >
@@ -77,7 +77,7 @@ const Diseases = () => {
 
           {/* Card 4 */}
           <div
-            className="card m-3"
+            className="card card-hover m-3"
             style={{ width: "18rem", cursor: "pointer" }}
             onClick={() => goTo("/diseases/congenital-heart-disease")}
           >

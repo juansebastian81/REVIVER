@@ -1,7 +1,9 @@
 import "./index.css";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router"; // Usando react-router
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./lib/firebase";
 import Home from "./pages/home/Home";
+import Quiz from "./pages/quiz/Quiz";
 import NotFound from "./pages/not-found/NotFound";
 import Diseases from "./pages/models/Diseases";
 import Arrhythmia from "./pages/models/arrhythmia/Arrhythmia";
@@ -20,50 +22,59 @@ import SymptomsCoronary from "./pages/models/coronary-disease/symptoms-coronary-
 import TreatmentCoronary from "./pages/models/coronary-disease/treatment-coronary-disease/TreatmentCoronary";
 
 createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <Layout>
-      <Routes>
-        <Route index path="/" element={<Home />} />
-        <Route path="/diseases" element={<Diseases />} />
-        <Route path="/diseases/arrhythmia" element={<Arrhythmia />} />
-        <Route path="/diseases/arrhythmia/symptoms-arrhythmia" element={<ChestPain />} />
-        <Route path="/diseases/arrhythmia/treatment-arrhythmia" element={<ArrhythmiaTreatment />} />
-        <Route path="/diseases/heart-failure" element={<HeartFailure />} />
-        <Route
-          path="/diseases/heart-failure/fatigue-symptom"
-          element={<FatigueFailure />}
-        />
-        <Route
-          path="/diseases/heart-failure/cough-symptom"
-          element={<Cough />}
-        />
-        <Route
-          path="/diseases/congenital-heart-disease"
-          element={<CongenitalHeartDisease />}
-        />
-        <Route
-          path="/diseases/congenital-heart-disease/fatigue"
-          element={<Fatigue />}
-        />
-        <Route
-          path="/diseases/coronary-disease"
-          element={<CoronaryDiseases />}
-        />
-        <Route
-          path="/diseases/coronary-disease/symptoms-coronary-disease"
-          element={<SymptomsCoronary />}
-        />
-        <Route
-          path="/diseases/coronary-disease/treatment-coronary-disease"
-          element={<TreatmentCoronary />}
-        />
-        <Route
-          path="/diseases/congenital-heart-disease/treatment-congenital"
-          element={<TreatmentCongenital />}
-        />
-        <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Layout>
-  </BrowserRouter>
+  <AuthProvider>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route index path="/" element={<Home />} />
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="/diseases" element={<Diseases />} />
+          <Route path="/diseases/arrhythmia" element={<Arrhythmia />} />
+          <Route
+            path="/diseases/arrhythmia/symptoms-arrhythmia"
+            element={<ChestPain />}
+          />
+          <Route
+            path="/diseases/arrhythmia/treatment-arrhythmia"
+            element={<ArrhythmiaTreatment />}
+          />
+          <Route path="/diseases/heart-failure" element={<HeartFailure />} />
+          <Route
+            path="/diseases/heart-failure/fatigue-symptom"
+            element={<FatigueFailure />}
+          />
+          <Route
+            path="/diseases/heart-failure/cough-symptom"
+            element={<Cough />}
+          />
+          <Route
+            path="/diseases/congenital-heart-disease"
+            element={<CongenitalHeartDisease />}
+          />
+          <Route
+            path="/diseases/congenital-heart-disease/fatigue"
+            element={<Fatigue />}
+          />
+          <Route
+            path="/diseases/coronary-disease"
+            element={<CoronaryDiseases />}
+          />
+          <Route
+            path="/diseases/coronary-disease/symptoms-coronary-disease"
+            element={<SymptomsCoronary />}
+          />
+          <Route
+            path="/diseases/coronary-disease/treatment-coronary-disease"
+            element={<TreatmentCoronary />}
+          />
+          <Route
+            path="/diseases/congenital-heart-disease/treatment-congenital"
+            element={<TreatmentCongenital />}
+          />
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
+  </AuthProvider>
 );

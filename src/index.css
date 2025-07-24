@@ -104,3 +104,22 @@ a {
   justify-content: center;
   gap: 1rem;
 }
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  transform-origin: center;
+  background-color: white;
+}
+
+.card-hover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  border: 2px solid #007bff;
+}
+
+.card-hover:active {
+  transform: scale(0.98);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}

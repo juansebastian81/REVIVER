@@ -1,5 +1,5 @@
 import "./BreadCrumbs.css";
-import { NavLink, useLocation } from "react-router";
+import { NavLink, useLocation } from "react-router-dom";
 
 const pathNameMap = {
   diseases: "Enfermedades",
@@ -15,6 +15,7 @@ const pathNameMap = {
   "cough-symptom": "Tos",
   "symptoms-arrhythmia": "Síntomas Arritmia",
   "treatment-arrhythmia": "Tratamiento Arritmia",
+  "treatment-congenital": "Tratamiento Cardiopatía",
 };
 
 const BreadCrumbs = () => {

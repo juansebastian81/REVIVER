@@ -2,7 +2,6 @@ canvas {
   touch-action: none;
 }
 
-
 .next-button {
   position: absolute;
   top: 75%;
@@ -18,14 +17,12 @@ canvas {
   font-weight: bold;
 }
 
-
 .viewer-container {
-  height: 100vh;
-  width: 100vw;
   position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
-
-
 
 .info-button {
   position: absolute;
@@ -61,4 +58,23 @@ canvas {
 /* Añadir esto: fuerza el color blanco en todos los hijos */
 .tooltip-box * {
   color: white;
+}
+
+.canvas-switch-buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none; /* Para no interferir con orbit controls */
+}
+
+.canvas-switch-buttons button {
+  pointer-events: all;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  color: black;
 }
