@@ -8,7 +8,7 @@ import AnimatedModel from "../animation/AnimatedModel";
 import Lights from "../lights/Lights";
 import CustomAudio from "../audio/CustomAudio";
 import BreadCrumbs from "../navigation/BreadCrumbs";
-import Text2D from "../texts/Text2D";
+import Text2D from "../texts/Text2d";
 
 const GLBViewer = ({
   stagingModel,
