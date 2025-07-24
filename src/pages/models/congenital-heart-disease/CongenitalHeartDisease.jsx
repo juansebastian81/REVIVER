@@ -50,8 +50,6 @@ const CongenitalHeartDisease = () => {
           audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1}
           textCase="Cardiopatía Congénita: Un defecto cardíaco presente desde el nacimiento"
-
-          
         />
 
       

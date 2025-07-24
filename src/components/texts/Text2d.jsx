@@ -1,4 +1,5 @@
 import { Text } from "@react-three/drei";
+import "/Text2d.css"; 
 
 const Text2D = ({ text }) => (
   <Text
