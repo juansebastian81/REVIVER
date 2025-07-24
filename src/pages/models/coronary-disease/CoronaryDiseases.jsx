@@ -48,6 +48,7 @@ const CoronaryDiseases = () => {
           defaultAnimation="Beating"
           audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1.75}
+          textCase="Este es el texto de enfermedad coronaria"
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
