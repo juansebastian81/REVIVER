@@ -29,6 +29,7 @@ const GLBViewer = ({
   speedAudio,
   title2D = "Tu titulo 2D",
   text2D = "Tu texto 2D",
+  youtubeURL = "NdYWuo9OFAw",
 }) => {
   //Canvas
   const [activeCanvas, setActiveCanvas] = useState(0);
@@ -43,6 +44,44 @@ const GLBViewer = ({
 
   //video
   const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setShowVideo(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  useEffect(() => {
+    if (showVideo) {
+      // Bloqueo de scroll completo
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden"; // <- esto evita scroll por fuera del body
+    } else {
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    };
+  }, [showVideo]);
+
+  useEffect(() => {
+    const preventScrollKeys = (e) => {
+      const keys = ["ArrowUp", "ArrowDown", "PageUp", "PageDown", " "];
+      if (showVideo && keys.includes(e.code)) {
+        e.preventDefault();
+      }
+    };
+
+    window.addEventListener("keydown", preventScrollKeys);
+    return () => window.removeEventListener("keydown", preventScrollKeys);
+  }, [showVideo]);
 
   //Controles
   const controlsRef = useRef();
@@ -165,15 +204,41 @@ const GLBViewer = ({
               </mesh>
             </>
           )}
-          {activeCanvas === 1 && (
+          {activeCanvas === 1 && !showVideo && (
             <>
               <CameraReset position={[0, 0, 0]} fov={6} />
               <Text2D text={title2D} position={[0, 0.225, -5]} />
               <Text2D text={text2D} position={[0, 0.18, -5]} />
+
+              <Html center position={[0, -0.15, -5]}>
+                <button
+                  className="video-button"
+                  onClick={() => setShowVideo(true)}
+                >
+                  ▶ Ver Video
+                </button>
+              </Html>
             </>
           )}
         </Canvas>
       </Suspense>
+
+      {showVideo && (
+        <div className="video-popup">
+          <iframe
+            width="854"
+            height="480"
+            src={`https://www.youtube.com/embed/${youtubeURL}?autoplay=1`}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+          <button className="close-button" onClick={() => setShowVideo(false)}>
+            ✖ Cerrar
+          </button>
+        </div>
+      )}
 
       {/* Botones navegación */}
       <div className="canvas-switch-buttons">
