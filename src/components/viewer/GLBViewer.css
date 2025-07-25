@@ -90,3 +90,56 @@ canvas {
   background-position: center;
   z-index: 0;
 }
+
+.video-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #ff3d00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  min-width: 180px; /* hace el botón más ancho */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.video-button:hover {
+  background-color: #e63300;
+}
+
+.video-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* asegurar ancho completo */
+  height: 100vh; /* asegurar alto completo */
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* asegurarse que esté encima de todo */
+  flex-direction: column; /* importante para que el botón quede debajo */
+}
+
+.video-popup iframe {
+  display: block;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.close-button {
+  margin-top: 10px;
+  background: #ff3d00;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background-color: #e63300;
+}
