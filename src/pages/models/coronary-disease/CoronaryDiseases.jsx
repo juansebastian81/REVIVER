@@ -48,6 +48,9 @@ const CoronaryDiseases = () => {
           defaultAnimation="Beating"
           audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1.75}
+          title2D="Testimonio de la enfermedad coronaria"
+          text2D="Aqui todo del testimonio"
+          youtubeURL="t85uCuSRNiA"
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
@@ -93,6 +96,9 @@ const CoronaryDiseases = () => {
           </NavLink>
           <NavLink to="/diseases/coronary-disease/treatment-coronary-disease">
             <button className="btn btn-primary">Tratamiento</button>
+          </NavLink>
+          <NavLink to="/diseases/coronary-disease/prevention-care-coronary-disease">
+            <button className="btn btn-primary">Prevención</button>
           </NavLink>
         </div>
       </div>
