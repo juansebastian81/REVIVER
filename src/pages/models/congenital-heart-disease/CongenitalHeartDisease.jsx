@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import GLBViewer from "../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../components/scroll/ScrollDownButton.jsx";
 
-
 const CongenitalHeartDisease = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false);
 
@@ -49,10 +48,10 @@ const CongenitalHeartDisease = () => {
           defaultAnimation="Beating"
           audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1}
-          textCase="Cardiopatía Congénita: Un defecto cardíaco presente desde el nacimiento"
+          title2D="Testimonio de la Cardioparia"
+          text2D="Aqui todo del testimonio"
         />
 
-      
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
       </div>
 

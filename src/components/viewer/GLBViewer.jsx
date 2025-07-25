@@ -9,6 +9,7 @@ import Lights from "../lights/Lights";
 import CustomAudio from "../audio/CustomAudio";
 import BreadCrumbs from "../navigation/BreadCrumbs";
 import Text2D from "../texts/Text2d";
+import CameraReset from "./ResetCamera";
 
 const GLBViewer = ({
   stagingModel,
@@ -26,7 +27,8 @@ const GLBViewer = ({
   animationMap = {},
   audioUrl = "/sounds/whiteNoise.mp3",
   speedAudio,
-  textCase = "tu texto",
+  title2D = "Tu titulo 2D",
+  text2D = "Tu texto 2D",
 }) => {
   //Canvas
   const [activeCanvas, setActiveCanvas] = useState(0);
@@ -115,7 +117,13 @@ const GLBViewer = ({
 
   return (
     <div className="viewer-container">
+      {/* Fondo visual */}
+      <div className="viewer-background" />
+
+      {/* Navegación tipo breadcrumbs */}
       <BreadCrumbs />
+
+      {/* Canvas y modelo */}
       <Suspense fallback={<Loader />}>
         <Canvas
           shadows
@@ -124,13 +132,13 @@ const GLBViewer = ({
         >
           {activeCanvas === 0 && (
             <>
+              <CameraReset position={cameraPosition} fov={fov} />
               <Title
                 title={titleHeart}
                 position={titlePosition}
                 size={titleSize}
               />
               <CustomAudio ref={audioRef} url={audioUrl} speed={speedAudio} />
-
               <group onClick={() => audioRef.current?.toggleAudio()}>
                 <AnimatedModel
                   url={modelUrl}
@@ -158,20 +166,22 @@ const GLBViewer = ({
             </>
           )}
           {activeCanvas === 1 && (
-              <Text2D 
-              text={textCase} 
-              />
-    
+            <>
+              <CameraReset position={[0, 0, 0]} fov={6} />
+              <Text2D text={title2D} position={[0, 0.225, -5]} />
+              <Text2D text={text2D} position={[0, 0.18, -5]} />
+            </>
           )}
         </Canvas>
       </Suspense>
 
+      {/* Botones navegación */}
       <div className="canvas-switch-buttons">
         <button onClick={goToPreviousCanvas}>←</button>
         <button onClick={goToNextCanvas}>→</button>
       </div>
 
-      {/* Botón tooltip de información */}
+      {/* Botón de info */}
       <button
         className="info-button"
         onClick={() => setShowTooltip(!showTooltip)}
@@ -180,7 +190,7 @@ const GLBViewer = ({
         💡
       </button>
 
-      {/* Tooltip informativo */}
+      {/* Tooltip */}
       {showTooltip && (
         <div className="tooltip-box">
           <p>

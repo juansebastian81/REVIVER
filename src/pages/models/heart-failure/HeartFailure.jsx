@@ -47,6 +47,8 @@ const HeartFailure = () => {
           defaultAnimation="ArmatureAction"
           audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1.2}
+          title2D="Testimonio de la Insuficiencia"
+          text2D="Aqui todo del testimonio"
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}

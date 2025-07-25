@@ -45,6 +45,8 @@ const Arrhythmia = () => {
           defaultAnimation={"Take 001"}
           audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1.5}
+          title2D="Testimonio de la Arritmia"
+          text2D="Aqui todo del testimonio"
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
