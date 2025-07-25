@@ -20,6 +20,7 @@ import Fatigue from "./pages/models/congenital-heart-disease/symptom-fatigue/Fat
 import AboutUs from "./pages/about-us/AboutUs";
 import SymptomsCoronary from "./pages/models/coronary-disease/symptoms-coronary-disease/SymptomsCoronary";
 import TreatmentCoronary from "./pages/models/coronary-disease/treatment-coronary-disease/TreatmentCoronary";
+import PreventionCareCoronary from "./pages/models/coronary-disease/prevention-care-coronary-disease/PreventionCareCoronary";
 
 createRoot(document.getElementById("root")).render(
   <AuthProvider>
@@ -66,6 +67,10 @@ createRoot(document.getElementById("root")).render(
           <Route
             path="/diseases/coronary-disease/treatment-coronary-disease"
             element={<TreatmentCoronary />}
+          />
+          <Route
+            path="/diseases/coronary-disease/prevention-care-coronary-disease"
+            element={<PreventionCareCoronary />}
           />
           <Route
             path="/diseases/congenital-heart-disease/treatment-congenital"

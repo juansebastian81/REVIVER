@@ -47,8 +47,9 @@ const SymptomsCoronary = () => {
           shadowPosition={[0, -0.01, 0]}
           defaultAnimation="Look"
           animationMap={{
-            KeyQ: "Dizzy",
-            KeyW: "Sweat",
+            KeyQ: "Look",
+            KeyW: "Dizzy",
+            KeyE: "Sweat",
           }}
         />
 
@@ -170,6 +171,9 @@ const SymptomsCoronary = () => {
           </NavLink>
           <NavLink to="/diseases/coronary-disease/treatment-coronary-disease">
             <button className="btn btn-primary">Tratamiento</button>
+          </NavLink>
+          <NavLink to="/diseases/coronary-disease/prevention-care-coronary-disease">
+            <button className="btn btn-primary">Prevención</button>
           </NavLink>
         </div>
       </div>

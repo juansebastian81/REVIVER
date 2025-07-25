@@ -118,6 +118,9 @@ const TreatmentCoronary = () => {
           <NavLink to="/diseases/coronary-disease/symptoms-coronary-disease">
             <button className="btn btn-primary">Sintomas</button>
           </NavLink>
+          <NavLink to="/diseases/coronary-disease/prevention-care-coronary-disease">
+            <button className="btn btn-primary">Prevención</button>
+          </NavLink>
         </div>
       </div>
     </>
