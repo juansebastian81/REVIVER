@@ -48,6 +48,9 @@ const CoronaryDiseases = () => {
           defaultAnimation="Beating"
           audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1.75}
+          title2D="Testimonio de la enfermedad coronaria"
+          text2D="Aqui todo del testimonio"
+          youtubeURL="t85uCuSRNiA"
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
