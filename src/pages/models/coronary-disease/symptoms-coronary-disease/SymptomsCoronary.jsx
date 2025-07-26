@@ -51,6 +51,15 @@ const SymptomsCoronary = () => {
             KeyW: "Dizzy",
             KeyE: "Sweat",
           }}
+          title2D="Testimonio de la enfermedad coronaria"
+          text2D="                “Hace dos años me diagnosticaron una enfermedad coronaria.
+                Decidí cambiar mi estilo de vida por completo: 
+                empecé a comer mejor, a hacer ejercicio y dejé de fumar.
+                Hoy, gracias al acompañamiento médico y a mi compromiso, 
+                me siento más saludable que nunca.”
+                        
+                                                                        – Carlos M., 58 años"
+          youtubeURL="t85uCuSRNiA"
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
