@@ -48,15 +48,17 @@ const CoronaryDiseases = () => {
           defaultAnimation="Beating"
           audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1.75}
-          title2D="Testimonio de la enfermedad coronaria"
-          text2D="                “Hace dos años me diagnosticaron una enfermedad coronaria.
-                Decidí cambiar mi estilo de vida por completo: 
-                empecé a comer mejor, a hacer ejercicio y dejé de fumar.
-                Hoy, gracias al acompañamiento médico y a mi compromiso, 
-                me siento más saludable que nunca.”
-                        
-                                                                        – Carlos M., 58 años"
-          youtubeURL="t85uCuSRNiA"
+          title2D="La enfermedad coronaria"
+          text2D="            La enfermedad coronaria es una afección en la que las arterias 
+          que suministran sangre al corazón se estrechan o se bloquean por acumulación de placa. 
+          
+          Esto reduce el flujo sanguíneo y puede causar dolor en el pecho, 
+          dificultad para respirar o incluso un ataque cardíaco.
+          
+          Es una de las principales causas de muerte en el mundo, 
+          pero puede prevenirse y controlarse con cambios en el estilo de vida, 
+          medicamentos y atención médica."
+          youtubeURL="sEdy3EfiBzM"
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
