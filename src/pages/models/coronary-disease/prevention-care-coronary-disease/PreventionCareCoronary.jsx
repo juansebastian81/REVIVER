@@ -61,7 +61,7 @@ const PreventionCareCoronary = () => {
             Hoy, gracias al acompañamiento médico y a mi compromiso, 
             me siento más saludable que nunca.”
                         
-                                                                        – Carlos M., 58 años"
+                                                                        – Carlos M., 59 años"
           youtubeURL="ezf-E4hpGoQ"
         />
 
