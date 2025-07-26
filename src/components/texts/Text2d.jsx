@@ -8,8 +8,7 @@ const Text2D = ({ text, position }) => (
     anchorY="middle"
     fontSize={0.017} // Tamaño estándar y visible
     position={position} // Posición estándar y visible
-    lineHeight={0.8}
-    letterSpacing={0.005}
+    lineHeight={1.5}
     outlineWidth={0.001} // Grosor del reborde
     outlineColor="white" // Color del reborde
   >

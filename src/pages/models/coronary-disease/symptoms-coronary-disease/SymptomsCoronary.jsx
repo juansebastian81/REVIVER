@@ -47,9 +47,20 @@ const SymptomsCoronary = () => {
           shadowPosition={[0, -0.01, 0]}
           defaultAnimation="Look"
           animationMap={{
-            KeyQ: "Dizzy",
-            KeyW: "Sweat",
+            KeyQ: "Look",
+            KeyW: "Dizzy",
+            KeyE: "Sweat",
           }}
+          title2D="Sintomas de la enfermedad coronaria"
+          text2D="          Uno de los síntomas más comunes de la enfermedad coronaria 
+          es el dolor en el pecho, también llamado angina.
+          
+          Este dolor puede sentirse como presión, opresión o ardor en el pecho, 
+          y a veces se irradia hacia los brazos, cuello, mandíbula o espalda.
+          
+          Suele ocurrir con el esfuerzo físico o el estrés emocional, 
+          y se alivia con el descanso."
+          youtubeURL="mVvgVJewqG8"
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
@@ -170,6 +181,9 @@ const SymptomsCoronary = () => {
           </NavLink>
           <NavLink to="/diseases/coronary-disease/treatment-coronary-disease">
             <button className="btn btn-primary">Tratamiento</button>
+          </NavLink>
+          <NavLink to="/diseases/coronary-disease/prevention-care-coronary-disease">
+            <button className="btn btn-primary">Prevención</button>
           </NavLink>
         </div>
       </div>

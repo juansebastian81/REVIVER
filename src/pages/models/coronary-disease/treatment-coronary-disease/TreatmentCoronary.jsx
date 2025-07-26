@@ -47,6 +47,17 @@ const TreatmentCoronary = () => {
           shadowPosition={[0, -0.1, 0]}
           audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1.75}
+          title2D="Testimonio de la enfermedad coronaria"
+          text2D="          La angioplastia coronaria es un procedimiento médico 
+          que se utiliza para abrir arterias obstruidas en el corazón.
+
+          Durante esta intervención, se inserta un pequeño balón en la arteria afectada 
+          y se infla para eliminar el bloqueo. 
+          
+          En muchos casos, también se coloca un stent para mantener la arteria abierta.
+          Este tratamiento ayuda a mejorar el flujo sanguíneo 
+          y reducir el riesgo de un ataque cardíaco."
+          youtubeURL="JuCssz3o6Rk"
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
@@ -117,6 +128,9 @@ const TreatmentCoronary = () => {
           </NavLink>
           <NavLink to="/diseases/coronary-disease/symptoms-coronary-disease">
             <button className="btn btn-primary">Sintomas</button>
+          </NavLink>
+          <NavLink to="/diseases/coronary-disease/prevention-care-coronary-disease">
+            <button className="btn btn-primary">Prevención</button>
           </NavLink>
         </div>
       </div>
