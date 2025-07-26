@@ -49,7 +49,13 @@ const CoronaryDiseases = () => {
           audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1.75}
           title2D="Testimonio de la enfermedad coronaria"
-          text2D="Aqui todo del testimonio"
+          text2D="                “Hace dos años me diagnosticaron una enfermedad coronaria.
+                Decidí cambiar mi estilo de vida por completo: 
+                empecé a comer mejor, a hacer ejercicio y dejé de fumar.
+                Hoy, gracias al acompañamiento médico y a mi compromiso, 
+                me siento más saludable que nunca.”
+                        
+                                                                        – Carlos M., 58 años"
           youtubeURL="t85uCuSRNiA"
         />
 
