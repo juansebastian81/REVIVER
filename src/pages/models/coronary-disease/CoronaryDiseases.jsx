@@ -49,7 +49,7 @@ const CoronaryDiseases = () => {
           audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1.75}
           title2D="La enfermedad coronaria"
-          text2D="            La enfermedad coronaria es una afección en la que las arterias 
+          text2D="          La enfermedad coronaria es una afección en la que las arterias 
           que suministran sangre al corazón se estrechan o se bloquean por acumulación de placa. 
           
           Esto reduce el flujo sanguíneo y puede causar dolor en el pecho, 
