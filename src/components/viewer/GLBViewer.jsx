@@ -207,8 +207,8 @@ const GLBViewer = ({
           {activeCanvas === 1 && !showVideo && (
             <>
               <CameraReset position={[0, 0, 0]} fov={6} />
-              <Text2D text={title2D} position={[0, 0.225, -5]} />
-              <Text2D text={text2D} position={[0, 0.18, -5]} />
+              <Text2D text={title2D} position={[0, 0.2, -5]} />
+              <Text2D text={`${text2D}`} position={[0, 0.05, -5]} />
 
               <Html center position={[0, -0.15, -5]}>
                 <button
