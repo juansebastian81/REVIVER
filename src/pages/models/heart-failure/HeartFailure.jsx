@@ -47,8 +47,15 @@ const HeartFailure = () => {
           defaultAnimation="ArmatureAction"
           audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1.2}
-          title2D="Testimonio de la Insuficiencia"
-          text2D="Aqui todo del testimonio"
+          title2D="Enfermedad Insuficiencia Cardiaca"
+          text2D="            La insuficiencia cardíaca es una enfermedad en la que el corazón no
+           puede bombear sangre de forma eficiente, lo que impide que el cuerpo reciba
+           el oxígeno y los nutrientes que necesita. Esto provoca síntomas como fatiga, 
+           dificultad para respirar e hinchazón en las piernas. Puede ser causada por 
+           problemas como presión arterial alta, infartos o enfermedades del músculo cardíaco.
+           Aunque no tiene cura, se puede controlar con medicamentos, cambios en el estilo de
+           vida y tratamientos médicos."
+          youtubeURL="Cpkkvht0JYk"
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
