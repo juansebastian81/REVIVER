@@ -98,6 +98,10 @@ a {
   margin-bottom: 1rem;
 }
 
+.card-title h5 {
+  text-align: center;
+}
+
 .button-group-centered {
   margin-top: 2rem;
   display: flex;
