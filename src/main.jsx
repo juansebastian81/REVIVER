@@ -21,6 +21,7 @@ import AboutUs from "./pages/about-us/AboutUs";
 import SymptomsCoronary from "./pages/models/coronary-disease/symptoms-coronary-disease/SymptomsCoronary";
 import TreatmentCoronary from "./pages/models/coronary-disease/treatment-coronary-disease/TreatmentCoronary";
 import PreventionCareCoronary from "./pages/models/coronary-disease/prevention-care-coronary-disease/PreventionCareCoronary";
+import SiteMap from "./pages/site/SiteMap";
 
 createRoot(document.getElementById("root")).render(
   <AuthProvider>
@@ -28,8 +29,13 @@ createRoot(document.getElementById("root")).render(
       <Layout>
         <Routes>
           <Route index path="/" element={<Home />} />
-          <Route path="/quiz" element={<Quiz />} />
+          <Route path="*" element={<NotFound />} />
           <Route path="/diseases" element={<Diseases />} />
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/sitemap" element={<SiteMap />} />
+
+          {/* Arritmia */}
           <Route path="/diseases/arrhythmia" element={<Arrhythmia />} />
           <Route
             path="/diseases/arrhythmia/symptoms-arrhythmia"
@@ -39,6 +45,8 @@ createRoot(document.getElementById("root")).render(
             path="/diseases/arrhythmia/treatment-arrhythmia"
             element={<ArrhythmiaTreatment />}
           />
+
+          {/* Insuficiencia cardiaca */}
           <Route path="/diseases/heart-failure" element={<HeartFailure />} />
           <Route
             path="/diseases/heart-failure/fatigue-symptom"
@@ -48,14 +56,8 @@ createRoot(document.getElementById("root")).render(
             path="/diseases/heart-failure/cough-symptom"
             element={<Cough />}
           />
-          <Route
-            path="/diseases/congenital-heart-disease"
-            element={<CongenitalHeartDisease />}
-          />
-          <Route
-            path="/diseases/congenital-heart-disease/fatigue"
-            element={<Fatigue />}
-          />
+
+          {/* Enfermedad coronaria */}
           <Route
             path="/diseases/coronary-disease"
             element={<CoronaryDiseases />}
@@ -72,12 +74,20 @@ createRoot(document.getElementById("root")).render(
             path="/diseases/coronary-disease/prevention-care-coronary-disease"
             element={<PreventionCareCoronary />}
           />
+
+          {/* Cardiopatia congenita */}
+          <Route
+            path="/diseases/congenital-heart-disease"
+            element={<CongenitalHeartDisease />}
+          />
+          <Route
+            path="/diseases/congenital-heart-disease/fatigue"
+            element={<Fatigue />}
+          />
           <Route
             path="/diseases/congenital-heart-disease/treatment-congenital"
             element={<TreatmentCongenital />}
           />
-          <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </BrowserRouter>

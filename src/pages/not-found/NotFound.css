@@ -1,0 +1,58 @@
+.not-found-container {
+  width: 100vw;
+  height: 80vh;
+  background: radial-gradient(#111 50%, #000);
+  position: relative;
+  overflow: hidden;
+  color: white;
+  font-family: "PageFont";
+}
+
+.not-found-ui {
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  text-align: center;
+}
+
+.not-found-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.rescue-button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background: crimson;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+.rescue-button:hover {
+  background: #ff0033;
+}
+
+.dialogue-bubble {
+  background: white;
+  color: black;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  max-width: 300px;
+  text-align: center;
+  animation: appear 1s ease;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
