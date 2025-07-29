@@ -35,8 +35,8 @@ const PreventionCareCoronary = () => {
       <div className="viewer-container">
         <GLBViewer
           stagingModel="park"
-          modelUrl="/models-3d/coronary-disease/AvatarJSOM.glb"
-          scaleModel={[0.1, 0.1, 0.1]}
+          modelUrl="/models-3d/coronary-disease/AvatarSport.glb"
+          scaleModel={[1, 1, 1]}
           positionModel={[0, 0.001, 0]}
           cameraPosition={[0, 0.5, 4.5]}
           targetModel={[0, 0.09, 0]}
@@ -45,12 +45,11 @@ const PreventionCareCoronary = () => {
           titleSize={0.04}
           titlePosition={[0, 0.21, -0.1]}
           shadowPosition={[0, -0.01, 0]}
-          defaultAnimation="Look"
-          speedAudio={1.75}
+          defaultAnimation="Mirar"
           animationMap={{
-            KeyQ: "Look",
-            KeyW: "Dizzy",
-            KeyE: "Sweat",
+            KeyQ: "Mirar",
+            KeyW: "Calentamiento",
+            KeyE: "Mariposas",
           }}
           title2D="Testimonio de la enfermedad coronaria"
           text2D="           “Hace dos años me diagnosticaron una enfermedad coronaria.
@@ -61,7 +60,7 @@ const PreventionCareCoronary = () => {
             Hoy, gracias al acompañamiento médico y a mi compromiso, 
             me siento más saludable que nunca.”
                         
-                                                                        – Carlos M., 58 años"
+                                                                        – Carlos M., 59 años"
           youtubeURL="ezf-E4hpGoQ"
         />
 
