@@ -17,3 +17,9 @@ footer p {
   margin: 10px;
   color: var(--color-neutral);
 }
+
+footer li {
+  margin: 0.5rem 0;
+  list-style-type: ">  ";
+  color: white;
+}
