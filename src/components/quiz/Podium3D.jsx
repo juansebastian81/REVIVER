@@ -1,4 +1,4 @@
-import { Text } from '@react-three/drei'
+import { Text, Html } from '@react-three/drei'
 import './Podium3D.css'
 import { memo } from 'react'
 
@@ -12,10 +12,10 @@ function Blocks({ rows }) {
         <boxGeometry args={[1.5,heights[i],1.5]}/>
         <meshStandardMaterial color={colors[i]}/>
       </mesh>
-      <Text position={[0, heights[i]+0.4, 0]} fontSize={0.13} color="white" anchorX="center" maxWidth={1.4}>
+      <Text position={[0, heights[i]+0.4, 0]} fontSize={0.13} fontWeight={800} color="white" anchorX="center" maxWidth={1.4}>
         {u.displayName}
       </Text>
-      <Text position={[0, heights[i]+0.1, 0]} fontSize={0.18} color="#ffed4e" anchorX="center">
+      <Text position={[0, heights[i]+0.1, 0]} fontSize={0.18} fontWeight={800} color="#ffed4e" anchorX="center">
         {u.bestScore} pts
       </Text>
     </group>

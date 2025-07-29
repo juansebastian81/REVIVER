@@ -1,0 +1,33 @@
+.quiz-login-required-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  max-width: 350px;
+  margin: 40px auto;
+}
+
+.quiz-login-required {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.quiz-login-button {
+  background: #4285f4;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.quiz-login-button:hover {
+  background: #357ae8;
+}
