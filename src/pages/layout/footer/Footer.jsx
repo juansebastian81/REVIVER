@@ -25,12 +25,15 @@ const Footer = () => {
           </a>
         </p>
         <p>
-          📞 Teléfono:{" "}
+          📞 Teléfono: <a href="tel:+573243819539">(+57) 324-3819539 </a>
+        </p>
+        <p>
+          📲WhatsApp:{" "}
           <a
             href="https://wa.me/573243819539?text=Hola,%20quiero%20más%20información%20sobre%20REVIVER"
             target="_blank"
           >
-            (+57) 324-3819539{" "}
+            Chatea con nuestro bot 🤖
           </a>
         </p>
         <p>
