@@ -22,6 +22,7 @@ import SymptomsCoronary from "./pages/models/coronary-disease/symptoms-coronary-
 import TreatmentCoronary from "./pages/models/coronary-disease/treatment-coronary-disease/TreatmentCoronary";
 import PreventionCareCoronary from "./pages/models/coronary-disease/prevention-care-coronary-disease/PreventionCareCoronary";
 import SiteMap from "./pages/site/SiteMap";
+import PreventionCongenital from "./pages/models/congenital-heart-disease/prevention-congenital/PreventionCongenital";
 
 createRoot(document.getElementById("root")).render(
   <AuthProvider>
@@ -87,6 +88,10 @@ createRoot(document.getElementById("root")).render(
           <Route
             path="/diseases/congenital-heart-disease/treatment-congenital"
             element={<TreatmentCongenital />}
+          />
+          <Route
+            path="/diseases/congenital-heart-disease/prevention-congenital"
+            element={<PreventionCongenital />}
           />
         </Routes>
       </Layout>
