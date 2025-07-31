@@ -42,8 +42,8 @@ const Fatigue = () => {
           targetModel={[0, 0.1, 0]}
           fov={4}
           titleHeart="Cansancio"
-          titleSize={0.04}
-          titlePosition={[0, 0.21, -0.1]}
+          titleSize={0.03}
+          titlePosition={[0.01, 0.21, -0.1]}
           shadowPosition={[0, -0.1, 2]}
           audioUrl="/sounds/cansancio.mp3"
           speedAudio={1}
@@ -52,6 +52,26 @@ const Fatigue = () => {
             KeyW: "Yawn",
             KeyQ: "Cansancio",
           }}
+          title2D="
+
+  Tetimonio # 2 de la Cardiopatía Congénita
+          
+
+          "
+          text2D="          Fui operada por primera vez cuando tenía apenas 8 meses. 
+          Me diagnosticaron Tetralogía de Fallot, una condición compleja 
+          que hizo que pasara parte de mi infancia en hospitales. A los 
+          5 años tuve una segunda cirugía y, desde entonces, he aprendido 
+          a vivir con ciertas limitaciones, pero también con mucha gratitud. 
+          Hoy estudio medicina para ayudar a otros niños que nacen con 
+          condiciones como la mía. Mi corazón no es perfecto, pero late 
+          fuerte y con propósito.
+          
+                                                                                        - Sofía M., 22 años
+          "
+
+
+
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
@@ -91,11 +111,14 @@ const Fatigue = () => {
           salud subyacentes que necesitan diagnóstico y tratamiento.
         </p>
         <div className="button-group-centered">
-          <NavLink to="/diseases/congenital-heart-disease/fatigue">
-            <button className="btn btn-primary">Sintomas</button>
+          <NavLink to="/diseases/congenital-heart-disease">
+            <button className="btn btn-primary">Enfermedad</button>
           </NavLink>
           <NavLink to="/diseases/congenital-heart-disease/treatment-congenital">
             <button className="btn btn-primary">Tratamiento</button>
+          </NavLink>
+          <NavLink to="/diseases/congenital-heart-disease/prevention-congenital">
+            <button className="btn btn-primary">Prevención</button>
           </NavLink>
         </div>
       </div>

@@ -42,8 +42,8 @@ const TreatmentCongenital = () => {
           targetModel={[0, 0.1, 0]}
           fov={4}
           titleHeart="Hacer Ejercicio"
-          titleSize={0.04}
-          titlePosition={[0, 0.21, -0.1]}
+          titleSize={0.03}
+          titlePosition={[0.01, 0.21, -0.1]}
           shadowPosition={[0, -0.1, 2]}
           audioUrl="/sounds/cansancio.mp3"
           speedAudio={1}
@@ -52,6 +52,26 @@ const TreatmentCongenital = () => {
             KeyW: "Trot",
             KeyQ: "Standing",
           }}
+          title2D="
+          
+Testimonio #3 de la Cardiopatía Congénita
+          
+          "
+          text2D="          
+
+          Me enteré de que tenía una cardiopatía congénita a 
+          los 12 años, cuando me desmayé en una clase de educación 
+          física. Fue una coartación de la aorta que había pasado 
+          desapercibida desde el nacimiento. Me operaron a los 13 
+          y, aunque tuve que dejar el deporte competitivo, eso no 
+          me impidió tener una vida plena. Hoy soy abuelo, sigo mis 
+          controles anuales y trato de llevar una vida activa. A 
+          veces la vida te da un corazón con cicatrices, pero igual 
+          puede amar con fuerza.
+
+                                                              — Jorge A., jubilado y abuelo feliz
+          "
+
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
@@ -110,8 +130,14 @@ const TreatmentCongenital = () => {
           </li>
         </ul>
         <div className="button-group-centered">
+          <NavLink to="/diseases/congenital-heart-disease">
+            <button className="btn btn-primary">Enfermedad</button>
+          </NavLink>
           <NavLink to="/diseases/congenital-heart-disease/fatigue">
             <button className="btn btn-primary">Sintomas</button>
+          </NavLink>
+          <NavLink to="/diseases/congenital-heart-disease/prevention-congenital">
+            <button className="btn btn-primary">Prevención</button>
           </NavLink>
         </div>
       </div>
