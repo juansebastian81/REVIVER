@@ -13,6 +13,7 @@ const pathNameMap = {
   "congenital-heart-disease": "Cardiopatía Congénita",
   fatigue: "Cansancio",
   "cough-symptom": "Tos",
+  "feeds-symptom": "Pies Hinchados",
   "symptoms-arrhythmia": "Síntomas Arritmia",
   "treatment-arrhythmia": "Tratamiento Arritmia",
   "treatment-congenital": "Tratamiento Cardiopatía",
