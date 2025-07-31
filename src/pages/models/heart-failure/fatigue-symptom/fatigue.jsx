@@ -46,6 +46,15 @@ const FatigueFailure = () => {
           titleSize={0.04}
           defaultAnimation="ArmatureAction"
           audioUrl="/sounds/heartBeating.mp3"
+          title2D="Síntoma Fatiga en Insuficiencia Cardíaca"
+text2D="La fatiga o cansancio es uno de los síntomas más comunes en personas con insuficiencia cardíaca.
+Ocurre porque el corazón no puede bombear sangre de manera eficiente, lo que reduce el suministro de oxígeno
+y nutrientes a los músculos y órganos. Como resultado, tareas simples como caminar, subir escaleras o vestirse
+pueden generar agotamiento. Este tipo de fatiga no mejora fácilmente con el descanso y puede afectar la concentración,
+el estado de ánimo y la capacidad para realizar actividades cotidianas. Aunque es un síntoma frecuente, puede
+controlarse con tratamiento médico, ajustes en el estilo de vida y monitoreo adecuado por parte del equipo de salud."
+          youtubeURL="3NtyYKt_3FM"
+
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
