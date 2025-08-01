@@ -16,7 +16,6 @@ import FatigueFailure from "./pages/models/heart-failure/fatigue-symptom/fatigue
 import TreatmentCongenital from "./pages/models/congenital-heart-disease/treatment-congenital/TreatmentCongenital";
 import Cough from "./pages/models/heart-failure/cough-symptom/cough";
 import FeedsFailure from "./pages/models/heart-failure/feeds/feeds";
-
 import Layout from "./pages/layout/Layout";
 import Fatigue from "./pages/models/congenital-heart-disease/symptom-fatigue/Fatigue";
 import AboutUs from "./pages/about-us/AboutUs";
