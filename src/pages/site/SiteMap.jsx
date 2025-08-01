@@ -42,10 +42,14 @@ const SiteMap = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="">Tratamiento</Link>
+                  <Link to="/diseases/heart-failure/cough-symptom">
+                    Tratamiento
+                  </Link>
                 </li>
                 <li>
-                  <Link to="">Prevención</Link>
+                  <Link to="/diseases/heart-failure/feeds-symptom">
+                    Prevención
+                  </Link>
                 </li>
               </ul>
             </li>
@@ -89,7 +93,9 @@ const SiteMap = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="">Prevención</Link>
+                  <Link to="/diseases/congenital-heart-disease/prevention-congenital">
+                    Prevención
+                  </Link>
                 </li>
               </ul>
             </li>

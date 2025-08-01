@@ -48,8 +48,24 @@ const CongenitalHeartDisease = () => {
           defaultAnimation="Beating"
           audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1}
-          title2D="Testimonio de la Cardioparia"
-          text2D="Aqui todo del testimonio"
+          title2D="         
+          Testimonio de la Cardioparia Congénita
+          
+
+          "
+          text2D="                                 
+                                  Cuando Samuel nació, los médicos escucharon 
+                              un soplo en su corazón. Después de varios exámenes,
+                            nos dijeron que tenía una comunicación interventricular. 
+                              Al principio fue muy difícil, con muchas dudas y miedo,
+                    pero gracias al seguimiento médico constante y una cirugía 
+                    correctiva a los 6 meses, hoy Samuel lleva una vida completamente 
+                          normal. Corre, juega fútbol y va a la escuela como cualquier 
+                            otro niño. No ha necesitado más cirugías, pero lo revisan 
+                              cada año para asegurarse de que todo esté bien.
+                              
+
+                                                                                  – Ana M., madre de Samuel, 3 años "
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
@@ -174,7 +190,7 @@ const CongenitalHeartDisease = () => {
         </p>
         <div style={{ marginTop: "2rem", textAlign: "center" }}>
           <NavLink to="/diseases/congenital-heart-disease/fatigue">
-            <button className="btn btn-primary">Más síntomas</button>
+            <button className="btn btn-primary">Síntomas</button>
           </NavLink>
         </div>
       </div>

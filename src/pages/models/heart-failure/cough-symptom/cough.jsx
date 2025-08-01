@@ -1,5 +1,7 @@
 import "./cough.css";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+
 import GLBViewer from "../../../../components/viewer/GLBViewer.jsx";
 import ScrollDownButton from "../../../../components/scroll/ScrollDownButton.jsx";
 
@@ -44,6 +46,17 @@ const Cough = () => {
           titlePosition={[0, 0.35, -0.1]}
           titleSize={0.04}
           defaultAnimation="ArmatureAction"
+          title2D="Síntoma Tos en Insuficiencia Cardíaca"
+          text2D="La tos es un síntoma que puede presentarse en personas con insuficiencia cardíaca,
+especialmente cuando el corazón no logra bombear la sangre de forma adecuada. Esta situación
+provoca acumulación de líquido en los pulmones, lo que irrita las vías respiratorias y causa una
+tos persistente, seca o en ocasiones con flema espumosa. Suele empeorar al acostarse o durante la noche.
+En algunos casos, la tos puede confundirse con una afección respiratoria, pero en realidad es un
+signo de congestión pulmonar debido al mal funcionamiento del corazón. Aunque este síntoma puede
+resultar molesto y alarmante, se puede controlar mediante tratamiento médico adecuado, reducción
+de la retención de líquidos y seguimiento regular por parte del personal de salud."
+          youtubeURL="SnNt5tCe6Jk"
+
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
@@ -116,6 +129,14 @@ const Cough = () => {
           descartar complicaciones. Nunca se debe automedicar sin supervisión
           profesional.
         </p>
+
+
+        
+        <div style={{ marginTop: "2rem", textAlign: "center" }}>
+          <NavLink to="/diseases/heart-failure/feeds-symptom">
+            <button className="btn btn-primary">Más síntomas</button>
+          </NavLink>
+        </div>
       </div>
     </>
   );

@@ -15,6 +15,7 @@ import CongenitalHeartDisease from "./pages/models/congenital-heart-disease/Cong
 import FatigueFailure from "./pages/models/heart-failure/fatigue-symptom/fatigue";
 import TreatmentCongenital from "./pages/models/congenital-heart-disease/treatment-congenital/TreatmentCongenital";
 import Cough from "./pages/models/heart-failure/cough-symptom/cough";
+import FeedsFailure from "./pages/models/heart-failure/feeds/feeds";
 import Layout from "./pages/layout/Layout";
 import Fatigue from "./pages/models/congenital-heart-disease/symptom-fatigue/Fatigue";
 import AboutUs from "./pages/about-us/AboutUs";
@@ -22,6 +23,7 @@ import SymptomsCoronary from "./pages/models/coronary-disease/symptoms-coronary-
 import TreatmentCoronary from "./pages/models/coronary-disease/treatment-coronary-disease/TreatmentCoronary";
 import PreventionCareCoronary from "./pages/models/coronary-disease/prevention-care-coronary-disease/PreventionCareCoronary";
 import SiteMap from "./pages/site/SiteMap";
+import PreventionCongenital from "./pages/models/congenital-heart-disease/prevention-congenital/PreventionCongenital";
 
 createRoot(document.getElementById("root")).render(
   <AuthProvider>
@@ -57,6 +59,11 @@ createRoot(document.getElementById("root")).render(
             element={<Cough />}
           />
 
+          <Route
+            path="/diseases/heart-failure/feeds-symptom"
+            element={<FeedsFailure />}
+          />
+
           {/* Enfermedad coronaria */}
           <Route
             path="/diseases/coronary-disease"
@@ -87,6 +94,10 @@ createRoot(document.getElementById("root")).render(
           <Route
             path="/diseases/congenital-heart-disease/treatment-congenital"
             element={<TreatmentCongenital />}
+          />
+          <Route
+            path="/diseases/congenital-heart-disease/prevention-congenital"
+            element={<PreventionCongenital />}
           />
         </Routes>
       </Layout>
