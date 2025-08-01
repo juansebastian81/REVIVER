@@ -18,6 +18,7 @@ const pathNameMap = {
   "treatment-arrhythmia": "Tratamiento Arritmia",
   "treatment-congenital": "Tratamiento Cardiopatía",
   "prevention-care-coronary-disease": "Prevención y cuidados",
+  "prevention-congenital": "Prevención y cuidados",
 };
 
 const BreadCrumbs = () => {
