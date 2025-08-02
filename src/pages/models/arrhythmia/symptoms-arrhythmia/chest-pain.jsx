@@ -43,7 +43,15 @@ const ChestPain = () => {
           titleHeart="Síntomas"
           titlePosition={[0, 0.525, -0.1]}
           titleSize={0.05}
+          shadowPosition={[0, -0.01, 0]}
+          title2D="Sintomas de la Arritmia"
+          text2D="Los síntomas de la arritmia pueden incluir palpitaciones, sensación de latidos irregulares,
+mareos, fatiga, dificultad para respirar, dolor en el pecho, desmayos, debilidad general, ansiedad,
+sudoración excesiva, y en casos graves, pérdida de conciencia. Es importante consultar a un médico
+si se presentan estos síntomas para un diagnóstico adecuado."
+        youtubeURL="ICkOkWx2iac"
         />
+        
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
       </div>
@@ -77,6 +85,9 @@ const ChestPain = () => {
           </NavLink>
           <NavLink to="/diseases/arrhythmia/treatment-arrhythmia">
             <button className="btn btn-primary">Tratamiento</button>
+          </NavLink>
+          <NavLink to="/diseases/arrhythmia/origin-arrhythmia">
+            <button className="btn btn-primary">Origen</button>
           </NavLink>
         </div>
       </div>

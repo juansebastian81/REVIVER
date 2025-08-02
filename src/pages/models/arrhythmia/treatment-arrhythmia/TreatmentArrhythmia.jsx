@@ -47,6 +47,14 @@ const TreatmentArrhythmia = () => {
           shadowPosition={[0, -0.01, 0]}
           defaultAnimation={"mixamo.com"}
           speedAudio={1.75}
+          title2D="¿Cómo se trata la Arritmia?"
+          text2D="            El tratamiento de la arritmia depende del tipo y gravedad.
+            Puede incluir cambios en el estilo de vida, medicamentos para regular el ritmo
+            cardíaco y procedimientos médicos como cardioversión, ablación o implante de marcapasos.
+            
+            Siempre debe ser supervisado por un especialista.
+          " 
+          youtubeURL="zYs145RDrqU"
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
@@ -86,6 +94,9 @@ const TreatmentArrhythmia = () => {
           </NavLink>
           <NavLink to="/diseases/arrhythmia/symptoms-arrhythmia">
             <button className="btn btn-primary">Síntomas</button>
+          </NavLink>
+          <NavLink to="/diseases/arrhythmia/origin-arrhythmia">
+            <button className="btn btn-primary">Origen</button>
           </NavLink>
         </div>
       </div>
