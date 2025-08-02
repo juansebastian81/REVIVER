@@ -45,8 +45,16 @@ const Arrhythmia = () => {
           defaultAnimation={"Take 001"}
           audioUrl="/sounds/heartBeating.mp3"
           speedAudio={1.5}
-          title2D="Testimonio de la Arritmia"
-          text2D="Aqui todo del testimonio"
+          title2D="¿Qué es la Arritmia y cómo se clasifica?"
+          text2D={`                        La arritmia es una alteración en el ritmo normal del corazón, 
+                        haciendo que los latidos sean irregulares, demasiado rápidos (taquicardia) o demasiado lentos (bradicardia). 
+          
+                        Las arritmias se clasifican según su origen y el tipo de alteración:
+                        - Según la frecuencia cardíaca: taquiarritmias (rápidas) y bradiarritmias (lentas).
+                        - Según el lugar de origen: supraventriculares (en las aurículas) y ventriculares (en los ventrículos).
+
+                        Algunas arritmias son benignas, pero otras pueden ser graves y requerir atención médica.`}
+          youtubeURL="ml19a5_SydM"
         />
 
         {!scrollEnabled && <ScrollDownButton onClick={handleScrollDown} />}
@@ -54,26 +62,22 @@ const Arrhythmia = () => {
 
       <div className="text-container" id="info-section">
         <h1>
-          <strong>¿Qué es?</strong>
+          <strong>¿Qué es la arritmia?</strong>
         </h1>
         <p>
-          Las arritmias se producen cuando los impulsos eléctricos que controlan
-          el ritmo del corazón no funcionan correctamente. Esto puede hacer que
-          el corazón lata demasiado rápido, demasiado lento o de manera
-          irregular. Las arritmias pueden ser inofensivas o potencialmente
-          mortales, dependiendo de su tipo y gravedad.
+          La arritmia es una alteración en el ritmo normal del corazón. Puede hacer que el corazón lata demasiado rápido, demasiado lento o de manera irregular. Estas alteraciones pueden ser inofensivas, pero algunas arritmias pueden poner en riesgo la vida si afectan la capacidad del corazón para bombear sangre de manera eficiente.
         </p>
 
         <h1>
           <strong>¿Cuáles son sus causas?</strong>
         </h1>
         <ul>
-          <li>Enfermedades Cardíacas</li>
-          <li>Desequilibrios electrolíticos</li>
+          <li>Enfermedades cardíacas previas</li>
+          <li>Desequilibrios electrolíticos en la sangre</li>
           <li>Hipertensión arterial</li>
           <li>Edad avanzada</li>
           <li>Factores genéticos</li>
-          <li>Consumo de alcohol, cafeína, tabaco o drogas recreativas</li>
+          <li>Consumo de alcohol, cafeína, tabaco o drogas</li>
           <li>Estrés y ansiedad</li>
           <li>Falta de sueño</li>
         </ul>
@@ -82,18 +86,7 @@ const Arrhythmia = () => {
           <strong>¿Cómo afecta al cuerpo humano?</strong>
         </h1>
         <p>
-          Las arritmias cardíacas pueden tener efectos que van desde ser
-          completamente inofensivos hasta representar un riesgo grave para la
-          vida. En casos más severos, pueden aumentar significativamente la
-          probabilidad de sufrir un accidente cerebrovascular, especialmente
-          cuando se trata de fibrilación auricular, ya que esta favorece la
-          formación de coágulos sanguíneos que pueden desplazarse al cerebro.
-          También pueden llevar al desarrollo de insuficiencia cardíaca,
-          debilitando al corazón y reduciendo su capacidad para bombear sangre
-          de manera eficiente. En situaciones críticas, algunas arritmias pueden
-          desencadenar un paro cardíaco súbito, lo que implica una pérdida
-          repentina de la función cardíaca y requiere intervención médica
-          inmediata.
+          Las arritmias pueden causar síntomas como palpitaciones, mareos, desmayos, dificultad para respirar y dolor en el pecho. En casos graves, pueden provocar accidentes cerebrovasculares, insuficiencia cardíaca o paro cardíaco súbito, requiriendo atención médica inmediata.
         </p>
         <div className="button-group-centered">
           <NavLink to="/diseases/arrhythmia/symptoms-arrhythmia">
@@ -101,6 +94,9 @@ const Arrhythmia = () => {
           </NavLink>
           <NavLink to="/diseases/arrhythmia/treatment-arrhythmia">
             <button className="btn btn-primary">Tratamiento</button>
+          </NavLink>
+          <NavLink to="/diseases/arrhythmia/origin-arrhythmia">
+            <button className="btn btn-primary">Origen</button>
           </NavLink>
         </div>
       </div>

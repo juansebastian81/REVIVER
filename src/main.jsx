@@ -9,6 +9,7 @@ import Diseases from "./pages/models/Diseases";
 import Arrhythmia from "./pages/models/arrhythmia/Arrhythmia";
 import ChestPain from "./pages/models/arrhythmia/symptoms-arrhythmia/chest-pain";
 import ArrhythmiaTreatment from "./pages/models/arrhythmia/treatment-arrhythmia/TreatmentArrhythmia";
+import OriginArrhythmia from "./pages/models/arrhythmia/origin-arrhythmia/OriginArrhythmia";
 import HeartFailure from "./pages/models/heart-failure/HeartFailure";
 import CoronaryDiseases from "./pages/models/coronary-disease/CoronaryDiseases";
 import CongenitalHeartDisease from "./pages/models/congenital-heart-disease/CongenitalHeartDisease";
@@ -47,6 +48,10 @@ createRoot(document.getElementById("root")).render(
           <Route
             path="/diseases/arrhythmia/treatment-arrhythmia"
             element={<ArrhythmiaTreatment />}
+          />
+          <Route
+            path="/diseases/arrhythmia/origin-arrhythmia"
+            element={<OriginArrhythmia />}
           />
 
           {/* Insuficiencia cardiaca */}

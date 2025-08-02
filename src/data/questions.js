@@ -1,32 +1,46 @@
 export const QUESTIONS = [
   {
     id: 1,
-    question: '¿Capital de Francia?',
-    options: ['Madrid', 'París', 'Roma', 'Berlín'],
+    question: '¿Cuál de las siguientes afirmaciones describe mejor a una cardiopatía congénita?',
+    options: [
+      'Es una enfermedad del corazón causada por infecciones en la edad adulta.',
+      'Es una malformación del corazón o de los vasos sanguíneos presente desde el nacimiento.',
+      'Es una enfermedad cardíaca que solo afecta a personas mayores.',
+      'Es una arritmia causada por el estrés y la mala alimentación.'
+    ],
     answer: 1
   },
   {
-    id: 2,
-    question: '¿2 + 2?',
-    options: ['3', '4', '5', '6'],
-    answer: 1
+    id: 2 ,
+    question: '¿Cuál es una de las principales causas de la enfermedad coronaria?',
+    options: [
+      'Consumo moderado de frutas',
+      'Ejercicio regular',
+      'Acumulación de placa en las arterias',
+      'Buena hidratación'
+    ],
+    answer: 2
   },
   {
     id: 3,
-    question: '¿Color del cielo en un día despejado?',
-    options: ['Rojo', 'Azul', 'Verde', 'Amarillo'],
-    answer: 1
+    question: '¿Cuál de los siguientes NO es una causa común de arritmia?',
+    options: [
+      'Enfermedades cardíacas',
+      'Ejercicio regular',
+      'Consumo de alcohol',
+      'Falta de sueño'
+    ],
+    answer: 3
   },
   {
     id: 4,
-    question: '¿Quién escribió "Don Quijote"?',
-    options: ['Miguel de Cervantes', 'Gabriel García Márquez', 'Pablo Neruda', 'Federico García Lorca'],
+    question: "¿Qué síntoma es típico de la insuficiencia cardíaca?",
+    options: [
+      "Fatiga",
+      "Visión borrosa",
+      "Dolor de cabeza",
+      "Erupción cutánea"
+    ],
     answer: 0
-  },
-  {
-    id: 5,
-    question: '¿Elemento químico con símbolo H?',
-    options: ['Helio', 'Hidrógeno', 'Hierro', 'Hafnio'],
-    answer: 1
   }
 ];
